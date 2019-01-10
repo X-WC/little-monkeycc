@@ -1,0 +1,46 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	padding: 20px;
+}
+
+h2{
+	padding-top: 23px;
+	text-align: center;
+}
+/*针对布局溢出 使用overflow-hidden*/
+div{
+	overflow: hidden;
+}
+
+.head{
+	background-color: #808080;
+	color: white;
+	height: 80px;
+}
+/*高度和宽度也是点睛之笔*/
+.head_{
+	background-color: #CCCCCC;
+	padding: 25px;
+	float: left;
+	width:100px;
+	height: 100px;
+	text-align: left;
+	font-size: 15px;
+	border: 1px solid rgb(219, 219, 219);
+}
+
+table{
+	height: 100px;
+	text-align: left;
+}
+
+.content{
+	border: 1px solid rgb(219, 219, 219);
+}
+.basainf{
+	border: 1px solid rgb(219, 219, 219);
+}
