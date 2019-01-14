@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox align 0 — starting code</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      body {
+        width: 70%;
+        max-width: 960px;
+        margin: 20px auto;
+      }
+      button {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 15%;
+      }
+      div {
+        height: 100px;
+        border: 1px solid black;
+		display: flex;
+		align-items: center;
+		/*align-items控制flex项在交叉轴上的位置 默认的值为stretch（弹性的）*/
+		justify-content: space-between;
+      }
+	  button:first-child{
+		  order: 1;
+	  }
+	  /*button:first-child{
+		  align-self: flex-end;
+		  /*使用algin-self覆盖之前align-items属性
+	  }*/
+      /* Add your flexbox CSS below here */
+      
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>Smile</button>
+      <button>Laugh</button>
+      <button>Wink</button>
+      <button>Shrug</button>
+      <button>Blush</button>
+    </div>
+  </body>
+</html>
+	</body>
+</html>
