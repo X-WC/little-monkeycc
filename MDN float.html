@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/MDN%20float.css"/>
+	</head>
+	<body>
+		<h1>Basic document flow</h1>
+		<section class="paragraph-st">
+			<p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+		</section>
+		<section class="paragraph-st">
+			<p>By default we span 100% of the width of our parent element, and we are as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+		</section>
+		<section class="paragraph-st">
+			<p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+		</section>
+		<section class="paragraph-st">
+			<p>inline elements<span> like this one</span> and<span> this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements will<span> wrap onto a new line if possible (like this one containing text)</span>, or just go on to a new line if not, much like this image will do: <img src="https://mdn.mozillademos.org/files/13360/long.jpg" /></p>
+		</section>
+	</body>
+</html>
