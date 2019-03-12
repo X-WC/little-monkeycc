@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>跑马灯实例1</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h4>{{ message }}</h4>
+    <input type="button" value="动起来" @click="pao">
+    <input type="button" value="停下来" @click="stop">
+  </div>
+  
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: '这是一个Vue的跑马灯实例',
+        intervalId:null
+      },
+      methods: {
+        pao(){
+          if (this.intervalId != null) return;
+          // console.log(this.message);
+          this.intervalId = setInterval( () => {
+            var start = this.message.substring(0,1);
+
+            var end = this.message.substring(1);
+
+            this.message = end + start;
+          },400)
+        },
+        stop(){
+          clearInterval(this.intervalId);
+          this.intervalId = null;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

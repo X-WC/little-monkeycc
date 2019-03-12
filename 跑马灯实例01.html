@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯实例01</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body{
+            background-color: black;
+            color: white;
+        }
+        .div1{
+            text-align: center;
+            padding: 10%;
+        }
+        .font{
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="run" class="div1">
+        <div class="font">
+            <h4 id="msg" style="font-size:7vw;">跑马灯实例01</h4>
+        </div>
+        
+
+        <input type="button" value="跑起来" onclick="pao()" class="btn btn-primary">
+        <input type="button" value="停下" onclick="stop()" class="btn btn-primary">
+        </form>
+    </div>
+
+    <script>
+        
+        function pao(){
+            timer = setInterval(function(){
+                var message = document.getElementById("msg").innerText;
+                var start = message.substring(0,1);
+                // document.write(start + "<br />");
+                var end = message.substring(1);
+                // document.write(end +"<br />");
+                // document.write(end + start+ "<br />");
+                message = end + start;
+                // document.write(message);
+                document.getElementById("msg").innerHTML = message;
+            },400)
+        }
+
+        function stop(){
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>
