@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue样式-style</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <!-- 对象就是无序键值对的集合 -->
+    <!-- <div id="app">
+        <h1 :style="{color:'blue','font-weight': 200}">此实例演示如何用vue绑定样式 利用style，哈哈哈哈！！</h1>
+    </div> -->
+
+    <!-- <div id="app">
+        <h1 :style="h1Obj1">此实例演示如何用vue绑定样式 利用style，哈哈哈哈！！</h1>
+    </div> -->
+    
+    <!-- 通过数组绑定到style样式 -->
+    <!-- <div id="app">
+        <h1 :style="[h1Obj1,h1Obj2]">此实例演示如何用vue绑定样式 利用style，哈哈哈哈！！</h1>
+    </div> -->
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                h1Obj1:{color:'blue','font-weight': 200},
+                h1Obj2:{'font-size':'20px','background-color':'red'},
+            },
+            methods: {}
+        })
+    </script>
+</body>
+</html>

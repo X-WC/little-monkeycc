@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for常用的几种循环</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <!-- v-for循环遍历普通数组 -->
+    <!-- <div id="app">
+        <p v-for="(item,i) in list">索引值：{{i}}-----值：{{item}}</p>
+    </div> -->
+
+    <!-- v-for循环遍历对象数组 -->
+    <!-- <div id="app">
+        <p v-for="item in list1">ID:{{ item.id }}----- 姓名:{{ item.name }}</p>
+    </div> -->
+
+    <!-- v-for循环遍历对象 -->
+    <!-- <div id="app">
+        <p v-for="(val,key) in user">值：{{val}}----键：{{key}}</p>
+    </div> -->
+
+    <!-- v-for循环遍历数字 -->
+    <!-- v-for遍历数字从1开始 -->
+    <!-- <div id="app">
+        <p v-for="item in 10">这是数字：{{ item }}</p>
+    </div> -->
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: [1,2,3,4,5,6],
+                list1: [
+                    {id:1,name:'zs1'},
+                    {id:2,name:'zs2'},
+                    {id:3,name:'zs3'},
+                    {id:4,name:'zs4'},
+                ],
+                user: {
+                    id:1,
+                    name:'congcong',
+                    sex:'woman',
+                }
+            },
+            methods:{}
+        })
+    </script>
+</body>
+</html>
