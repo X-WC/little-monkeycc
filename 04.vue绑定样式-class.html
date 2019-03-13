@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue绑定样式-class</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        
+        .thin{
+            font-weight: 200;
+        }
+        
+        .italic{
+            font-style: italic;
+        }
+
+        .active{
+            letter-spacing: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- 用数组来绑定class属性 要给类名加‘’ -->
+    <!-- <div id="app">
+        <h1 :class=['red','thin']>这是一个h1标签，来演示用vue的class来绑定样式</h1>
+    </div> -->
+
+    <!-- 三元运算符来表示class属性 要在data中绑定flag的数据 -->
+    <!-- <div id="app">
+        <h1 :class="['red' , 'thin' , flag?'active':'']">这是一个h1标签，来演示用vue的class来绑定样式</h1>
+    </div> -->
+
+    <!-- 嵌套模式类型 调用对象属性 -->
+    <!-- <div id="app">
+        <h1 :class="['red' , 'thin' , {'active':flag}]">这是一个h1标签，来演示用vue的class来绑定样式</h1>
+    </div> -->
+
+    <!-- 直接使用对象 属性名：标识符（true/false）true显示属性 false不显示属性 -->
+    <!-- <div id="app">
+        <h1 :class="styleObj">这是一个h1标签，来演示用vue的class来绑定样式</h1>
+    </div> -->
+
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag:true,
+                styleObj:{red:true,italic:true,thin:true,active:false},
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+</html>

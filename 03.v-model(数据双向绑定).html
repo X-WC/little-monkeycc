@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03.v-model(双向数据绑定)</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h4> {{ message }} </h4>
+
+        <!-- v-bind可以实现事件绑定 但是只能实现数据单项绑定 M-V -->
+        <!-- <input type="text" v-bind:value="message" style="width:100%"> -->
+
+        <!-- v-model可以实现数据双向绑定  M-V-M  -->
+        <input type="text" style="width:100%" v-model="message">
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: '大家好！我是xx，今年12岁！',
+            },
+            methods: {}
+        });
+    </script>
+</body>
+</html>

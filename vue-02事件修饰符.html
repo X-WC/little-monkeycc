@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-02</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <style>
+        .inner{
+            background-color:pink;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- .stop阻止了事件冒泡机制 -->
+    <!-- <div id="app">
+        <div class="inner" @click="divHandler">
+            <input type="button" value="按钮" @click.stop="btnHandler">
+        </div>
+    </div> -->
+
+    <!-- .prevent阻止了默认的事件 -->
+    <!-- <a href="http://www.baidu.com" @click.prevent="linkClick">百度一下，你就知道</a> -->
+    
+    <!-- .self 只在事件在该元素本身触发时回调 -->
+    <!-- <div id="app">
+        <div class="inner" @click.self="divHandler">
+            <input type="button" value="按钮" @click="btnHandler">
+        </div>
+    </div> -->
+
+    <!-- .capture 添加事件监听器是使用事件捕获机制 -->
+    <!-- <div id="app">
+        <div class="inner" @click.capture="divHandler">
+            <input type="button" value="按钮" @click="btnHandler">
+        </div>
+    </div> -->
+
+    <!-- .once事件只触发一次 在此实例中只阻止一次冒泡行为 -->
+    <!-- <div id="app">
+        <div class="inner" @click="divHandler">
+            <input type="button" value="按钮" @click.stop.once="btnHandler">
+        </div>
+    </div> -->
+
+    
+    <script>
+        // 创建vue实例 得到viewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                divHandler(){
+                    console.log("这是触发了div的事件");
+                },
+                btnHandler(){
+                    console.log("这是触发了btn的事件");
+                },
+                linkClick(){
+                    console.log("这是触发的href的事件");
+                },
+            }
+        })
+    </script>
+</body>
+</html>
