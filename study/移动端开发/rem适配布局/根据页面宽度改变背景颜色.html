@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根据页面宽度改变背景颜色</title>
+    <style>
+        /* 1.媒体查询一般按照从大到小或者从小到大的顺序来写 */
+        /* screen还有and不能省略 */
+        /* 数字后面必须跟单位 */
+        /* 小于540px 背景颜色变为蓝色 */
+        
+        @media screen and (max-width:539px) {
+            body {
+                background-color: blue;
+            }
+        }
+        /* 540——970 背景颜色变为绿色 */
+        /* @media screen and (min-width:540px) and (max-width:969px) {
+            body {
+                background-color: green;
+            }
+        } */
+        
+        @media screen and (min-width:540px) {
+            body {
+                background-color: green;
+            }
+        }
+        /* 大于970 变红色 */
+        
+        @media screen and (min-width:970px) {
+            body {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

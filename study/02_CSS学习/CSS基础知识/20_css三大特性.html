@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css三大特性</title>
+    <style>
+        div {
+            /* 样式冲突会层叠 */
+            color: red;
+            /* 样式不冲突不会层叠 */
+            font-size: 12px;
+        }
+        
+        div {
+            color: blue;
+        }
+        
+        ul {
+            text-decoration: none;
+            color: blue;
+            /* 行高可以不跟单位 1.5的意思是是子元素文字大小的1.5倍 */
+            font: 700 14px/1.5 'Microsoft yahei';
+        }
+        /* 
+        优先级决定于权重 继承/*（通配符) < 元素选择器 < 类选择器/伪类选择器< id选择器 < 行内样式 < ！important
+        1. 复合选择器会有权重叠加的问题 但是不会有进位的问题
+        */
+        
+        ul li {
+            /* 权重为0,0,0,1+0,0,0,1=0,0,0,2 */
+            color: green;
+        }
+        
+        li {
+            /* 权重为0,0,0,1 */
+            color: red;
+        }
+        
+        .nav li {
+            /* 权重为0,0,1,0+0,0,0,1=0,0,1,1 */
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>层叠性的效果显示就近样式</div>
+    <ul>
+        <li><a href="">继承性的效果</a></li>
+    </ul>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

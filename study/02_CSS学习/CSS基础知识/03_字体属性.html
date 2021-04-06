@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体属性</title>
+    <style>
+        body {
+            /* 设置字体字体 */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* 标题标签比较特殊 需要单独指定文字大小 */
+        
+        p {
+            /* 设置字体大小 */
+            font-size: 20px;
+        }
+        
+        .bold {
+            /* 设置字体粗细 数字700=bold 400=normal */
+            /* font-weight: bold; */
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-weight: 400;
+        }
+        /* 文字样式 正常（normal）/斜体（italic） */
+        
+        em {
+            font-style: normal;
+        }
+        /* 字体复合写法 */
+        
+        .fuhe {
+            /* font: font-style font-weight font-size/line-height font-family; 不能改变顺序 不能省略字体大小和字体 */
+            font: italic 700 16px 'Microsoft yahei';
+        }
+    </style>
+</head>
+
+<body>
+    <h1>十三届全国人大四次会议新闻发布会将于3月4日举行</h1>
+    <p class="fuhe">十三届全国人大四次会议将于3月4日（星期四）21时40分在人民大会堂新闻发布厅举行新闻发布会，由大会发言人就大会议程和人大工作相关问题回答中外记者提问。 </p>
+    <p class="bold">为有效防控疫情，共同维护公共卫生与健康，新闻发布会将采用网络视频形式进行。届时中央广播电视总台进行现场直播，新华网进行现场图文直播。</p>
+    <em>十三届全国人大四次会议新闻中心<br>2021年3月2日<br>(来源:人大会议新闻中心微信公号)</em>
+
+</body>
+
+</html>

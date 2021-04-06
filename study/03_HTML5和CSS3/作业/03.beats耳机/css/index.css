@@ -1,0 +1,29 @@
+.box {
+    width: 100px;
+    height: 35px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.box:hover .box2 {
+    transform: translateY(-100%);
+}
+
+.box1 {
+    /* 使box1中的文字清晰 */
+    position: relative;
+    z-index: 1;
+    padding: 6px 33px;
+    margin-bottom: 1px;
+}
+
+.box2 {
+    width: 100px;
+    height: 35px;
+    background-color: #ccc;
+    transition: transform .5s ease;
+    opacity: .8;
+}

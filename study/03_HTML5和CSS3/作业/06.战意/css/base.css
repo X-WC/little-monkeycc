@@ -1,0 +1,47 @@
+/* 把页面的外边距和内边距清除 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 有序/无序列表清除小圆点 */
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* input/button清除聚焦 清除边框 */
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+
+/* 超链接无下划线 */
+
+a {
+    text-decoration: none;
+}
+
+
+/* 清除浮动 */
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+}
+
+.clearfix::after {
+    clear: both;
+}

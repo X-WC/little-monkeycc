@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 打开页面之后 盒子从左到右 历时5s 自动播放 -->
+    <style>
+        /* 定义动画 */
+        
+        @keyframes move {
+            /* 动画开始 */
+            0% {
+                transform: translate(0px);
+            }
+            100% {
+                transform: translate(1000px);
+            }
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 调用动画 */
+            animation-name: move;
+            /* 持续时间 */
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

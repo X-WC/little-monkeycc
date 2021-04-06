@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品模块</title>
+    <style>
+        /* 分析如下
+            1、首先是由一个div.box的大盒子包含
+            2、盒子里分别有图片
+            3、描述
+            4、评价
+            5、商品名称和价格 */
+        
+        * {
+            /* 清除页面默认内外边距 */
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .box {
+            width: 298px;
+            height: 415px;
+            background-color: white;
+            /* 让块级盒子水平居中 */
+            margin: 100px auto;
+        }
+        
+        .box img {
+            width: 100%;
+        }
+        
+        .review {
+            height: 70px;
+            font-size: 14px;
+            padding: 0 28px;
+            margin-top: 30px;
+        }
+        
+        .appraise {
+            padding: 0 28px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #b0b0b0;
+        }
+        
+        h4 {
+            display: inline-block;
+            font-weight: 400;
+        }
+        
+        .info {
+            font-size: 14px;
+            padding: 0 28px;
+            margin-top: 15px;
+        }
+        
+        .info a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .info em {
+            /* 将文字变为不倾斜 */
+            font-style: normal;
+            /* 设置文字的padding */
+            margin: 0 6px 0 15px;
+            color: #ebe4e0;
+        }
+        
+        .info span {
+            color: #ff6700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href=""><img src="images/img.jpg" alt=""></a>
+        <p class="review">快递牛，整体不错蓝牙可以说秒连。红米给力</p>
+        <div class="appraise">来自于 117384232 的评价</div>
+        <div class="info">
+            <h4><a href="">Redmi AirDots真无线蓝...</a></h4>
+            <em>|</em>
+            <span>99.9元</span>
+        </div>
+    </div>
+</body>
+
+</html>

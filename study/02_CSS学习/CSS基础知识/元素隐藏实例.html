@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土豆网实例</title>
+    <style>
+        .td {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: skyblue;
+            margin: 30px auto;
+        }
+        
+        .td img {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3) url(arr.png) no-repeat center;
+        }
+        /* 当鼠标经过大盒子时 让隐藏层显示出来的做法 */
+        
+        .td:hover .box {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="td">
+        <div class="box"></div>
+        <img src="tudou.jpg" alt="">
+    </div>
+</body>
+
+</html>

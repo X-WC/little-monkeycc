@@ -1,0 +1,79 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    /* flexible 划分了10等份 所以一份就是10rem */
+    width: 10rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background-color: #f2f2f2;
+}
+
+@media screen and (min-width:750px) {
+    html {
+        font-size: 50px !important;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 表单无聚焦框 */
+
+input {
+    border: none;
+    outline: none;
+}
+
+
+/* 搜索框后面叉号去除 */
+
+input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.173333rem;
+    background-color: #ffc001;
+}
+
+.search-content .classify {
+    width: .586667rem;
+    height: .933333rem;
+    background: url(../images/classify.png) no-repeat;
+    background-size: .586667rem .933333rem;
+    margin: .146667rem .333333rem .093333rem .32rem;
+}
+
+.search {
+    flex: 1;
+}
+
+.search input {
+    width: 100%;
+    height: .88rem;
+    margin-top: .133333rem;
+    border-radius: .44rem;
+    background-color: #fff2cc;
+    padding-left: .733333rem;
+    color: #757575;
+    font-size: .333333rem;
+}
+
+.login {
+    width: 1rem;
+    height: .933333rem;
+    margin: .133333rem;
+    font-size: .333333rem;
+    color: white;
+    text-align: center;
+    line-height: .933333rem;
+}

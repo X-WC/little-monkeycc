@@ -1,0 +1,45 @@
+body {
+    font: 16px/28px 'Microsoft yahei';
+}
+
+h1 {
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 文字不加粗 */
+    font-weight: 400;
+}
+
+a {
+    /* 取消链接下划线 */
+    text-decoration: none;
+}
+
+.gray {
+    color: rgb(136, 136, 136);
+    text-align: center;
+    font-size: 12px;
+}
+
+.search {
+    color: #666666;
+    width: 173px;
+}
+
+.btn {
+    /* 加粗文字 */
+    font-weight: 700;
+}
+
+p {
+    text-indent: 2em;
+}
+
+.pic {
+    /* 想要图片居中对齐 需要给它的父元素p标签添加水平居中代码 */
+    text-align: center;
+}
+
+.down {
+    color: rgb(136, 136, 136);
+    font-size: 12px;
+}

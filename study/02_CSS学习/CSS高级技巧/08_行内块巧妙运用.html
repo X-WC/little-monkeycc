@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            text-align: center;
+        }
+        
+        .box a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .box .prev,
+        .box .next {
+            width: 85px;
+        }
+        
+        .box .clear {
+            background-color: white;
+            border: none;
+        }
+        
+        .box input {
+            width: 45px;
+            height: 36px;
+            border: 1px solid #ccc;
+            /* 聚焦无框线 */
+            outline: none;
+        }
+        
+        .box button {
+            width: 45px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#" class="prev">&lt;&lt;上一页</a>
+        <a href="#" class="clear">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#" class="clear">7</a>
+        <a href="#" class="next">&gt;&gt;下一页</a> 到第几
+        <input type="text"> 页
+        <button>确定</button>
+    </div>
+</body>
+
+</html>

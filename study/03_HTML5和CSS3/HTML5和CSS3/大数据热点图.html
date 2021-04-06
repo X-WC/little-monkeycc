@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        
+        .map {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            margin: 0 auto;
+            background: url(media/map.png) no-repeat;
+        }
+        
+        .city {
+            position: absolute;
+            top: 227px;
+            right: 191px;
+            height: 8px;
+            width: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+        
+        .tb {
+            top: 498px;
+            right: 79px;
+        }
+        
+        .gz {
+            top: 541px;
+            right: 192px;
+        }
+        
+        .city div[class^=pulse] {
+            /* 让脉冲垂直水平居中 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 8px;
+            width: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite;
+        }
+        
+        .city div.pulse2 {
+            animation-delay: 0.4s;
+        }
+        
+        .city div.pulse3 {
+            animation-delay: 0.8s;
+        }
+        
+        @keyframes pulse {
+            0% {}
+            70% {
+                width: 40px;
+                height: 40px;
+                /* 透明度为1 */
+                opacity: 1;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                /* 波纹慢慢消失 透明度为0 */
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

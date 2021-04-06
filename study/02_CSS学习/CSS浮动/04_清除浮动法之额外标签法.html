@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动法之额外标签法</title>
+    <style>
+        .box {
+            /* 父元素不指定高度 */
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        .left {
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+            float: left;
+        }
+        
+        .right {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            float: left;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        br {
+            clear: both;
+        }
+        
+        .normal {
+            height: 200px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+        <!-- 添加额外标签 清除浮动 -->
+        <!-- <div class="clear"></div> -->
+        <!-- 添加的额外标签必须为块级元素 不能为行内元素 可以用br -->
+        <br>
+    </div>
+    <div class="normal"></div>
+</body>
+
+</html>

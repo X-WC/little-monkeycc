@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动法之伪元素：after法</title>
+    <style>
+        .box {
+            width: 500px;
+            /* 盒子垂直水平居中 */
+            margin: 0 auto;
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .clearfix {
+            /* IE6/7专用 */
+            *zoom: 1;
+        }
+        
+        .left {
+            width: 200px;
+            height: 200px;
+            float: left;
+            background-color: pink;
+        }
+        
+        .right {
+            width: 300px;
+            height: 200px;
+            float: left;
+            background-color: green;
+        }
+        
+        .normal {
+            height: 200px;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box clearfix">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="normal"></div>
+</body>
+
+</html>

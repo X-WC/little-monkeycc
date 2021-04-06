@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sprite {
+            display: inline-block;
+            vertical-align: middle;
+            background: url('sprites.png') no-repeat 0 -180px;
+            width: 30px;
+            height: 34px;
+        }
+        
+        .box .sprite {
+            background: url('sprites.png') no-repeat 0 -350px;
+            width: 236px;
+            height: 107px;
+        }
+        
+        .box {
+            width: 800px;
+            height: 107px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sprite"></div>精灵图本质是处理网页背景图片的一种技术
+    <div class="box">
+        <div class="sprite"></div>可以有效的减少服务器接受和请求的次数，提高页面的加载速度
+    </div>
+</body>
+
+</html>

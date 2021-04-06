@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>权重练习</title>
+    <style>
+        /*
+        出现的颜色为skyblue 因为.nav指定的是ul的颜色 继承的权重是0
+         .nav {
+            color: red;
+        }
+        
+        li {
+            color: skyblue;
+        } */
+        /* 需求把第一个li 颜色改为天蓝色加粗 */
+        
+        .nav li {
+            color: red;
+        }
+        
+        .nav .skyblue {
+            color: skyblue;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="skyblue">人生四大悲</li>
+        <li>家里没宽带</li>
+        <li>网速不够快</li>
+        <li>手机没流量</li>
+        <li>学校没wifi</li>
+    </ul>
+
+
+
+
+
+</body>
+
+</html>

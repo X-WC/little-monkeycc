@@ -1,0 +1,249 @@
+body {
+    width: 100%;
+    max-width: 1080px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #666;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    /* 去除图片空白缝隙 */
+    vertical-align: top;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+
+/* 顶部 */
+
+.app {
+    height: 45px;
+}
+
+.app ul li {
+    float: left;
+    height: 45px;
+    background-color: #333;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+
+.app ul li:nth-child(1) img {
+    width: 10px;
+    /* 将图片改为和文字居中对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    /* 图片默认和基线对齐 */
+    width: 30px;
+    /* 将图片改为和文字居中对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #F63515;
+}
+
+
+/* 搜索 */
+
+.search-wrap {
+    position: fixed;
+    width: 100%;
+    height: 44px;
+    overflow: hidden;
+}
+
+
+/* 按钮 */
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    /* 背景图片缩放 */
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+
+/* 搜索框 */
+
+.search {
+    position: relative;
+    height: 30px;
+    /* 添加margin值后会出现上边距塌陷问题 给父元素添加overflow：hidden可解决 */
+    margin: 7px 50px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+/* jd-logo */
+
+.search .jd-icon {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd-logo.png) no-repeat;
+    background-size: 20px 15px;
+}
+
+.search .jd-icon::after {
+    content: '';
+    position: absolute;
+    top: 8;
+    left: 27px;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+    line-height: 15px;
+}
+
+
+/* 搜索图标 */
+
+.search .jd-icon2 {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat -83px 0;
+    /* 写原本精灵图的一半 */
+    background-size: 200px auto;
+}
+
+.search input {
+    position: absolute;
+    top: 0;
+    left: 68px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+
+/* 登录 */
+
+.search-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    color: white;
+    text-align: center;
+    line-height: 44px;
+}
+
+.slider img {
+    width: 100%;
+}
+
+
+/* 品牌日 */
+
+.brand {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.brand div {
+    float: left;
+    width: 33.3%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+
+/* 导航栏 */
+
+nav {
+    padding-top: 5px;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    display: block;
+}
+
+
+/* 新闻快报 */
+
+.news {
+    margin-top: 20px;
+}
+
+.news img {
+    width: 100%;
+}
+
+.news a {
+    float: left;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    /*从第二个往后面 */
+    width: 25%;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}

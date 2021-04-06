@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="zh-cmn-Hans">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #d1 {
+            height: 100px;
+            position: relative;
+            width: 100px;
+            overflow: hidden;
+        }
+        
+        #d1:hover>#d3 {
+            transform: translateY(-100%);
+        }
+        
+        #d2 {
+            background: red;
+            height: 100px;
+            width: 100px;
+        }
+        
+        #d3 {
+            color: white;
+            background: #111;
+            height: 100px;
+            opacity: 0.6;
+            transition: transform 0.5s ease;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        <div id="d2"></div>
+        <div id="d3"></div>
+    </div>
+</body>
+
+</html>

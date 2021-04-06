@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box1 {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            /* 添加相对定位 参照物为之前盒子的位置 */
+            position: relative;
+            /* 相对于之前盒子向下移动100px 向右移动100px */
+            top: 10px;
+            left: 10px;
+        }
+        
+        .box2 {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

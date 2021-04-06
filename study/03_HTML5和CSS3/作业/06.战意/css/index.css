@@ -1,0 +1,38 @@
+body {
+    background: url(../images/bg_81ab3d6.jpg) no-repeat;
+}
+
+.play-video {
+    position: absolute;
+    top: 280px;
+    right: 380px;
+    width: 93px;
+    height: 93px;
+}
+
+.play-video::before {
+    content: '';
+    position: absolute;
+    /* background-color: skyblue; */
+    background: url(../images/index_z_9769688.png) -744px -819px;
+    width: 93px;
+    height: 93px;
+    animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+    0% {}
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.play-video::after {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 39px;
+    background: url(../images/index_z_9769688.png) no-repeat -2290px -107px;
+    width: 21px;
+    height: 25px;
+}

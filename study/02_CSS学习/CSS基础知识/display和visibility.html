@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display元素隐藏</title>
+    <style>
+        .show {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        
+        .hidden {
+            /* 元素隐藏 */
+            /* 隐藏后不占有之前的位置 */
+            /* display: none; */
+            /* 元素显示 */
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .v-hidden {
+            /* 元素隐藏 */
+            /* 隐藏后还占有之前的位置 */
+            /* visibility: hidden; */
+            /* 元素显示 */
+            visibility: visible;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .v-show {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hidden"></div>
+    <div class="show"></div>
+    <div class="v-hidden"></div>
+    <div class="v-show"></div>
+</body>
+
+</html>

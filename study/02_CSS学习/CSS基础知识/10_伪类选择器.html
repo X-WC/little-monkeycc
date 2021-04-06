@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 链接伪类选择器 给链接添加特殊效果
+        a:link 选择所有未被访问的链接
+        a:visited 选择所有已被访问的链接
+        a:hover 选择鼠标指针位于其上的链接
+        a:active 选择活动链接（鼠标按下未弹起的 s链接） */
+        /* 未访问过的链接 */
+        
+        a:link {
+            color: red;
+        }
+        /* 选择访问过的链接 */
+        
+        a:visited {
+            color: yellow;
+        }
+        /* 选择鼠标经过的链接 */
+        
+        a:hover {
+            color: skyblue;
+        }
+        /* 选择鼠标点着但是没有松开的 */
+        
+        a:active {
+            color: green;
+        }
+        /* 必须按照link visited hover active顺序来写 给a指定样式必须单独指定 */
+        /* :focus获取元素 表单元素 */
+        /* 把获得光标的input表单元素选取出来 */
+        
+        input:focus {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">小猪佩奇</a>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</body>
+
+</html>

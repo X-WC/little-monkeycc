@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:before,
+        .clear:after {
+            content: '';
+            /* 表格式显示 使before和after在一行内显示 */
+            display: table;
+        }
+        
+        .clear:after {
+            clear: both;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="clear">
+        <div class="box1">第一个盒子</div>
+        <div class="box2">第二个盒子</div>
+    </div>
+</body>
+
+</html>

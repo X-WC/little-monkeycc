@@ -1,0 +1,78 @@
+* {
+    /* 把所有元素的内外边距清0 */
+    margin: 0;
+    padding: 0;
+    /* css3盒子模型 */
+    box-sizing: border-box;
+}
+
+em,
+i {
+    /* 把斜体变正 */
+    font-style: normal;
+}
+
+li {
+    /* li的小圆点去除 */
+    list-style: none;
+}
+
+img {
+    /* 照顾低版本浏览器 如果图片外面包含了链接会有边框问题 */
+    border: 0;
+    /* 将图片与文字居中对齐 不留空白缝隙 */
+    vertical-align: middle;
+}
+
+button {
+    /* 按钮图标鼠标变成小手形状 */
+    cursor: pointer;
+}
+
+a {
+    /* 链接颜色改变 */
+    color: #666;
+    /* 链接无下划线 */
+    text-decoration: none;
+}
+
+a:hover {
+    /* 鼠标移动上变颜色 */
+    color: #c81623;
+}
+
+button,
+input {
+    /* 按钮和表单指定字体样式 */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    /* 去除input和button自带边框 */
+    border: 0;
+    /* 去除聚焦蓝色 */
+    outline: none;
+}
+
+body {
+    /* 抗锯齿性 让文字更加清晰 */
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #666;
+}
+
+.hide,
+.none {
+    display: none;
+}
+
+.clearfix:after {
+    /* 添加伪元素 清除浮动 */
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}

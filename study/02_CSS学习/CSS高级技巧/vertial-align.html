@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片表单和文字对齐</title>
+    <style>
+        img {
+            /* 只针对行内/行内块元素 */
+            /* 图片文字居中对齐 */
+            vertical-align: middle;
+            /* 图片文字顶端对齐 */
+            /* vertical-align: top; */
+            /* 图片文字底端对齐 */
+            /* vertical-align: bottom; */
+        }
+        
+        body {
+            background-color: rgb(35, 35, 235);
+        }
+        
+        .box {
+            width: 500px;
+            height: 100px;
+            margin: 0 auto;
+            border-radius: 50px;
+            background-color: skyblue;
+        }
+        
+        .box img {
+            position: relative;
+            top: 25%;
+            left: 20%;
+            background-color: #ff5000;
+            vertical-align: middle;
+            border-radius: 20%;
+        }
+        
+        .box span {
+            position: relative;
+            top: 25%;
+            left: 20%;
+            color: white;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="pig.jpg" alt="">123
+    <div class="box">
+        <img src="mi-logo.png" alt=""><span>使用小米账号登录</span>
+    </div>
+</body>
+
+</html>

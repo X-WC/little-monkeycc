@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        .tb-promo {
+            width: 520px;
+            height: 280px;
+            background-color: pink;
+            margin: 100px auto;
+            /* 子绝父相 */
+            position: relative;
+        }
+        
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+        
+        .prev {
+            /* 绝对定位 */
+            left: 0;
+            /* 使盒子实现垂直居中 */
+            border-radius: 0 15px 15px 0;
+        }
+        
+        .next {
+            /* 绝对定位 */
+            right: 0;
+            border-radius: 15px 0 0 15px;
+        }
+        /* 并集选择器可以声明相同的属性 */
+        
+        .prev,
+        .next {
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, .3);
+            width: 20px;
+            height: 30px;
+            position: absolute;
+            /* 绝对定位的盒子实现垂直居中 */
+            top: 50%;
+            margin-top: -15px;
+            line-height: 30px;
+        }
+        
+        .promo-nav {
+            position: absolute;
+            bottom: 10px;
+            /* 绝对定位盒子实现水平居中 */
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 13px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+        
+        .promo-nav li {
+            background-color: white;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            float: left;
+            line-height: 8px;
+            margin: 3px;
+        }
+        
+        .promo-nav li:hover {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <img src="tb.jpg" alt="">
+        <!-- 左侧按钮 -->
+        <a href="#" class="prev">&lt;</a>
+        <!-- 右侧按钮 -->
+        <a href="#" class="next">&gt;</a>
+        <!-- 小圆点 -->
+        <ul class="promo-nav">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

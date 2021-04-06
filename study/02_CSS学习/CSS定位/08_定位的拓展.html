@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的拓展</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            /* 垂直居中 */
+            /* left走50% 父容器宽度的一半 */
+            left: 50%;
+            /* margin负值 盒子宽度的一半 */
+            margin-left: -100px;
+            /* 水平居中 */
+            top: 50%;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 绝对定位水平垂直居中 -->
+    <div class="box"></div>
+</body>
+
+</html>

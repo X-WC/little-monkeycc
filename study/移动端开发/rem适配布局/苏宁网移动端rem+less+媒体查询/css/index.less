@@ -1,0 +1,132 @@
+// 首页的less样式文件
+// 将common.less文件导入index.less文件中
+// @import 导入 可以把一个样式文件引入到另外一个样式文件中
+// @import "文件名" / @import “文件名.less”
+@import "common";
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family:  Arial, Helvetica;
+    background-color: #f2f2f2;
+}
+a{
+    text-decoration: none;
+}
+input{
+    border: 0;
+    //清除谷歌浏览器下的搜索框叉号
+    &::-webkit-search-cancel-button{
+        display: none;
+    }
+    // 清除IE下的 search 叉号
+    &[type=search]::-ms-clear{
+    display: none;
+    }
+}
+div{
+    // css3盒子模型
+    box-sizing: border-box;
+}
+// 顶部搜搜索框
+// 背景色
+@bgcolor:#ffc001;
+// 字体颜色
+@fontColor:white;
+@baseFont:50rem;
+.search-content{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: @bgcolor;
+    width: 15rem;
+    height: (88 / @baseFont);
+    // 图片模块
+    .classify {
+        margin: (11/@baseFont) (25/@baseFont) (7/@baseFont) (24/@baseFont);
+        width: (44 / @baseFont);
+        height: (70 / @baseFont);
+        background: url(../images/classify.png) no-repeat;
+        background-size: (44 / @baseFont) (70 / @baseFont);
+    }
+    // 搜索模块
+    .search{
+        flex: 1;
+        input{
+            margin-top: (12/@baseFont);
+            width: 100%;
+            height: (66/@baseFont);
+            background-color: #fff2cc;
+            border-radius: (33/@baseFont);
+            font-size: (25/@baseFont);
+            padding: (1/@baseFont) (2/@baseFont) (1/@baseFont) (55/@baseFont);
+            color: #757575;
+            // 去除聚焦框
+            outline: none;
+        }
+    }
+    // 登录模块
+    .login{
+        width: (75/@baseFont);
+        height: (70/@baseFont);
+        font-size: (25/@baseFont);
+        color: @fontColor;
+        margin: (10/@baseFont);
+        text-align: center;
+        line-height: (70/@baseFont);
+    }
+}
+// banner
+.banner{
+    width: (750/@baseFont);
+    height: (368/@baseFont);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//广告
+.ad{
+    display: flex;
+    a{
+        flex: 1;
+        width: (250/@baseFont);
+        height: (199.27/@baseFont);
+        img{
+           width: 100%;
+           height: 100%;
+        }
+    }
+}
+
+// nav导航栏模块
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        // width: (150/@baseFont);
+        // height: (140/@baseFont);
+        img{
+            margin: (10/@baseFont) (34/@baseFont);
+            width: (82/@baseFont);
+            height: (82/@baseFont);
+        }
+        span{
+            font-size: (25/@baseFont);
+            color: #333;
+        }
+    }
+}

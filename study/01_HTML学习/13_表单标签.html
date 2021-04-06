@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单标签</title>
+</head>
+
+<body>
+    <!-- 表单是为了收集用户信息 -->
+    <!--
+        表单的组成
+        1、表单域
+        2、表单控件（表单元素）
+        3、提示信息
+    -->
+    <!-- 表单域 包含表单元素的区域 form用于定义表单域 实现用户信息的收集和传递 将它范围内的表单元素信息提交给服务器 -->
+    <!-- action：指定接收并处理表单数据的服务器程序的url地址 -->
+    <!-- method：用于设置表单数据的提交方式 取值为get或post -->
+    <!-- name：用于指定表单的名称 区分同一个页面中的多个表单域 -->
+    <form action="demo.php" method="POST" name="name1">
+        <!--input输入表单元素  -->
+        <p>name由用户自定义 定义input元素的名称</p>
+        <p>value由用户自定义 规定input元素的值</p>
+        <p>单选框和复选框可以设置checked 默认选定</p>
+        <p>maxlength 规定输入字段中的字符最大长度 使用较少</p>
+        文本框:<input type="text" value="这是一个文本框" maxlength="10"><br> 密码框: <input type="password"><br> 男：
+        <input type="radio" name="sex" id="" value="男"> 女：
+        <input type="radio" name="sex" id="" value="女"> 复选按钮：
+        <input type="checkbox" name="" id="" checked>
+        <!-- 提交按钮 把数据提交给后台 -->
+        <input type="submit" value="免费注册"><br>
+        <!-- 重置按钮 可以还原表单元素初始的默认方式 -->
+        <input type="reset" value="重新填写"><br>
+        <!-- 点击按钮 多与js一起使用 -->
+        <input type="button" value="获取手机验证码"><br>
+        <!-- 文件域 上传文件使用的 -->
+        <input type="file" name="" id="">
+    </form>
+    <h2>labe标签用于绑定一个表单元素 当点击label标签的文本时 浏览器会自动将焦点（光标）转到或者选择对应的表单元素上来增加用户体验</h2>
+    <input type="radio" name="sex" id="man"><label for="man">男</label>
+    <input type="radio" name="sex" id="woman"><label for="woman">女</label>
+    <label for="username">用户名:</label><input type="text" name="请输入你的用户名" id="username">
+    <h2>select下拉标签 定义下来列表</h2>
+    <!-- select至少包含一堆option selected默认选择 -->
+    <form action="">
+        籍贯：
+        <select name="" id="">
+            <option value="" selected>甘肃</option>
+            <option value="">陕西</option>
+            <option value="">山西</option>
+            <option value="">上海</option>
+            <option value="">北京</option>
+        </select>
+    </form>
+    <h3>textarea文本域标签 使用多行输入文字 留言板等等</h3>
+    <form action="">
+        今日反馈：
+        <!-- cols一行多少字 rows能写多少行 -->
+        <textarea name="" id="" cols="30" rows="10"> </textarea>
+    </form>
+</body>
+
+</html>

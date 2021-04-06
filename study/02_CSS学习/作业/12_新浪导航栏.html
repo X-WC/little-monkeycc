@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新浪导航栏</title>
+    <style>
+        .box {
+            height: 41px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            background-color: #fcfcfc;
+        }
+        
+        .box a {
+            text-decoration: none;
+            color: #4c4c4c;
+            line-height: 41px;
+            font-size: 14px;
+            /* 改变为行内块元素 */
+            display: inline-block;
+            padding: 0 20px;
+        }
+        
+        .box a:hover {
+            color: #ff8500;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 分析如下：
+    1.导航栏由盒子构成
+    2.盒子有一个#ff8500的上边框 像素为3 有一个#edeef0的下边框 像素为1
+    3.盒子高度为41px 背景颜色为#fcfcfc
+    4.文字颜色为#4c4c4c
+     -->
+    <div class="box">
+        <a href="#">新浪导航</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">微博</a>
+        <a href="#">用户名</a>
+    </div>
+</body>
+
+</html>

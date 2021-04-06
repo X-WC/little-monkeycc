@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 2D转换之移动 */
+            /* transform: translate(100px, 100px); */
+            /* 只移动x轴 */
+            /* transform: translateX(100px); */
+            /* 只移动y轴 */
+            /* transform: translateY(100px); */
+        }
+        
+        p:first-of-type {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* transform不影响其他元素 */
+            transform: translate(100px, 100px);
+        }
+        
+        p:last-of-type {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+        }
+        
+        span {
+            transform: translate(100px, 100px);
+        }
+        
+        .bbox {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: yellowgreen;
+        }
+        
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            /* translate(-50%, -50%)盒子水平居中对齐 */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <p></p>
+    <p></p>
+    <span>transform对行内元素无效果</span>
+    <!-- 实现盒子垂直水平居中 -->
+    <div class="bbox">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

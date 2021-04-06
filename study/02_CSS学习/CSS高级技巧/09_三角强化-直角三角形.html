@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直角三角形</title>
+    <style>
+        .triangle {
+            width: 0;
+            height: 0;
+            border-color: transparent skyblue transparent transparent;
+            border-style: solid;
+            border-width: 100px 50px 0 0;
+        }
+        
+        .price {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            margin: 0 auto;
+            line-height: 24px;
+        }
+        
+        .price .last {
+            position: relative;
+            float: left;
+            height: 100%;
+            width: 90px;
+            text-align: center;
+            background-color: #ff5000;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .last i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent white transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+        
+        .now {
+            color: #ccc;
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="triangle"></div>
+    <div class="price">
+        <span class="last">¥1650
+            <i></i>
+        </span>
+        <span class="now">¥2500</span>
+    </div>
+</body>
+
+</html>

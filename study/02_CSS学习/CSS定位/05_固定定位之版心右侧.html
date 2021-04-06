@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位之版心右侧</title>
+    <style>
+        .content {
+            width: 800px;
+            height: 1000px;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+        
+        .flban {
+            height: 100px;
+            width: 50px;
+            background-color: pink;
+            /* 固定定位 */
+            position: fixed;
+            /* 让盒子走到版心中间 */
+            left: 50%;
+            /* 外边距为版心的一半 */
+            margin-left: 400px;
+            /* 盒子固定在版心右侧位置 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flban"></div>
+    <div class="content"></div>
+
+</body>
+
+</html>

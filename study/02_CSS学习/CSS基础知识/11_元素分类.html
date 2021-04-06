@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            /* 行内转换为块元素 display:block  */
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+        }
+        
+        div {
+            /* 块元素转换为行内元素 display:inline */
+            display: inline;
+            background-color: lightpink;
+        }
+        
+        span {
+            display: inline-block;
+            width: 500px;
+            height: 100px;
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 元素显示模式转换-->
+    <!-- 转换为块元素 -->
+    <a href="#">你好</a>
+    <a href="#">再见</a>
+    <!-- 转换为行内元素 -->
+    <div>hello</div>
+    <div>hello</div>
+    <!-- 转换为行内块元素 -->
+    <span>行内元素转换为行内块元素</span>
+</body>
+
+</html>

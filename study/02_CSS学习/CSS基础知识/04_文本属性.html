@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本属性</title>
+    <style>
+        h1 {
+            /* 文本颜色 */
+            /* 使用最多的是十六进制 */
+            /* color: red; */
+            color: #ff0000;
+            /* color: rgb(255, 0, 0); */
+        }
+        
+        .duiqi {
+            /* 对齐方式 默认左对齐(left) 居中对齐(center) 右对齐(right) */
+            text-align: center;
+        }
+        
+        em {
+            /* 装饰文本 可以给文本添加下划线 删除线 上划线 下划线和无划线最常用 */
+            /* 下划线 */
+            /* text-decoration: underline; */
+            /* 上划线 */
+            /* text-decoration: overline; */
+            /* 删除线 */
+            text-decoration: line-through;
+        }
+        
+        a {
+            /* 取消a默认的下划线 */
+            text-decoration: none;
+        }
+        
+        .bold {
+            /* 文本缩进 段落的首行缩进 */
+            /* em是一个相对单位 是当前元素1个文字的大小 */
+            text-indent: 2em;
+        }
+        
+        div {
+            /* 行间距 行与行之间的距离 上间距+下间距+文本大小 */
+            line-height: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>中国人</div>
+    <h1>十三届全国人大四次会议新闻发布会将于3月4日举行</h1>
+    <p class="duiqi">十三届全国人大四次会议将于3月4日（星期四）21时40分在人民大会堂新闻发布厅举行新闻发布会，由大会发言人就大会议程和人大工作相关问题回答中外记者提问。 </p>
+    <p class="bold">为有效防控疫情，共同维护公共卫生与健康，新闻发布会将采用网络视频形式进行。届时中央广播电视总台进行现场直播，新华网进行现场图文直播。</p>
+    <em>十三届全国人大四次会议新闻中心<br>2021年3月2日<br>(来源:人大会议新闻中心微信公号)</em><br>
+    <a href="#">百度</a>
+</body>
+
+</html>

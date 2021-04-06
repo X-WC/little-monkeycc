@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: skyblue;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            position: relative;
+            width: 250px;
+            height: 500px;
+            background-color: white;
+            /* 左边变成黑色 */
+            border-left: 250px solid #000;
+            border-radius: 50%;
+            margin: 50px auto;
+            transition: transform 1s ease;
+        }
+        
+        .box:hover {
+            transform: rotate(180deg);
+        }
+        
+        .box1 {
+            position: absolute;
+            top: 0;
+            left: -130px;
+            width: 251px;
+            height: 251px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        
+        .box1::after {
+            content: '';
+            position: absolute;
+            top: 87px;
+            left: 102px;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        .box2 {
+            position: absolute;
+            top: 250px;
+            left: -122px;
+            width: 250px;
+            height: 250px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        .box2::after {
+            content: '';
+            position: absolute;
+            top: 87px;
+            left: 102px;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

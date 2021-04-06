@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3</title>
+    <!-- 新增属性选择器 -->
+    <style>
+        /* input[value] {
+            color: skyblue;
+        } */
+        /* input[type="text"] {
+            color: skyblue;
+        } */
+        /* 选择属性值开头的元素 */
+        
+        div[class^="icon"] {
+            color: red;
+        }
+        
+        section[class$="-data"] {
+            color: pink;
+        }
+        /* ul li[class*="val"] {
+            color: skyblue;
+        } */
+        
+        ul li:first-child {
+            /* 选择ul的第一个元素 */
+            background-color: skyblue;
+        }
+        
+        ul li:last-child {
+            /* 选择ul的最后一个元素 */
+            background-color: pink;
+        }
+        
+        ul li:nth-child(2) {
+            /* 选择ul的第二个元素 */
+            background-color: plum;
+        }
+        /* 伪元素选择器 */
+        
+        a::after {
+            content: ">";
+            margin-left: 20px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            /* 加padding/border会撑开盒子 */
+            border: 10px solid skyblue;
+            padding: 20px;
+        }
+        
+        .box1 {
+            width: 200px;
+            height: 200px;
+            /* css3盒子模型 */
+            box-sizing: border-box;
+            border: 10px solid skyblue;
+            padding: 20px;
+        }
+        
+        img {
+            /* 使图片变得模糊 */
+            filter: blur(5px);
+        }
+        
+        img:hover {
+            filter: blur(0);
+        }
+        
+        .father {
+            width: 300px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        
+        .son {
+            width: calc(100% - 30px);
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 属性选择器 类选择器 伪类选择器权重都为10 -->
+    <!-- 利用属性选择器就可以不借助类/id选择器 -->
+    <!-- <input type="text" name="" id="" value="属性选择器">
+    <input type="text"> -->
+    <!-- 利用属性选择器可以选择属性=值的某些元素 需要掌握 -->
+    <!-- <input type="text" name="" id="">
+    <input type="password" name="" id=""> -->
+    <!-- 属性选择器可以选择属性值开头的某些元素 -->
+    <div class="icon1">小图标1</div>
+    <div class="icon2">小图标2</div>
+    <div class="icon3">小图标3</div>
+    <div class="icon4">小图标4</div>
+    <div>我是打酱油的</div>
+    <!-- 属性选择器可以选择属性值结尾的某些元素 -->
+    <section class="icon1-data">我是数据1</section>
+    <section class="icon2-data">我是数据2</section>
+    <section class="icon3-ico">我是数据3</section>
+    <!-- 属性选择器可以选择属性值的某些字符片段元素 -->
+    <!-- <ul>
+        <li class="1_box_1">第一个</li>
+        <li class="2_box_2">第二个</li>
+        <li class="3_box_value3">第三个</li>
+    </ul> -->
+    <!-- 结构伪类选择器 根据父级选择器里面的子元素 -->
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+    <!-- 伪元素选择器 利用css创建标签元素 简化html结构 -->
+    <!-- ::before -->
+    <!-- ::after -->
+
+    <!-- css3新特性 -->
+    <!-- css3盒子模型 -->
+    <div class="box"></div>
+    <div class="box1"></div>
+
+    <!-- 图片模糊 css3滤镜filter -->
+    <img src="media/mi9.jpg" alt="">
+    <!-- calc函数 计算盒子的大小 -->
+    <!-- 需求：子盒子的大小比父盒子永远小30px -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

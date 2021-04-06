@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            /* 先设置了背景图片 */
+            background: url(img/dog.jpg) no-repeat;
+            /* 设置背景图片的尺寸 */
+            /* background-size: 背景图片宽度 背景图片高度; 缺点会变形 */
+            /* background-size: 500px 200px; */
+            /* 只设置一个单位 默认设置宽度 高度自适应 */
+            /* background-size: 500px; */
+            /* 设置百分比 盒子宽度和高度的50% */
+            /* background-size: 50% 50%; */
+            /* cover把背景图像扩展至足够大 以至于背景图像完全覆盖背景区域 */
+            /* background-size: cover; */
+            /* contain把图像扩展至最大尺寸 使其宽度和高度完全适应内容区域 */
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

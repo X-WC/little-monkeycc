@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 圣杯布局 */
+        
+        div {
+            display: flex;
+            width: 60%;
+            height: 500px;
+            background-color: skyblue;
+            margin: 0 auto;
+        }
+        
+        span:nth-child(1) {
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+        
+        span:nth-child(2) {
+            /* flex定义子项目分配剩余空间 用flex来表示占多少份数 */
+            /* flex子项目所占份数 flex:<number>;默认为0 */
+            flex: 1;
+            height: 200px;
+            background-color: hotpink;
+            /* align-self控制子项自己在侧轴的排列方式 */
+            align-self: center;
+        }
+        
+        span:nth-child(3) {
+            width: 100px;
+            height: 200px;
+            background-color: green;
+        }
+        
+        p {
+            display: flex;
+            width: 60%;
+            height: 200px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+        
+        p span {
+            /* 每一个里面的span分一份 */
+            flex: 1;
+        }
+        
+        p span:nth-child(2) {
+            /* order属性定义子项的排列顺序（前后顺序） */
+            order: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <p>
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 第一个案例大盒子 */
+        
+        .box {
+            width: 1226px;
+            height: 460px;
+            margin: auto;
+            background-color: skyblue;
+            margin-bottom: 20px;
+        }
+        /* 左侧盒子 */
+        
+        .left {
+            width: 230px;
+            height: 460px;
+            float: left;
+            background-color: red;
+        }
+        /* 右侧盒子 */
+        
+        .right {
+            width: 996px;
+            height: 460px;
+            float: right;
+            background-color: blue;
+        }
+        /* 第二个案例大盒子 */
+        
+        .nav {
+            width: 1226px;
+            height: 285px;
+            background-color: slateblue;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            list-style: none;
+        }
+        /* 平分的四个小盒子 */
+        
+        .nav li {
+            background-color: skyblue;
+            height: 285px;
+            width: 296px;
+            float: left;
+            margin-right: 14px;
+        }
+        /* 最后一个盒子没有右外边距 */
+        
+        .nav .last {
+            margin-right: 0;
+        }
+        /* 第三个案例大盒子 */
+        
+        .boxes {
+            width: 1226px;
+            height: 615px;
+            background-color: pink;
+            margin: auto;
+        }
+        
+        .left1 {
+            width: 234px;
+            height: 615px;
+            background-color: purple;
+            float: left;
+        }
+        
+        .right1 {
+            width: 992px;
+            height: 615px;
+            background-color: salmon;
+            float: left;
+        }
+        
+        .right1>div {
+            width: 234px;
+            height: 300px;
+            background-color: violet;
+            float: left;
+            margin-left: 14px;
+            margin-bottom: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">左边</div>
+        <div class="right">右边</div>
+    </div>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+    </ul>
+    <div class="boxes">
+        <div class="left1"></div>
+        <div class="right1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+    </div>
+</body>
+
+</html>

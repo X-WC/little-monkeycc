@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 三角制作</title>
+    <style>
+        .triangle {
+            width: 0;
+            height: 0;
+            margin: 100px auto;
+            border-top: 20px solid skyblue;
+            border-left: 20px solid red;
+            border-bottom: 20px solid green;
+            border-right: 20px solid purple;
+        }
+        /* 三角形的制作 */
+        
+        .triangle1 {
+            width: 0;
+            height: 0;
+            margin: 20px auto;
+            /* 照顾低版本浏览器 */
+            line-height: 0;
+            font-size: 0;
+            border: 10px solid transparent;
+            border-top-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="triangle"></div>
+    <div class="triangle1"></div>
+</body>
+
+</html>

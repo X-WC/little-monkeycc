@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景精确定位</title>
+    <style>
+        .jingzhun {
+            width: 400px;
+            height: 280px;
+            background-color: pink;
+            background-image: url(01_作业_百度页面/bdlogo.gif);
+            background-repeat: no-repeat;
+            /* 精准定位第一个是x轴 第二个是y轴 */
+            /* background-position: 40px 40px; */
+            /* 精准定位 只写一个的话是x轴 */
+            background-position: 80px;
+        }
+        
+        .hunhe {
+            width: 400px;
+            height: 200px;
+            background-color: pink;
+            background-image: url(01_作业_百度页面/bdlogo.gif);
+            background-repeat: no-repeat;
+            /* 混合 既可以写方位也可以写精确 */
+            background-position: center 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="jingzhun"></div> -->
+    <div class="hunhe"></div>
+</body>
+
+</html>

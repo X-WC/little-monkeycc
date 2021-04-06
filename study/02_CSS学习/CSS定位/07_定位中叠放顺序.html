@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位中的叠放顺序</title>
+    <style>
+        .box1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 第一个盒子在叠放最上面 */
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .box2 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            /* 第二个盒子在叠放最上面 */
+            z-index: 2;
+            width: 100px;
+            height: 100px;
+            background-color: powderblue;
+        }
+        
+        .box3 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bbox">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>

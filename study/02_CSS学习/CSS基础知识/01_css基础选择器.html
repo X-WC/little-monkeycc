@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语法规范</title>
+    <style>
+        /* 选择器{样式} */
+        /* 选择器的作用 选择标签去使用的 */
+        /* 标签选择器：写上标签名 */
+        
+        p {
+            color: red;
+        }
+        
+        div {
+            color: blue;
+        }
+        /* 类选择器 开发最常用 可以多人去使用 */
+        
+        .pink {
+            color: pink;
+        }
+        /* id选择器 id只能调用一次 别的标签不能再次使用  */
+        
+        #hotpink {
+            color: hotpink;
+        }
+        /* 通配符选择器 *选择所有的标签去使用 */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="pink">男生</p>
+    <p class="pink">男生</p>
+    <p>男生</p>
+    <div>女生</div>
+    <div>女生</div>
+    <div>女生</div>
+    <p id="hotpink">麦克风</p>
+</body>
+
+</html>

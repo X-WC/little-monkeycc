@@ -1,0 +1,19 @@
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+}
+.header a {
+  color: pink;
+}
+.header a:hover {
+  color: blue;
+}
+.nav::before {
+  content: '我是伪类';
+}
+.nav .logo {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}

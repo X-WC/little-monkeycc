@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 把ol里面的li选出来改为red */
+        /* 后代选择器 语法：元素1 元素2{样式声明} 元素1是父元素 元素2是子元素 改变的是子元素的样式 */
+        
+        ol li {
+            color: red;
+        }
+        
+        ol li a {
+            color: brown;
+        }
+        
+        .yellow li a {
+            color: yellow;
+        }
+        /* 子选择器 语法：元素1>元素2{样式声明} 元素1是父元素 元素2是子元素 改变的是子元素的样式 */
+        
+        div>a {
+            color: green;
+        }
+        /* 并集选择器 语法 元素1，元素2{} 最后一个选择器不需要加， */
+        /* 要求1.请把熊大和熊二改成粉色 */
+        /* div,
+        p {
+            color: pink;
+        } */
+        /* 要求2.请把熊大熊二改成粉色 小猪一家改成粉色 */
+        
+        div,
+        p,
+        .pig li {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 复合选择器将类型选择器组合为基础选择器和复合选择器 -->
+    <!-- 后代选择器 父元素的子元素 -->
+    <ol>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li><a href="#">我是ol的孙子</a></li>
+    </ol>
+    <ul class="yellow">
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li><a href="">我是ul孙子</a></li>
+        <li><a href="">我是ul孙子</a></li>
+        <li><a href="">我是ul孙子</a></li>
+    </ul>
+    <!-- 子选择器 选亲儿子元素 -->
+    <div>
+        <a href="#">儿子</a>
+        <p><a href="#">孙子</a></p>
+    </div>
+    <!-- 并集选择器 -->
+    <!-- 并集选择器通常用于集体选择 -->
+    <div>熊大</div>
+    <p>熊二</p>
+    <span>光头强</span>
+    <ul class="pig">
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+    <!-- 伪类选择器 -->
+    <!-- 链接伪类选择器 -->
+    <a href="#" class="weilei">Hello World</a>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <!-- 页面上有购物车标签，该标签点击后会跳转到购物车页面，所以必须使用a标签来实现；并且该标签在鼠标经过的时候背景图会发生更替。请使用css和HTML代码实现以上效果. -->
+    <style>
+        a {
+            /* 将a转换为块元素/行内块元素 设置宽/高 */
+            display: inline-block;
+            width: 67px;
+            height: 31px;
+            background-image: url(shopcar_01.png);
+            background-repeat: no-repeat;
+        }
+        
+        a:hover {
+            background-image: url(shopcar_02.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="shopping.html"></a>
+    </div>
+</body>
+
+</html>

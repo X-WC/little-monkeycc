@@ -1,0 +1,33 @@
+.v-code {
+    position: relative;
+    background: url(../images/index_z_71df05e.png) no-repeat 0 0;
+    width: 145px;
+    height: 287px;
+    margin: 50px;
+    padding-top: 47px;
+}
+
+.v-code .erweima {
+    width: 107px;
+    height: 107px;
+    margin: 0 19px;
+}
+
+.v-code .line {
+    position: absolute;
+    top: 47px;
+    left: 0;
+    margin: 0 19px;
+    width: 109px;
+    animation: translate_y 4s infinite linear;
+}
+
+@keyframes translate_y {
+    0% {}
+    50% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新特性</title>
+    <style>
+        header,
+        nav {
+            width: 1200px;
+            height: 100px;
+            background-color: skyblue;
+            border-radius: 10px;
+            margin: 15px auto;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        article {
+            float: left;
+            width: 600px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 15px auto;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        video {
+            width: 100%;
+        }
+        
+        input::placeholder {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 语义化标签 -->
+    <!-- 头部标签 -->
+    <header>头部标签</header>
+    <!-- 导航标签 -->
+    <nav>导航栏</nav>
+    <!-- 内容标签 -->
+    <article>
+        <!-- 定义文档某个区域 -->
+        <section>文章内容</section>
+    </article>
+    <!-- 侧边栏标签 -->
+    <aside></aside>
+    <!-- 尾部标签 -->
+    <footer></footer>
+    <!-- 多媒体标签 -->
+    <!-- 视频video 尽量使用mp4格式 -->
+    <!-- 谷歌浏览器解决自动播放 autoplay muted -->
+    <video src="media/mi.mp4" autoplay="autoplay" muted="muted" loop="loop" poster="media/mi9.jpg"></video>
+    <!-- 音频标签 -->
+    <audio src="media/music.mp3" autoplay="autoplay" controls="controls"></audio>
+    <!-- 新增input表单 -->
+    <form action="">
+        <input type="search" name="" id="" placeholder="搜索信息">
+        <input type="number" name="" id="">
+        <input type="tel" name="" id="">
+    </form>
+</body>
+
+</html>

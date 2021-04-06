@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin负值</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        ul li {
+            position: relative;
+            float: left;
+            background-color: skyblue;
+            border: 2px solid red;
+            width: 200px;
+            height: 249px;
+            margin-left: -2px;
+        }
+        /* 1.如果盒子没有加定位 则鼠标经过添加相对定位即可
+        ul li:hover {
+            position: relative;
+            border-color: yellow;
+        } */
+        
+        ul li:hover {
+            z-index: 1;
+            border-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- margin负值解决边框重叠 -->
+    <ul>
+        <li class="nomove">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

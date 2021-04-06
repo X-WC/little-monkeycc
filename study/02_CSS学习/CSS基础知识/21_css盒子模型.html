@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        /* border */
+        /* 边框会改变盒子大小 */
+        
+        .bor1 {
+            width: 300px;
+            height: 200px;
+            /* 边框的宽度 单位是px */
+            /* border-width: 5px; */
+            /* 设置实现边框样式 soild实线框 dashed虚线框 dotted点线框 */
+            /* border-style: solid; */
+            /* 设置边框颜色 */
+            /* border-color: skyblue; */
+            /* 边框的复合性写法 */
+            border: 5px dashed skyblue;
+            /* 边框的分开写法 border-top/bottom/left/right */
+            border-top: 5px solid pink;
+        }
+        
+        .topborder {
+            width: 200px;
+            height: 200px;
+            border: 10px solid blue;
+            border-top: 10px solid red;
+        }
+        /* padding会改变盒子大小 */
+        
+        .paddingtest {
+            width: 60px;
+            height: 60px;
+            background-color: skyblue;
+            /* 左内边距 */
+            /* padding-left: 20px; */
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bor1"></div>
+    <div class="topborder">课堂作业 上边框为红色 其余边框为蓝色</div>
+    <div class="paddingtest">
+        HELLO WORLD
+    </div>
+</body>
+
+</html>
