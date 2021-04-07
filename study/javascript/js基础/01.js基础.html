@@ -6,29 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 外部式js -->
-    <!-- <script src="url"></script> -->
-    <!-- 内嵌式js -->
-    <script>
-        // 这是一个单行注释
-        /* 这是
-        一个
-        多行
-        注释 */
-        // alert('hello world!');
-        // 浏览器输入框
-        prompt("请输入你的年龄");
-        // 弹出警示框 输出
-        alert("计算的结果是");
-        // 控制台输出
-        console.log("嘻嘻 只有程序员才能看见我");
-    </script>
+    <!-- 外部引入 -->
+    <!-- 
+        html为script定义了6个属性
+        1.src 包含要执行的外部文件的地址
+            2.async 立即下载脚本 但是不妨碍页面中其他操作 比如下载资源/等待加载其他脚本 只对外部脚本文件有效
+            3.defer 延迟到文档完全被解析和显示之后再执行 只对外部脚本文件有效
+        4.charset 通过src属性指定的代码字符集(UTF-8) 大多数浏览器会忽略他的值 因此这个属性很少使用
+        5.language 已废弃
+        6.type 可以看成是language的替代属性 平常使用text/javascript
+     -->
+    <script src="url"></script>
 </head>
-√
 
 <body>
-    <!-- 行内的js 直接写在元素内部 -->
-    <input type="button" name="" id="" value="Hello" onclick="alert('world')">
+    <!-- 浏览器不支持脚本/浏览器支持脚本但是脚本被禁用 -->
+    <noscript>
+        <p>本页面需要浏览器支持JavaScript</p>
+    </noscript>
+    <!-- 内部嵌入 -->
+    <script>
+        alert("hello world");
+    </script>
+    <!-- 行内元素 -->
+    <input type="button" value="hello" onclick="alert('world')">
 </body>
 
 </html>

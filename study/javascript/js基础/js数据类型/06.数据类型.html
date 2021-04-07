@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // js的变量数据类型是程序在运行过程中 根据等号右边的值来确定的
+        var str = "hello world";
+        // javascript是动态语言 变量的数据类型是可以变化的
+        var x = 10; // x 数字
+        x = "congcong"; // x 字符串
+        console.log(x);
+
+        //简单数据类型
+        // 1.Number 既可以包括整数 还可以包括浮点数
+        var num = 10;
+        var PI = 3.14;
+        // 八进制 0～7 数字前面加0 表示八进制
+        var num1 = 010;
+        console.log(num1);
+        // 十六进制 0～9 a～f 数字前面加0x 表示十六进制
+        var num2 = 0x9; //9
+        var num3 = 0xf; //15
+        console.log(num2);
+        console.log(num3);
+        // 数字型的最大值 1.7976931348623157e+308
+        console.log(Number.MAX_VALUE);
+        // 数字型的最小值 5e-324
+        console.log(Number.MIN_VALUE);
+        // 数字型的无穷大 Infinity
+        console.log(Number.MAX_VALUE * 2);
+        // 无穷小 -Infinity
+        console.log(-Number.MAX_VALUE * 2);
+        // 非数字 NaN
+        console.log(x - 100);
+        // isNaN()判断是否是一个非数字 如果是数字返回false 如果不是数字返回True
+        console.log(isNaN(12)); //false
+        console.log(isNaN("congcong")); //true
+
+        // 2.Boolean 布尔型 true/false
+        var flag = true;
+        var flag = false;
+        // 参与运算时 true的值为1 false的值为0
+        console.log(true + 1);
+        console.log(false + 1);
+
+        // 3. String 字符串型
+        var str = '我是一个字符串类型的变量';
+        console.log(str);
+        // 字符串转义字符
+        var str1 = "我可以\n换行";
+        console.log(str1);
+        // 转义字符案例
+        var article = "主页的右上角选择settings，点击SSH and GPS keys，\n点击new SSH keys,点击下方的Check out our guide\n to generating \"SSH\" keys";
+        // alert(article);
+        // 检测获取字符串的长度 length
+        var str2 = "my name is cc";
+        console.log(str2.length);
+        // 字符串拼接 + 只要有字符串 拼接后一定是字符串型
+        console.log("沙漠" + "骆驼");
+        console.log("cc" + 18);
+        var age = 18;
+        console.log("我今年" + age + "岁");
+
+        // 4. Undefined 一个变量声明未赋值 就是undefined 未定义的数据类型
+        var nothing;
+        console.log(nothing);
+        var variable = undefined;
+        console.log(variable + 'cc'); //undefinedcc
+        console.log(variable + 1); //NaN undefined和数字相加 最后的结果就是NaN
+        // 5.Null 空值
+        var space = null;
+        console.log(space);
+        console.log(space + 'cc'); //nullcc
+        console.log(space + 1); //1
+    </script>
+</body>
+
+</html>

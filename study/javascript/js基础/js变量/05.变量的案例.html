@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 交换变量
+        // 红苹果
+        var appleRed = "红苹果";
+        // 绿苹果
+        var appleGreen = "绿苹果";
+        // 输出两个苹果
+        console.log(appleRed);
+        console.log(appleGreen);
+        // 交换两个苹果
+        // 1.先定义一个空变量 将红苹果的内容存进去
+        var temp = appleRed;
+        // 2.将绿苹果的内容存入红苹果中
+        appleRed = appleGreen;
+        // 3.将红苹果的内容空变量中原先的红苹果内容存入绿苹果中
+        appleGreen = temp;
+        // 输出两个交换后的苹果
+        console.log(appleRed);
+        console.log(appleGreen);
+    </script>
+</body>
+
+</html>

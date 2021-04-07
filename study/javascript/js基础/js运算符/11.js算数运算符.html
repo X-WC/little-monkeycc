@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+</head>
+
+<body>
+    <script>
+        // 算数运算符
+
+        // + - * /
+        console.log(1 + 1); //2
+        console.log(1 - 1); //0
+        console.log(1 * 2); //2
+        console.log(2 / 1); //2
+
+        // % 取余运算 （取模）常见使用场景为判断一个数是否被整除
+        console.log(4 % 3); //1
+        console.log(3 % 5); //3
+
+        // 浮点数 尽量不要做运算 因为会有误差
+        console.log(0.2 + 0.1); //0.30000000000000004
+        console.log(0.07 * 100); //7.000000000000001
+        var num = 0.2 + 0.1;
+        console.log(num == 0.3); //false
+
+        //运算符是有优先级的 先乘除后加减
+    </script>
+</body>
+
+</html>

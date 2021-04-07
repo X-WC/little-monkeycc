@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //比较运算符 返回值为布尔值
+
+        // > < >= <=
+        console.log(3 >= 5); //false
+        console.log(2 <= 4); //true
+
+        // == 判断是否相等 默认会转换数据类型 只比较值是否相等
+        console.log(2 == 3); //false
+        console.log("cc" == "gg"); //false
+        console.log(18 == 18); //true
+        console.log(18 == "18"); //true
+
+        // != 不等于
+        console.log(18 != 18); //false
+
+        // === 全等于 要求两侧的值且数据类型相等
+        console.log(18 === "18"); //false
+
+        //课堂练习
+        var num1 = 10;
+        var num2 = 100;
+        var res1 = num1 > num2;
+        console.log(res1); //false
+        var res2 = num1 == 11;
+        console.log(res2); //false
+        var res3 = num1 != num2;
+        console.log(res3); //true
+    </script>
+</body>
+
+</html>

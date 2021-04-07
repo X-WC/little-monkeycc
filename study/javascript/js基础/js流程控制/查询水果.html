@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询水果</title>
+</head>
+
+<body>
+    <script>
+        // 用户在弹出框里输入一个水果 如果有就弹出水果的价格 如果没有就弹出“没有此水果”
+        var fruit = prompt("请您输入水果名称：");
+        switch (fruit) {
+            case "苹果":
+                alert("3元/斤");
+                break;
+            case "香蕉":
+                alert("4元/斤");
+                break;
+            case "西瓜":
+                alert("2元/斤");
+                break;
+            default:
+                alert("没有此水果");
+        }
+    </script>
+</body>
+
+</html>
