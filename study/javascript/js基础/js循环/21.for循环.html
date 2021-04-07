@@ -16,10 +16,36 @@
             console.log("媳妇儿 我错了");
         }
         // 可以让用户控制输出的次数
-        var num = prompt("请你输入次数：");
-        for (var i = 1; i <= num; i++) {
-            console.log("媳妇儿 我错了");
+        /*  var num = prompt("请你输入次数：");
+         for (var i = 1; i <= num; i++) {
+             console.log("媳妇儿 我错了");
+         } */
+
+        // 循环可以重复执行不同的代码
+        // 输出一个人 1～100岁
+        /* for (var i = 1; i <= 100; i++) {
+            console.log("今年" + i + "岁了");
+        } */
+
+        //  嵌套分支语句
+        /* for (let i = 1; i <= 17; i++) {
+            if (i == 1) {
+                console.log("今年出生了");
+            } else if (i == 17) {
+                console.log("今年死了");
+            } else {
+                console.log("今年" + i + "岁了");
+            }
+        } */
+
+        //重复某些相同的操作 
+        // 课堂案例 计算1-100之间所有整数的累加和
+        var sum = 0;
+        for (let i = 1; i <= 100; i++) {
+            // sum = sum + i;
+            sum += i;
         }
+        console.log(sum);
     </script>
 
 </body>
