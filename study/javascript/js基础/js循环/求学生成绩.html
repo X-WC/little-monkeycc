@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 要求用户输入班级人数 之后依次输入每个学生的成绩 最后打印除该班级总的成绩以及平均成绩
+        var headcount = prompt("请您输入班级总人数：");
+        var sum = 0;
+        var average = 0;
+        for (var i = 1; i <= headcount; i++) {
+            var grade = parseFloat(prompt("输入第" + i + "个人的成绩："));
+            sum += grade;
+        }
+        console.log(sum);
+        average = sum / headcount
+        console.log(average);
+    </script>
+</body>
+
+</html>

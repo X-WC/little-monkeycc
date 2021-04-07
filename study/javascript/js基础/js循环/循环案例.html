@@ -10,25 +10,35 @@
 
 <body>
     <script>
-        // 1.求1-100之间所有数的平均值
+        // 1.求1-100之间所有数和的平均值
+        var average = 0;
+        var sum = 0;
         for (let i = 1; i <= 100; i++) {
-            var average = i / 2;
-            console.log(average);
+            sum += i;
         }
+        average = sum / 100;
+        console.log(average);
 
         // 2.求1-100之间所有偶数和奇数的和
-        var num = 0;
-        var num1 = 0;
+        var even = 0;
+        var odd = 0;
         for (let i = 1; i <= 100; i++) {
             if (i % 2 == 0) {
-                num += i;
+                even += i;
             } else {
-                num1 += i;
+                odd += i;
             }
         }
-        console.log(num);
-        console.log(num1);
+        console.log("1-100之间所有偶数和" + even);
+        console.log("1-100之间所有奇数和" + odd);
         // 3.求1-100之间所有能被3整除的数字的和
+        var result = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                result = result + i;
+            }
+        }
+        console.log("1-100之间所有能被3整除的数字的和" + result);
     </script>
 </body>
 

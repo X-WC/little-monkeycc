@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 打印五行五列星星
+        /* var str = "";
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= 5; j++) {
+                str += "🌟";
+            }
+            str = str + "\n";
+        }
+        console.log(str); */
+
+        // 打印n行n列星星
+        var line = prompt("请输入您打印几行星星：");
+        var list = prompt("请输入您打印几列星星");
+        var str = "";
+        for (var i = 1; i <= line; i++) {
+            for (var j = 1; j <= list; j++) {
+                str += "🌟";
+            }
+            str += "\n";
+        }
+        console.log(str);
+        // 打印金字塔星星
+        var str = "";
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 1; j <= i; j++) {
+                str = str + "🌟";
+            }
+            str = str + "\n";
+        }
+        console.log(str);
+
+        // 倒金字塔的星星
+        /*  var str = "";
+         for (var i = 10; i > 0; i--) {
+             for (var j = 1; j <= i; j++) {
+                 str = str + "🌟";
+             }
+             str = str + "\n";
+         }
+         console.log(str); */
+        //  另一种方法
+        var str = "";
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++) {
+                str = str + "🌟"
+            }
+            str = str + "\n"
+        }
+        console.log(str);
+    </script>
+</body>
+
+</html>
