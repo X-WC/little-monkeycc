@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+
+<body>
+    <script>
+        // 1.数组（Array）就是一组数据的集合 存储在单个变量下的优雅方式
+        // 2.创建数组
+
+        // new关键字创建数组
+        var arr = new Array(); //创建了一个新的空数组
+
+        // 数组字面量创建数组
+        var arr1 = []; //创建了一个新的空数组
+        // 在数组中可以放任何的数据类型 数据用逗号隔开
+        // 里面的数据是数组元素
+        var arr2 = [1, "2", true, undefined, null]; //数组的初始化
+
+        // 获取(访问)数组元素 数组名[索引号]
+        // 数组的索引（下标）用来访问数组元素的序号 （数组下标从0开始）
+        console.log(arr2[0]); //1
+        console.log(arr2[4]); //null
+
+        // 课堂练习访问数组元素
+        var person = ["cc", "gg", "mm"];
+        console.log(person[0]); //cc
+        console.log(person[1]); //gg
+        console.log(person[2]); //mm
+
+        // 访问数组练习
+        // 定义一个数组 里面存放星期一/二/三....（共7天）输出星期日
+        var week = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"];
+        console.log(week[6]);
+
+        // 遍历(从头到尾都访问一次)数组 arr[i] 循环
+        // 因为索引号从0开始 所以i要从0开始 计数器当索引号用
+        for (var i = 0; i < week.length; i++) {
+            console.log(week[i]);
+        }
+
+        // 遍历数组练习
+        var personName = ["关羽", "张飞", "马超", "赵云", "黄忠", "刘备", "姜维"];
+        for (let i = 0; i < personName.length; i++) {
+            const element = personName[i];
+            console.log(element);
+        }
+
+        // 数组长度 数组名.length
+        // 数组的长度是元素的个数 不要跟索引号混淆
+        // 数组名.length 动态监测数组元素的个数
+        console.log(personName.length);
+
+        // 数组中新增元素
+
+        // 1.修改length长度新增数组元素 默认新增元素为undefined
+        var color = ["red", "yellow", "green"];
+        console.log(color.length);
+        color.length = 4; //把数组的长度修改成4
+        console.log(arr[3]); //undefined
+
+        // 2.修改索引号 如果索引号不存在 追加数组元素
+        var color1 = ["red", "yellow", "green"];
+        color1[3] = "pink";
+        console.log(color1);
+        // 如果索引号已存在 就可以替换数组元素
+        color1[0] = "black";
+        console.log(color1);
+
+        // 数组新增元素练习
+        // 创建一个数组 里面存放10个整数（1～10）
+        var numberInt = [];
+        for (let i = 0; i < 10; i++) {
+            numberInt[i] = i + 1;
+        }
+        console.log(numberInt);
+    </script>
+</body>
+
+</html>

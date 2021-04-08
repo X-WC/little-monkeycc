@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ["red", "yellow", "green","pink","black"]的内容反过来存放
+        /*  var color = ["red", "yellow", "green", "pink", "black"];
+         var color1 = [];
+         var j = color.length - 1;
+         for (let i = 0; i < color.length; i++) {
+             color1[color1.length] = color[j - i];
+         }
+         console.log(color1); */
+        var color = ["red", "yellow", "green", "pink", "black"];
+        var newColor = [];
+        for (var i = color.length - 1; i >= 0; i--) {
+            newColor[newColor.length] = color[i];
+        }
+        console.log(newColor);
+    </script>
+</body>
+
+</html>

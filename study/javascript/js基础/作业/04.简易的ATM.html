@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 现有100元
+
+        var money = 100;
+        do {
+            var i = 1;
+            var message = parseInt(prompt("请输入您要的操作：\n1.存钱\n2.取钱\n3.显示余额\n4.退出"));
+            switch (message) {
+                case 1:
+                    var add = parseFloat(prompt("请问您要存多少钱？"));
+                    money = add + money;
+                    alert("现在余额是" + money + "元");
+                    break;
+                case 2:
+                    var minus = parseFloat(prompt("请问您要取多少钱？"));
+                    money = money - minus;
+                    alert("现在余额是" + money + "元");
+                    break;
+                case 3:
+                    alert("现在余额是" + money + "元");
+                    break;
+                default:
+                    break;
+            }
+            if (message == 4) {
+                alert("退出");
+                break;
+            }
+        }
+        while (i);
+    </script>
+</body>
+
+</html>

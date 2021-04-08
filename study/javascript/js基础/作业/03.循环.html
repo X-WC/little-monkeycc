@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.求1-100之间所有数的总和和平均值
+        // for循环
+        /*  var sum = 0;
+         var average = 0;
+         for (let i = 0; i <= 100; i++) {
+             sum += i;
+         }
+         average = sum / 100;
+         console.log(sum);
+         console.log(average); */
+
+        // while循环
+        /* var num = 1;
+        var sum1 = 0
+        var average1 = 0;
+        while (num <= 100) {
+            sum1 += num;
+            num++;
+        }
+        average1 = sum1 / 100;
+        console.log(sum1);
+        console.log(average1); */
+
+        //do while 循环
+        /* var i = 1;
+        var sum2 = 0;
+        var average2 = 0;
+        do {
+            sum2 += i;
+            i++;
+        } while (i <= 100);
+        average2 = sum2 / 100;
+        console.log(sum2);
+        console.log(average2); */
+
+        // 2. 1-100所有偶数的和
+        // for 循环
+        /*  var sum = 0;
+         for (let i = 1; i <= 100; i++) {
+             if (i % 2 == 0) {
+                 sum += i;
+             }
+         }
+         console.log(sum); */
+
+        // while 循环
+        /*  var sum = 0;
+         var i = 1;
+         while (i <= 100) {
+             if (i % 2 == 0) {
+                 sum += i;
+             }
+             i++;
+         }
+         console.log(sum); */
+
+        // 3.求100以内7的倍数的总和
+        /* var sum = 0;
+        for (let i = 0; i <= 100; i++) {
+            if (i % 7 == 0) {
+                sum += i;
+            }
+        }
+        console.log(sum); */
+        // while 循环
+        /* var sum = 0;
+        var i = 1;
+        while (i <= 100) {
+            if (i % 7 == 0) {
+                sum += i;
+            }
+            i++;
+        }
+        console.log(sum); */
+
+        // 4.打印矩形五角星
+        /*  var str = "";
+         var rows = prompt("几行？");
+         var cols = prompt("几列？");
+         for (let i = 1; i <= rows; i++) {
+             for (let j = 1; j <= cols; j++) {
+                 str += "⭐️";
+             }
+             str += "\n";
+         }
+         console.log(str); */
+
+        // 5.金字塔五角星
+        /*  var str = "";
+         for (let i = 1; i <= 5; i++) {
+             for (let j = 0; j <= i; j++) {
+                 str += "⭐️";
+             }
+             str += "\n";
+         }
+         console.log(str); */
+
+        // 6.九九乘法表
+        /* var str = "";
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= i; j++) {
+                //  1✖️2 =2
+                str = str + j + "✖️" + i + "=" + i * j + "\t";
+            }
+            str += "\n";
+        }
+        console.log(str); */
+
+        // 7. 接收用户输入的用户名和密码 若用户名是 "admin"密码为 "123456"则提示用户登录成功 否则 让用户一直输入
+        /* do {
+            var i = 1;
+            var admin = prompt("请您输入用户名");
+            var password = prompt("请您输入密码:");
+            if (admin === "admin" && password === "123456") {
+                alert("登录成功");
+                break;
+            }
+        } while (i); */
+
+        // 8.求1-100的累加值 跳过所有个位为3的数
+        var sum = 0;
+        for (let i = 1; i <= 100; i++) {
+            // 3/10=0...3  13/10=1...3 23/10=2...3
+            if (i % 10 == 3) {
+                continue;
+            }
+            sum += i;
+        }
+        console.log(sum);
+    </script>
+</body>
+
+</html>

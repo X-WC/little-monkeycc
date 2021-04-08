@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // do while 循环
+        /*  do {
+             循环体
+         } while (条件表达式); */
+        // 执行思路 先执行一次循环体 在判断条件表达式结果 如果为真 执行循环体 为假 直接跳出循环
+        var i = 1;
+        do {
+            console.log("hello world");
+            i++;
+        } while (i <= 100);
+
+        // 课堂案例
+        // 1.打印人的一生 从1岁到100岁
+        var age = 1;
+        do {
+            console.log("我今年" + age + "岁了");
+            age++;
+        } while (age <= 100);
+
+        // 2.计算1～100之间所有整数的和
+        var num = 1;
+        var sum = 0;
+        do {
+            sum = sum + num
+            num++;
+        } while (num <= 100);
+        console.log(sum);
+
+        // 3.弹出一个提示框 你爱我嘛？ 如果输入我爱你 就提示接收 否则一直循环
+        do {
+            var message = prompt("你爱我嘛？");
+        } while (message !== "我爱你");
+        alert("我也爱你");
+    </script>
+
+</body>
+
+</html>

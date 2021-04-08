@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+
+<body>
+    <script>
+        // 函数 封装了一段可以重复使用的代码块
+        // 声明函数
+        /* function 函数名() {
+            函数体
+        } */
+        function sayHi() {
+            console.log("hi~");
+        }
+        // 调用函数
+        sayHi();
+        // 函数的封装 是将一个/多个功能通过函数的方式封装起来
+
+        // 课堂案例 利用函数计算1-100之间的累加和
+        function getSum() {
+            var sum = 0;
+            for (let i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        getSum();
+    </script>
+</body>
+
+</html>
