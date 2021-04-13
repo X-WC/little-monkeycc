@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.用户输入任意两个数字的任意哦算术运算 并能弹出运算后的结果
+
+        /*  var num1 = parseFloat(prompt("请输入第一个数字："));
+         var num2 = parseFloat(prompt("请输入第二个数字："));
+
+         function getCount(num1, num2) {
+             var message = prompt("请输入您所需要的计算方式\n1.加法\n2.减法\n3.乘法\n4.除法");
+
+             switch (message) {
+                 case "1":
+                     return num1 + num2;
+                     break;
+                 case "2":
+                     return num1 - num2;
+                     break;
+                 case "3":
+                     return num1 * num2;
+                     break;
+                 case "4":
+                     return num1 / num2;
+                     break;
+                 default:
+                     return "没有这个选项";
+                     break;
+             }
+         }
+         var re = getCount(num1, num2);
+         alert(re); */
+
+        // 用户输入任意两个数字的最大值 并能弹出运算后结果
+        /* var num3 = prompt("请输入第一个数字:");
+        var num4 = prompt("请输入第二个数字:");
+
+        function getMax(num3, num4) {
+            if (num3 > num4) {
+                return num3;
+            } else {
+                return num4;
+            }
+        }
+        var re1 = getMax(num3, num4);
+        alert("最大值是" + re1); */
+
+        // 用户输入任意三个不同的数字的最大值 并能弹出运算后结果
+        /* var arr = [];
+        arr[0] = parseFloat(prompt("请您输入第一个数字："));
+        arr[1] = parseFloat(prompt("请您输入第二个数字："));
+        arr[2] = parseFloat(prompt("请您输入第三个数字："));
+
+        function getMaxs(arr) {
+            var max1 = arr[0];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > max1) {
+                    max1 = arr[i];
+                }
+            }
+            return max1;
+        }
+        var re2 = getMaxs(arr);
+        alert(re2); */
+
+        // 用户输入一个数判断是否是素数 并弹出返回值
+        var num5 = prompt("请你输入一个数字：");
+
+        function getPrime(num5) {
+            var message;
+            if (num5 == 1 || num5 == 2) {
+                return "不是质数";
+            }
+            for (var i = 2; i < num5; i++) {
+                if (num5 % i == 0) {
+                    return "不是质数";
+                }
+            }
+            return "是质数";
+        }
+        var re3 = getPrime(num5);
+        alert(re3);
+    </script>
+</body>
+
+</html>

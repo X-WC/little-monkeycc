@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 利用函数求任意两个数的最大值
+        function getMax(num1, num2) {
+            /* if (num1 > num2) {
+                return num1;
+            } else {
+                return num2;
+            } */
+            return num1 > num2 ? num1 : num2;
+        }
+        console.log(getMax(1, 100));
+        console.log(getMax(10000, 100));
+
+        // 利用函数求任意一个数组中的最大值
+        function getMaxs(arr) {
+            var max = arr[0];
+            for (var i = 0; i <= arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        var re = getMaxs([5, 2, 99, 101, 67, 77])
+        console.log(re);
+
+        // 利用函数封装的方式 翻转任意一个数组
+        function reverse(arr) { //arguments = [1,2,3]
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        var arr1 = [1, 2, 3];
+        var arr2 = [1, 2, 3, 4, 5, 6, 7];
+        console.log(reverse(arr1));
+        console.log(reverse(arr2));
+        // 利用函数封装的方式 对数组排序 （冒泡排序）
+        function sort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    // 从大到小排序
+                    if (arr[j] < arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr3 = [1, 23, 3232, 4343231];
+        console.log(sort(arr3));
+
+        // 输入一个年份 判断是否是闰年
+        function getLeap(year) {
+            // 如果是闰年 true 平年false
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        /* var year = prompt("请输入一个年份：");
+        var message = getLeap(year);
+        console.log(message); */
+
+        // 用户输入一个年份 2月份有多少天
+
+
+        function backDay() {
+            var year = prompt("请输入一个年份：");
+            var day = "2月份有28天";
+            if (getLeap(year)) {
+                return "2月份有29天";
+            }
+            return day;
+        }
+        var result = backDay();
+        console.log(result);
+    </script>
+</body>
+
+</html>

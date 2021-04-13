@@ -31,6 +31,89 @@
             console.log(sum);
         }
         getSum();
+
+        // 利用函数的参数实现不同的代码
+        // 在声明函数的小括号里面是形参（形式上的参数）
+        /* function 函数名(形参1, 形参2.....) {
+            函数体
+        }
+        // 在函数调用的小括号里面是实参（实际的参数）
+        函数名(实参1, 实参2.....) */
+        function cook(aru) {
+            console.log(aru);
+        }
+        cook("酸辣土豆丝");
+        cook("大肘子");
+        // 函数的参数可以有 也可以没有 个数不限
+        // 课堂案例
+        // 1.利用函数求任意两个数的和
+        function getSum(num1, num2) {
+            var sum = 0;
+            sum = num1 + num2;
+            console.log(sum);
+        }
+        getSum(5, 2);
+        // 1.利用函数求任意两个数之间的和
+        function getSums(start, end) {
+            var sum = 0
+            for (var i = start; i <= end; i++) {
+                sum = sum + i;
+            }
+            console.log(sum);
+        }
+        getSums(1, 100);
+        getSums(1, 10);
+        // 参数之间用逗号隔开
+        // 形参可以看成不用声明的变量
+
+        // 函数形参实参个数匹配
+        // 实参个数多于形参的个数 最终取决于形参的个数 多出的实参自动忽略
+        getSum(1, 2, 3);
+        // 实参个数小于形参的个数 多于的形参定义是undefined 最终结果NaN
+        getSum(1);
+
+        // 函数是做某件事/实现某种功能
+        //  1. return 将函数值返回给调用者
+        /* function 函数名() {
+            return 需要返回的结果;
+        }
+        函数名(); */
+        function getAdd(num1, num2) {
+            var sum = 0;
+            sum = num1 + num2;
+            return sum;
+        }
+        console.log(getAdd(1, 2));
+
+        // return 终止函数
+        function getAlert() {
+            return alert("我是一个弹出警示框！");
+            alert("我是不会被弹出的");
+        }
+        getAlert();
+        // 2.return 只能返回一个值
+
+        // 3.返回多个值 使用数组
+        // 课堂案例 求任何两个数的加减乘除结果
+        function getResult(num1, num2) {
+            return [num1 + num2, num1 * num2, num1 / num2, num1 - num2];
+        }
+        var re = getResult(1, 2);
+        console.log(re);
+        for (var i = 0; i < re.length; i++) {
+            console.log(re[i]);
+        }
+
+        // 4.如果有return 返回的是return后面的值 没有return返回的是undefined
+        function fun1() {
+            return 1;
+        }
+        console.log(fun1()); //返回1
+
+        function fun2() {
+
+        }
+        console.log(fun2()); //返回undefined
     </script>
 </body>
 
