@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预解析</title>
+</head>
+
+<body>
+    <script>
+        // js引擎运行js分两步 1.预解析 2.代码执行
+        // 预解析 js引擎会把js里面所有的var function提升到当前作用域的最前面
+
+        // 变量预解析 （变量提升）只提升声明变量 不提升赋值
+        // console.log(num);
+        // var num = 10;
+        // 相当于执行了以下代码
+        /* var num;
+        console.log(num);
+        num = 10; */
+
+        // 函数预解析 （函数提升）将函数的声明提升到当前作用域的最前面 不调用函数
+        // fun();
+        // var fun = function() {
+        //     console.log(11);
+        // }
+        // 相当于执行了以下代码 所以会报错
+        /* var fun;
+        fun();
+
+        fun = function() {
+            console.log(11);
+        } */
+
+
+        // 代码执行 按照代码书写的顺序从上往下执行
+
+        // 课堂案例
+        // 案例1
+        /*  var num = 10;
+         fun();
+
+         function fun() {
+             console.log(num); //undefined
+             var num = 20;
+         } */
+        // 相当于执行了以下代码
+        /*  var num;
+
+         function fun() {
+             var num;
+             console.log(num);
+             num = 20;
+         }
+         num = 10;
+         fun(); */
+        // 案例2
+        /* var num = 10;
+
+        function fn() {
+            console.log(num);
+            var num = 20;
+            console.log(num);
+        }
+        fn(); */
+        // 相当于执行了以下代码
+        var num;
+
+        function fn() {
+            var num;
+            console.log(num); //undefined
+            num = 20;
+            console.log(num); //20
+        }
+        num = 10;
+        fn();
+        // 案例3
+        /* var a = 18;
+        f1();
+
+        function f1() {
+            var b = 9;
+            console.log(a);
+            console.log(b);
+            var a = "123";
+        } */
+        // 相当于执行了以下代码
+        /*  var a;
+
+         function f1() {
+             var b;
+             var a;
+             b = 9;
+             console.log(a); //undefined
+             console.log(b); //9
+             a = "123";
+         }
+         a = 18;
+         f1(); */
+
+        // 案例4
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        // 相当于执行了以下代码
+        function f1() {
+            var a;
+            a = 9;
+            b = 9; //全局变量
+            c = 9; //全局变量
+            console.log(a); // 9
+            console.log(b); // 9
+            console.log(c); // 9
+        }
+        f1();
+        console.log(c); // 9
+        console.log(b); // 9
+        console.log(a); // 报错
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间戳</title>
+</head>
+
+<body>
+    <script>
+        // 获得Date总的毫秒数（时间戳）距离1970-1-1
+        // 1.getTime()
+        var date = new Date();
+        console.log(date.getTime());
+        // 2.valueOf()
+        console.log(date.valueOf());
+        // 3. +new Date()简单的写法（最常用）
+        var date1 = +new Date();
+        // 4.H5新增的获得毫秒数
+        console.log(Date.now());
+    </script>
+</body>
+
+</html>

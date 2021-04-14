@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+</head>
+
+<body>
+    <script>
+        function getNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+
+        function guessNumber() {
+            var number2 = getNumber(1, 10);
+            for (var i = 0; i < 3; i++) {
+                var number = parseFloat(prompt("猜猜数字是多少："));
+                if (number === number2) {
+                    alert("你猜对了");
+                    return
+                } else if (number > number2) {
+                    alert("太大了")
+                } else if (number < number2) {
+                    alert("太小了");
+                }
+            }
+            return ("没有机会了");
+
+        }
+        guessNumber();
+    </script>
+</body>
+
+</html>

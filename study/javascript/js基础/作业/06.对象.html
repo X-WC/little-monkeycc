@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个电脑对象
+        function Computer(color, weight, brand, type) {
+            this.color = color;
+            this.weight = weight;
+            this.brand = brand;
+            this.type = type;
+            this.skill = function() {
+                console.log("看电影");
+                console.log("听音乐");
+                console.log("打游戏");
+                console.log("敲代码");
+            }
+        }
+        var mac = new Computer("black", "500g", "mac", "mac2019");
+        for (var key in mac) {
+            console.log(mac[key]);
+        }
+        mac.skill();
+
+        // 创建一个按钮对象
+        function Button(width, height, backgroundColor) {
+            this.width = width;
+            this.height = height;
+            this.backgroundColor = backgroundColor;
+            this.click = function(click) {
+                console.log(click);
+            }
+        }
+        var button = new Button(100, 200, "black");
+        button.click("可以点击嗷～");
+        for (var key in button) {
+            console.log(button[key]);
+        }
+
+        // 创建一个车的对象
+        function Car(weight, color, brand) {
+            this.weight = weight;
+            this.color = color;
+            this.brand = brand;
+            this.use = function(use) {
+                console.log(use);
+            }
+        }
+        var tlj = new Car("500kg", "blue", "拖拉机");
+        tlj.use("耕田");
+        for (var key in tlj) {
+            console.log(tlj[key]);
+        }
+
+        // 写一个函数 实现反转任意数组
+        function reverse(arr) {
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        var arr = [1, 2, 3, 4, 5];
+        console.log(reverse(arr));
+
+        // 数组排序 小到大
+        function order(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+
+                }
+
+            }
+            return arr;
+
+        }
+        var arr1 = [2, 1, 6, 4, 3, 7];
+        console.log(order(arr1));
+    </script>
+</body>
+
+</html>

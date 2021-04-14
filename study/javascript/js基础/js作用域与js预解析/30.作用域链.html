@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域链</title>
+</head>
+
+<body>
+    <script>
+        // 作用域链 内部函数访问呢外部函数的变量 采用链式查找来决定取哪个值 这个结构我们称为作用域链 就近原则
+        var num = 10;
+
+        function fn() { // 外部函数
+            var num = 20;
+
+            function fun() { //内部函数
+                console.log(num);
+            }
+            fun();
+        }
+        fn();
+        // 课堂案例
+        // 结果是几
+        function f1() {
+            var num1 = 123;
+
+            function f2() {
+                console.log(num1);
+            }
+            f2();
+        }
+        var num1 = 456;
+        f1(); //123
+        // 结果是几
+        var a = 1;
+
+        function fn1() {
+            var a = 2;
+            var b = "22";
+            fn2();
+
+            function fn2() {
+                var a = 3;
+                fn3();
+
+                function fn3() {
+                    var a = 4;
+                    console.log(a); //4
+                    console.log(b); //22
+                }
+            }
+        }
+        fn1();
+    </script>
+</body>
+
+</html>

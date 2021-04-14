@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组对象</title>
+</head>
+
+<body>
+    <script>
+        // 字面量方式
+        var arr = [1, 2, 3];
+        // new Array() 一个数字表示长度 两个以上表示数组元素
+        var arr1 = new Array(2, 3);
+
+        // 检测是否为数组
+        // instanceof 运算符
+        console.log(arr instanceof Array);
+        var obj = {};
+        console.log(obj instanceof Array);
+        // Array.isArray() H5新增 ie9以上可用
+        console.log(Array.isArray(arr));
+        console.log(Array.isArray(obj));
+
+        // 添加/删除数组元素方法
+        // push() 在末尾添加1个/多个数组元素
+        var arr2 = [1, 2, 3];
+        // push()参数是数组元素 返回值是数组的长度
+        console.log(arr2.push(4));
+        console.log(arr2);
+
+        // unshift() 在开头添加1个/多个数组元素
+        console.log(arr2.unshift("red"));
+        console.log(arr2);
+
+        // pop() 在末尾删除1个数组元素
+        // pop()无参数 返回值是删除的数组元素
+        console.log(arr2.pop());
+        console.log(arr2);
+
+        // shift() 在开头删除1个数组元素
+        arr2.shift();
+        console.log(arr2);
+
+        // 数组排序
+        // reverse() 翻转数组
+        var arr3 = [1, 2, 3, 4, 5];
+        arr3.reverse();
+        console.log(arr3);
+
+        // sort() 冒泡排序
+        var arr4 = [3, 5, 7, 2];
+        arr4.sort();
+        console.log(arr4);
+        // 注意：出现两位数的时候排序需要添加函数
+        var arr5 = [33, 21, 23, 43, 56, 5];
+        arr5.sort(function(a, b) {
+            // return a - b; //升序排序
+            return b - a; //降序排序
+        });
+        console.log(arr5);
+
+        // 数组索引方法
+        // indexOf() 从前往后查找 他只返回第一个满足条件的索引号
+        var arr6 = [1, 2, 3, 4, 5, 3];
+        console.log(arr6.indexOf(3));
+        // 如果没有数组元素 则返回-1
+        console.log(arr6.indexOf(6));
+        //  lastIndexOf() 从后往前查找
+        console.log(arr6.lastIndexOf(3));
+
+        // 数组转换为字符串
+        // 1.toString()
+        var arr7 = [1, 2, 3];
+        console.log(arr.toString());
+        // 2.join(分隔符)
+        console.log(arr.join("-"));
+
+        // 课堂案例
+        // 筛选数组 将工资超过2000的删除 剩余的放到新数组中
+        var money = [1500, 1200, 2000, 2100, 1800];
+        var newArray = [];
+        for (var i = 0; i < money.length; i++) {
+            if (money[i] < 2000) {
+                newArray.push(money[i]);
+            }
+        }
+        console.log(newArray);
+        // 数组去重
+        // 核心原理就是遍历旧数组 拿着旧数组的元素去查询新数组 如果该元素在新数组中出现 则不添加 如果不出现 则添加
+        var color = ["red", "blue", "yellow", "red", "pink", "blue", "red", "black"];
+
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i])
+                }
+
+            }
+            return newArr;
+        }
+        console.log(unique(color));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象</title>
+</head>
+
+<body>
+    <script>
+        // 对象 自定义对象 内置对象 浏览器对象
+        // Math对象 不是一个构造函数 所以不需要new来调用 直接使用就可以
+        // 使用属性
+        function circumFerence(radius) {
+            return 2 * Math.PI * radius;
+        }
+        console.log(circumFerence(1));
+        console.log(Math.PI);
+        // 使用方法
+        console.log(Math.max(1, 2, 3, 4, 5));
+
+        // 绝对值方法
+        console.log(Math.abs(-1));
+        console.log(Math.abs(1));
+        console.log(Math.abs("-1")); //会隐式转换成数字
+        console.log(Math.abs("xx"));
+
+        // 三个取整方法
+        // Math.floor() 向下取整 往最小取
+        console.log(Math.floor(1.9)); //1
+        // Math.ceil() 往最大取
+        console.log(Math.ceil(1.2)); //2
+        // Math.round() 四舍五入 .5往大取
+        console.log(Math.round(1.5)); //2
+        console.log(Math.round(-1.5)); // -1
+
+        // 随机数方法 random() 返回一个随机的小数 
+        console.log(Math.random());
+        // 得到两个之间的随机整数
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        console.log(getRandomIntInclusive(1, 10));
+        // 课堂案例
+        // 封装自己的数学对象 里面有PI 最大值 最小值
+        var myMath = {
+            PI: 3.141592653589793,
+            Max: function() {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+
+                }
+                return max;
+            },
+            Min: function(arr) {
+                var min = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+
+                }
+                return min;
+            }
+        }
+
+        console.log(myMath.Max(1, 2, 3, 4, 5));
+
+        // 随机点名
+        function getNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        var arr = ["cc", "gg", "kk", "hh", "qq", "yy"];
+        console.log(arr[getNumber(0, arr.length - 1)]);
+    </script>
+</body>
+
+</html>

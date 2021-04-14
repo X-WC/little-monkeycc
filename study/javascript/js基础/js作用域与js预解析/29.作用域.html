@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+</head>
+
+<body>
+    <script>
+        // javascript作用域 代码名字（变量）在某个范围内起作用和效果 减少命名冲突
+        // js的作用域（es6）之前
+        // 全局作用域 整个script标签 单独的js文件
+        var num = 10; // 全局作用域
+        console.log(num);
+        // 局部作用域 （在函数内部就是局部作用域 代码名字只在函数内部起效果）
+        function fn() {
+            var num = 20; //只在函数内使用
+            console.log(num);
+        }
+        fn();
+
+        // 变量作用域
+        // 全局变量 在全局作用域的变量
+        // 在函数内部没有声明 直接赋值的变量也是全局变量
+        var color = "red";
+        console.log(color);
+        // 局部变量 在局部作用域下的变量（函数内部定义的变量就是局部变量)
+        // 函数的形参也可以看成局部变量
+        function fn1(aru) {
+            var color = "yellow";
+            console.log(color);
+            color1 = "blue";
+        }
+        fn1();
+        // console.log(color);
+        console.log(color1);
+        console.log(aru);
+
+        // 从执行效率来看全局变量和局部变量
+        // 全局变量只有浏览器关闭时才会销毁 比较耗费内存资源
+        // 局部变量只在函数内部使用 当代码块执行的时候使用 代码块运行结束后 就会被销毁 更节省内存空间
+
+        // js没有块级作用域 （es6会新增）
+        // 块级作用域{}  if{} for{}
+        // 外面不能调用块级作用域里的变量
+    </script>
+</body>
+
+</html>

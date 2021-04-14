@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单类型和复杂类型</title>
+</head>
+
+<body>
+    <script>
+        // 简单数据类型（基本/值类型）
+        // null 返回的是一个空的对象 object
+        var timer = null;
+        console.log(typeof timer);
+        // 如果有个变量以后打算存储为对象 暂时没想好放什么 null
+        // 复杂数据类型（引用类型）
+
+        // 堆栈空间分配区别
+        // 简单类型放入栈 里面直接开辟一个空间 里面存的是值
+        // 复杂类型放入堆 在栈里面开辟一个空间（存放地址 用16进制表示地址）再指向堆里面的值
+
+        // 简单类型传参 不会对外面呢的变量产生影响 传值
+        // 复杂类型传参 传地址
+        function Person(name) {
+            this.name = name;
+        }
+
+        function f1(x) {
+            console.log(x.name); // 2.刘德华
+            x.name = "张学友";
+            console.log(x.name); // 3.张学友
+        }
+        var p = new Person("刘德华");
+        console.log(p.name); // 1.刘德华
+        f1(p);
+        console.log(p.name); // 4.张学友
+    </script>
+</body>
+
+</html>
