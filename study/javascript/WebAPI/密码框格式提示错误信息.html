@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            margin: 100px auto;
+        }
+        
+        .message {
+            display: inline-block;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .wrong {
+            background-image: url(images/wrong.png);
+            color: red;
+        }
+        
+        .right {
+            background-image: url(images/right.png);
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+    <script>
+        // 1.获取元素
+        var p = document.querySelector("p");
+        var input = document.querySelector("input");
+        // 2.注册事件 事件处理程序
+        // 表单失去焦点
+        input.onblur = function() {
+            // 根据表单里面值的长度来判断 input.value.length
+            if (this.value.length < 6 || this.value.length > 16) {
+                p.innerHTML = "您输入的位数不对要求6~16位";
+                p.className = "message wrong";
+            } else {
+                p.innerHTML = "您输入的正确";
+                p.className = "message right";
+            }
+        }
+    </script>
+</body>
+
+</html>

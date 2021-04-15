@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件基础</title>
+</head>
+
+<body>
+    <!-- 点击按钮 弹出对话框 -->
+    <button id="btn">唐伯虎</button>
+    <div>123</div>
+    <script>
+        // 事件 被JavaScript侦测到的行为
+        // 触发--响应机制
+        // 事件由三部分组成
+        // 事件源 事件被触发的对象 谁？
+        var btn = document.getElementById("btn"); // 获取事件源
+        // 事件类型 如何触发 什么事件 比如 鼠标经过 鼠标点击（onclick) 键盘按下
+        // 事件处理程序 通过一个函数赋值的方式 完成
+        btn.onclick = function() {
+            alert("点秋香");
+        }
+
+        // 执行事件的步骤
+        // 1.获取事件源
+        // 2.注册事件（绑定事件）
+        // 3.添加事件处理程序（采用函数赋值形式）
+        // 课堂案例 点击div 控制台输出 我被选中了
+        var div = document.querySelector("div");
+        div.onclick = function() {
+            console.log("我被选中了");
+        }
+    </script>
+</body>
+
+</html>

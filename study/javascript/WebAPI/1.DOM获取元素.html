@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <div id="time">2021-4-15</div>
+    <ul>
+        <li>hello</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul id="nav">
+        <li>hello wold</li>
+        <li>hello wold</li>
+        <li>hello wold</li>
+    </ul>
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    <script>
+        // DOM 就是处理HTML的接口 改变页面元素的结构样式
+
+        // 如何获得页面元素
+
+        // 1.根据ID来获取 document.getElementById(参数) id是大小敏感的字符串
+        // document 文档 get获得 element 元素 by通过 ID 
+        // 返回的是一个对象
+        var timer = document.getElementById("time");
+        console.log(timer);
+        console.log(typeof timer);
+        // console.dir()打印返回的元素对象 可以查看里面的属性及方法
+        console.dir(timer);
+        // 2.根据标签名来获取
+        // 返回的是 获取过来对象的集合 以伪数组的形式存储
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(typeof lis);
+        console.dir(lis);
+        // 打印第一个元素
+        console.log(lis[0]);
+        // 想要依次打印里面的元素对象 使用遍历的方式
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+        // element.getElementsByTagName("标签名") 获取某些相同标签的不同元素
+        var nav = document.getElementById("nav");
+        var navLis = nav.getElementsByTagName("li");
+        console.log(navLis);
+
+        // 3.通过HTML5新增的方法获取 在网页开发中ie9以上可用 移动端可用
+
+        // 根据类名返回元素对象集合
+        // getElementsByClassName("类名")
+        var box = document.getElementsByClassName("box");
+        console.log(box);
+
+        // 根据指定选择器返回第一个元素对象
+        // querySelector("选择器")
+        var firstBox = document.querySelector(".box");
+        console.log(firstBox);
+        var nav = document.querySelector("#nav");
+        console.log(nav);
+        var firstLi = document.querySelector("li");
+        console.log(firstLi);
+
+        // 根据指定选择器返回所有元素对象集合
+        // querySelectorAll()
+        var allBox = document.querySelectorAll('.box');
+        console.log(allBox);
+        var allLis = document.querySelectorAll("li");
+        console.log(allLis);
+        // 4.特殊元素获取
+        // 获取body元素
+        // document.body
+        var bodyEl = document.body;
+        console.log(bodyEl);
+        // 获取html元素
+        var htmlEl = document.documentElement;
+        console.log(htmlEl);
+    </script>
+</body>
+
+</html>

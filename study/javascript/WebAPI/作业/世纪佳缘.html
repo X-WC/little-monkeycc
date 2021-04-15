@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border: 1px solid #ccc;
+            outline: none;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="" value="邮箱/ID/手机号">
+    <script>
+        var ipt = document.querySelector("input");
+        ipt.onfocus = function() {
+            this.style.borderColor = "pink";
+            this.value = "";
+        }
+        ipt.onblur = function() {
+            this.style.borderColor = "#ccc";
+            this.value = "邮箱/ID/手机号";
+        }
+    </script>
+</body>
+
+</html>

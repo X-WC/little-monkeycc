@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/s.gif" alt="">
+    <div>早上好</div>
+    <script>
+        // 课堂案例 分时显示不同的图片呢 显示不同的问候语
+        // 获取元素
+        var img = document.querySelector("img");
+        var div = document.querySelector('div');
+        // 事件处理程序
+        if (getTime() < 12) {
+            div.innerHTML = "早上好";
+            img.src = "images/z.gif";
+        } else if (getTime() < 18) {
+            div.innerHTML = "下午好 ";
+            img.src = "images/x.gif";
+        } else {
+            div.innerHTML = "晚上好 ";
+            img.src = "images/w.gif";
+        }
+
+        function getTime() {
+            // 创建对象
+            var date = new Date();
+            // 时
+            var h = date.getHours();
+            return h;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        
+        .box input {
+            width: 370px;
+            height: 30px;
+            /* 将边框去除 */
+            border: 0;
+            /* 去除聚焦框 */
+            outline: none;
+        }
+        
+        .box img {
+            position: absolute;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <input type="password" name="" id="password"><img src="images/close.png" alt="">
+        </label>
+    </div>
+    <script>
+        // 获取元素
+        var password = document.getElementById("password");
+        var img = document.querySelector("img");
+        // 注册事件 事件处理程序
+        // 方法一
+
+        // console.log(password.type == "password");
+        // img.onclick = function() {
+        //     if (password.type == "password") {
+        //         password.type = "text";
+        //         img.src = "images/open.png";
+        //     } else if (password.type == "text") {
+        //         password.type = "password";
+        //         img.src = "images/close.png";
+        //     }
+        // }
+        // 方法二
+        var flag = 0;
+        img.onclick = function() {
+            if (flag == 0) {
+                password.type = "text";
+                img.scr = "images/open.png";
+                flag = 1;
+            } else {
+                password.type = "password";
+                img.src = "images/close.png";
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
