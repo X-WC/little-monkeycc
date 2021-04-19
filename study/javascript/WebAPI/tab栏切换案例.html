@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        .tab {
+            width: 640px;
+            margin: 100px auto;
+        }
+        
+        .tab-list {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #ccc;
+        }
+        
+        .tab-list ul li {
+            float: left;
+            margin-right: 10px;
+            width: 150px;
+            height: 30px;
+            cursor: pointer;
+        }
+        
+        .current {
+            background-color: red;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab-list">
+            <ul>
+                <li class="current">商品内容</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价(50000)</li>
+            </ul>
+        </div>
+        <div class="tab-con">
+            <div class="item" style="display: block;">
+                商品介绍模块
+            </div>
+            <div class="item">
+                规格与包装模块
+            </div>
+            <div class="item">
+                售后保障模块
+            </div>
+            <div class="item">
+                商品评价(50000)模块
+            </div>
+        </div>
+    </div>
+    <script>
+        // 案例分析
+        // 1.tab栏切换有2个大的模块
+        // 2.上面的模块选项卡 点击某一个 当前这个底色会是红色 其余不变（排他思想）
+        // 3.下面的模块内容会随着上面的选项卡变化而变化 所以下面模块变化写在点击事件内
+        // 4.规律：下面的模块显示内容和上面的选项卡一一对应 相匹配
+        // 5.核心思路：给上面的tab—list里面的所有小li添加自定义属性 属性值从0开始编号
+        var list = document.querySelector(".tab-list").querySelectorAll("li");
+        var items = document.querySelectorAll(".item");
+        console.log(list);
+        for (var i = 0; i < list.length; i++) {
+            // 开始给5个小li设置索引号
+            list[i].setAttribute("index", i);
+            list[i].onclick = function() {
+                for (var i = 0; i < list.length; i++) {
+                    list[i].className = "";
+                }
+                this.className = "current";
+                // 2.下面的显示内容模块
+                var index = this.getAttribute("index");
+                console.log(index);
+                // 排他思想
+                for (var i = 0; i < list.length; i++) {
+                    items[i].style.display = "none";
+                }
+                items[index].style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script>
+        // 获取所有按钮元素
+        var btn = document.getElementsByTagName("button");
+        console.log(btn);
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function() {
+                // 先把所有的背景颜色去掉
+                for (var i = 0; i < btn.length; i++) {
+                    btn[i].style.backgroundColor = "";
+                }
+                // 再让我们点击的元素背景颜色变为pink色 
+                this.style.backgroundColor = "pink";
+            }
+        }
+    </script>
+</body>
+
+</html>

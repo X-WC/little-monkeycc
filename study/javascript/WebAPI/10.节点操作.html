@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作</title>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <div>123</div>
+    <span>123</span>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <div class="demo">
+        <div class="box">
+            <span class="erweima">X</span>
+        </div>
+    </div>
+    <ul id="create">
+        <li>123</li>
+    </ul>
+    <button>删除</button>
+    <ul id="remove">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button id="clone">复制</button>
+    <ul class="clone">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 节点操作——本质还是操作元素（更简单、更高效）
+        // 1.nodeType（节点类型）2.nodeName（节点名称）3.nodeValue(节点值)这三个基本属性
+        var box = document.querySelector(".box");
+        console.dir(box);
+
+        // 节点层级 父子兄
+        // 父级节点 node.parentNode
+        var erweima = document.querySelector('.erweima');
+        // 得到的是离他最近的父节点 找不到父节点返回null
+        var box = erweima.parentNode;
+        console.log(box);
+
+        // 子节点 parentNode.childNodes(标准) 返回所有的子节点 包括元素节点 文本节点等 不提倡使用
+        var ul = document.querySelector("ul");
+        for (var i = 0; i < ul.childNodes.length; i++) {
+            if (ul.childNodes[i].nodeType == 1) {
+                // ul.childNodes[i]是元素节点
+                console.log(ul.childNodes[i]);
+            }
+        }
+        // parentNode.children 获取所有的子元素节点 开发中常用
+        console.log(ul.children);
+
+        // 兄弟节点 
+        // node.nextSibling 得到的是兄弟节点 包括元素节点/文本节点
+        var div = document.querySelector("div");
+        console.log(div.nextSibling);
+        console.log(div.previousSibling);
+        //  nextElementSibling 得到的是元素节点 IE9以上支持（想要ie9能兼容 自己封装函数）
+        console.log(div.nextElementSibling);
+        console.log(div.previousElementSibling);
+
+        // 页面中添加新元素分两步1.创建元素（createElement("tagName")) 2.添加元素(node.appendChild(child)/node.insertBefore(child,指定元素))
+        // 创建节点 (动态创建元素节点)
+        // document.createElement("tagName")
+        var li = document.createElement("li");
+        // 添加节点 
+        // node.appendChild(child) node是父级 child是子级
+        // 追加元素 类似数组中的push()
+        var ul = document.getElementById("create");
+        ul.appendChild(li);
+        // node.insertBefore(child,指定位置)
+        var lili = document.createElement("li");
+        ul.insertBefore(lili, ul.children[0]);
+
+        // 删除节点
+        // node.removeChild(child)
+        // 获取元素
+        var btn = document.querySelector("button");
+        var ul1 = document.getElementById("remove");
+        // 注册事件
+        btn.onclick = function() {
+            // 如果li没有了 按钮禁用
+            if (ul1.children.length == 0) {
+                this.disabled = true;
+            }
+            ul1.removeChild(ul1.children[0]);
+        }
+
+        // 复制节点（克隆节点）
+        // node.cloneNode() 括弧为空/里面是false 浅拷贝 只复制标签不复制内容
+        // node.cloneNode(true) 括弧里面是true 深拷贝 都复制
+        // 获取元素
+        var btnClone = document.getElementById("clone");
+        console.log(btnClone);
+        var ul = document.querySelector(".clone");
+        console.log(ul);
+        // 注册事件
+
+        btnClone.onclick = function() {
+            // 克隆节点
+            var newLi = ul.children[0].cloneNode(true);
+            // 添加节点
+            ul.appendChild(newLi);
+        }
+    </script>
+</body>
+
+</html>

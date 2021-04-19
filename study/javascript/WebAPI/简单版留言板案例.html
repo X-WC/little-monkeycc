@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            background-color: skyblue;
+            width: 300px;
+        }
+        
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea><button>发布</button>
+    <ul></ul>
+    <script>
+        // 获取button发布元素
+        var btn = document.querySelector("button");
+        // 获取textarea中的文本元素
+        var text = document.querySelector("textarea");
+        // 获取ul元素
+        var ul = document.querySelector("ul");
+        // 注册事件 事件处理程序
+        btn.onclick = function() {
+            if (text.value == "") {
+                alert("您没有输入内容");
+                // 终止程序
+                return false;
+            } else {
+                // console.log(text.value);
+                // 创建元素
+                var li = document.createElement("li");
+                // 把文本域的值赋值给li
+                // 组止链接跳转javascript:;/javascript:void(0);
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                // 添加元素
+                var newLi = ul.insertBefore(li, ul.children[0]);
+                text.value = "";
+                // 删除元素
+                var as = document.querySelectorAll("a");
+                // 所有的a都需要添加点击事件 所以通过遍历来做
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        // 删除的是当前a的li this.parentNode
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 100px auto;
+        }
+        
+        thead tr {
+            background-color: skyblue;
+            color: white;
+            border: 1px solid #ccc;
+        }
+        
+        tbody tr {
+            border: 1px solid #ccc;
+        }
+        
+        th {
+            border: 1px solid #ccc;
+        }
+        
+        td {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iPhone 8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iPhone 8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iPhone 8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>iPhone 8</td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 获取thead的checkbox
+        var tBox = document.querySelector("input");
+        console.log(tBox);
+        // 获取tbody的checkbox
+        var tBoxes = document.querySelector("tbody").querySelectorAll("input");
+        console.log(tBoxes);
+        console.log(tBoxes.length);
+        // 绑定事件并处理
+        tBox.onclick = function() {
+                console.log(this.checked);
+                for (var i = 0; i < tBoxes.length; i++) {
+                    tBoxes[i].checked = this.checked;
+                }
+            }
+            // 下面复选框全部选中 上面全选才选中上面的复选框
+        for (var i = 0; i < tBoxes.length; i++) {
+            tBoxes[i].onclick = function() {
+                // 利用flag控制全选按钮是否选中
+                var flag = true;
+                // 每次点击下面的复选框都要检查4个小按钮是否全部选中
+                for (var i = 0; i < tBoxes.length; i++) {
+                    if (!tBoxes[i].checked) {
+                        flag = false;
+                        break; //退出for循环 提高执行效率 只有有一个为false就停止循环
+                    }
+                }
+                tBox.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

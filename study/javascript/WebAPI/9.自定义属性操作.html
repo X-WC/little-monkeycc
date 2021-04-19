@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" index="1" class="nav"></div>
+    <script>
+        // 自定义属性
+        // 目的：保存并使用一些数据
+        var div = document.querySelector("div");
+        // 获取属性值
+        // 1.element.属性 获取内置属性值
+        console.log(div.id);
+        // 2.element.getAttribute("属性") 获取自定义属性
+        console.log(div.getAttribute("id"));
+        console.log(div.getAttribute("index"));
+
+        // 设置属性值
+        // element.属性 = "值"
+        div.id = "text";
+        div.className = "footer";
+        // element.setAttribute("属性","值") 针对自定义属性设置值
+        div.setAttribute("index", "2");
+        div.setAttribute('class', "nav");
+
+        // 移除属性
+        // removeAttribute("属性")
+        div.removeAttribute("class");
+        div.removeAttribute("index");
+
+        // 自定义属性规范
+        // data-属性名:"值" H5
+        div.setAttribute("data-index", "1");
+        console.log(div.getAttribute("data-index"));
+        // H5新增获取属性
+        // dataset是一个集合 存放了所有以data开头的自定义属性
+        console.log(div.dataset);
+        console.log(div.dataset.index);
+        console.log(div.dataset["index"]);
+        // 如果data里面的属性是多个单词用-连接的 获取自定义属性使用采用驼峰命名法
+    </script>
+</body>
+
+</html>
