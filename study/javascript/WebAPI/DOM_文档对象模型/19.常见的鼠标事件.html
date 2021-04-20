@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    我是一段不愿意被复制的文字
+    <script>
+        // 禁止鼠标右键菜单 contextmenu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        // 禁止鼠标选中文字 selectstart
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
+        // 鼠标事件对象 MouseEvent
+        document.addEventListener('click', function(e) {
+            // client 鼠标针对可视区的x/y坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            // page 鼠标针对页面的x/y坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+            // screen 鼠标针对电脑屏幕的x/y坐标
+            console.log(e.screenX);
+            console.log(e.screenY);
+        });
+    </script>
+</body>
+
+</html>

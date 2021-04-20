@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            background-color: blue;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+        
+        .son {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 事件捕获 addEventListener第三个参数为true 捕获阶段
+        // document -> html -> body -> father -> son
+        // 先弹出father 再弹出son
+        // var son = document.querySelector(".son");
+        // son.addEventListener('click', function() {
+        //     alert("son");
+        // }, true);
+        // var father = son.parentNode;
+        // father.addEventListener('click', function() {
+        //     alert("father");
+        // }, true);
+
+        // 事件冒泡 addEventListener第三个参数为false/空 冒泡阶段
+        // son -> father  -> body -> html -> document
+        // 先弹出son 后弹出father
+        var son = document.querySelector(".son");
+        son.addEventListener('click', function() {
+            alert("son");
+        }, false);
+        var father = son.parentNode;
+        father.addEventListener('click', function() {
+            alert("father");
+        }, false);
+    </script>
+</body>
+
+</html>

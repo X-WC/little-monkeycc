@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        // 事件对象
+        var div = document.querySelector('div');
+        div.onclick = function(event) {
+            console.log(event);
+        };
+
+        // ie 678 利用 window.event 兼容性问题 e=e||window.event
+    </script>
+</body>
+
+</html>

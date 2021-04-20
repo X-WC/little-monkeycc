@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // BOM 浏览器对象模型 与浏览器窗口进行交互的对象
+        // 窗口加载事件 所有图片 样式 flash加载完毕之后 再执行事件
+        // 传统方式 只可使用一次
+        // window.onload = function() {
+        //     var btn = document.querySelector('button');
+        //     btn.addEventListener('click', function() {
+        //         alert("点击我");
+        //     })
+        // };
+        // 方法监听事件方式
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert("点击我");
+            });
+        });
+        window.addEventListener('load', function() {
+            alert(22);
+        })
+
+        // DOMContentLoaded ie9以上可用 效率更快
+        document.addEventListener('DOMContentLoaded', function() {
+            alert(33);
+        });
+    </script>
+    <button>点击</button>
+
+</body>
+
+</html>

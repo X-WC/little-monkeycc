@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 100px;
+        }
+        
+        span {
+            display: inline-block;
+            background-color: black;
+            width: 30px;
+            height: 30px;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        // 获取元素
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2021-5-1');
+        // 防止有空白时期 先调用一次函数
+        countDown();
+        // 开启定时器
+        setInterval(countDown, 1000);
+        // 倒计时封装函数
+        function countDown() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? "0" + h : h;
+            // 把剩余的小时给黑色盒子
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? "0" + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? "0" + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

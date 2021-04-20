@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 窗口大小改变就触发事件
+        // resize
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var div = document.querySelector('div');
+            window.addEventListener('resize', function() {
+                console.log(window.innerWidth);
+                if (window.innerWidth <= 800) {
+                    div.style.display = "block";
+                } else {
+                    div.style.display = "none";
+                }
+                console.log('变化了');
+            });
+        });
+    </script>
+    <div></div>
+</body>
+
+</html>

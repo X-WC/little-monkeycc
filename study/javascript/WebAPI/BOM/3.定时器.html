@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定时器
+        // window.setTimeout(调用函数,延迟的毫秒数) 
+        // window 可以省略
+        // 延时时间可以省略 默认为0
+        // 这个调用函数可以直接写函数 也可以写函数名 还有一种写法 '函数名()'
+        // 页面中可能有很多的定时器 我们经常给定时器加标识符 （名字）
+        window.addEventListener('load', function() {
+            // setTimeout(function() {
+            //     console.log("时间到了");
+            // }, 2000)
+            function callback() {
+                console.log("爆炸了");
+            }
+            setTimeout(callback, 2000);
+        });
+
+        // setInterval()
+        // 多次调用函数
+        setInterval(function() {
+            alert("爆炸了");
+        }, 2000);
+    </script>
+</body>
+
+</html>

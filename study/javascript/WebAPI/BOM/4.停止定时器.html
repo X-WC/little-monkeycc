@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击停止计时器</button>
+    <button class="start">开启定时器</button>
+    <button class="end">停止定时器</button>
+    <script>
+        // 停止定时器
+        // clearTimeout(定时器的标识符)
+        var timer = setTimeout(function() {
+            alert("爆炸了");
+        }, 5000);
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            clearTimeout(timer);
+        });
+
+        // clearInterval("定时器的标识符")
+        var start = document.querySelector('.start');
+        var end = document.querySelector('.end');
+        // 设置一个全局变量
+        var timer1 = null;
+        start.addEventListener('click', function() {
+            timer1 = setInterval(function() {
+                console.log("爆炸了");
+            }, 1000);
+        });
+        end.addEventListener('click', function() {
+            clearInterval(timer1);
+        })
+    </script>
+</body>
+
+</html>

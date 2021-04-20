@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 常用的键盘事件 
+        // keyup 按键弹起的时候触发 执行顺序3
+        document.onkeyup = function() {
+            console.log("我弹起了");
+        };
+        // keydown 按键按下的时候触发 全键盘执行 执行顺序1
+        document.addEventListener('keydown', function() {
+            console.log("按下down触发");
+        });
+        // keypress 按键按下的时候触发 功能键不能触发 执行顺序2
+        document.addEventListener('keypress', function() {
+            console.log("按下press触发");
+        });
+
+        // 键盘事件对象
+        // document.addEventListener('keyup', function(e) {
+        //     console.log(e);
+        //     console.log(e.keyCode);
+        //     // 1. keyup / keydown事件 不区分字母大小写
+        // });
+        // keyCode 属性显示ASCII码值
+        document.addEventListener('keypress', function(e) {
+            console.log(e);
+            console.log(e.keyCode);
+            // 2.keypress 区分大小写
+        });
+    </script>
+</body>
+
+</html>

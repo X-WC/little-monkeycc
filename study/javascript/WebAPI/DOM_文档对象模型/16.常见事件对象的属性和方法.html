@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+    <a href="http://www.baidu.com">百度</a>
+    <form action="http://www.baidu.com">
+        <input type="submit" name="sub" value="提交" id="">
+    </form>
+    <script>
+        // 常见事件对象的属性和方法
+        // e.target返回的是触发事件的对象 this返回的是绑定事件的对象
+        // e.target点击了哪个就返回哪个 this哪个绑定就返回哪个
+        var div = document.querySelector('div');
+        div.addEventListener('click', function(e) {
+            console.log(e.target);
+            console.log(this);
+        });
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            // 点击li 返回的就是li
+            console.log(e.target);
+            // 点击li 返回的是绑定元素ul
+            console.log(this);
+            // 与类似相似的属性 有兼容性问题
+            console.log(e.currentTarget);
+        });
+        // e.srcElement(IE9以上)使用 兼容写法 e.target||e.srcElement
+
+        // 返回事件类型
+        div.addEventListener('click', fn);
+
+        function fn(e) {
+            console.log(e.type);
+        }
+
+        // 阻止默认行为（事件）
+        // 点击a不跳转
+        var a = document.querySelector('a');
+        a.addEventListener('click', function(e) {
+            e.preventDefault(); //dom标准写法
+        });
+        // 传统的注册方式
+        a.onclick = function(e) {
+            // 普通浏览器 e.preventDefault()方法
+            e.preventDefault();
+            // 低版本浏览器 e.returnValue属性 （ie678）
+            e.returnValue;
+            // return false 阻止默认行为 没有兼容性问题 return后面语句不执行 只限于传统注册方式
+            return false;
+        }
+    </script>
+</body>
+
+</html>

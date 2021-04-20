@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="search" name="" id="">
+    <script>
+        // 使用keydown的话会把键盘内容也输入 所以用keyup更合理
+        var ipt = document.querySelector('input');
+        document.addEventListener('keyup', function(e) {
+            // console.log(e.keyCode);
+            if (e.keyCode === 83) {
+                // 搜索框获得焦点 focus()
+                ipt.focus();
+            }
+        });
+    </script>
+</body>
+
+</html>

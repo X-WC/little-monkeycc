@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册方式</button>
+    <button>ie9以下方法监听注册方式</button>
+    <script>
+        // 注册事件（绑定事件）
+        // 传统方式 唯一性
+        var btns = document.querySelectorAll('button');
+        btns[0].onclick = function() {
+            alert("hello");
+        }
+        btns[0].onclick = function() {
+            alert("第二次弹出"); // 会覆盖前面的警告框
+        }
+
+        // 方法监听注册方式 提倡使用 IE9以下用attachEvent()
+        // eventTarget.addEventListener(type,listener,[,useCapture]) 
+        // eventTarget（目标对象） type("事件类型") listener（事件处理函数） useCapture（可选参数 布尔值类型 默认为false）
+        // 事件类型是一个字符串类型 不用加on
+        btns[1].addEventListener('click', function() {
+            alert(22);
+        })
+        btns[1].addEventListener('click', function() {
+            alert(33);
+        })
+
+        // attachEvent IE独有 其他浏览器会报错
+        // btns[2].attachEvent("onclick", function() {
+        //     alert(11);
+        // })
+    </script>
+</body>
+
+</html>
