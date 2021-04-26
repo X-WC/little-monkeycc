@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取元素
+        var div = document.querySelector('div');
+        // 定义倒计时开始时间
+        var time = 5;
+        // 利用定时器做倒计时效果
+        setInterval(function() {
+            if (time == 0) {
+                // 如果时间为0 跳转页面
+                location.href = 'https://www.baidu.com';
+            } else {
+                // 在div中显示还剩多少秒跳转页面
+                div.innerHTML = "还剩" + time + "秒跳转页面";
+                time--;
+                // console.log(time);
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

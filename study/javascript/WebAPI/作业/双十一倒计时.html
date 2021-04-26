@@ -7,53 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box {
+        div {
+            width: 600px;
             margin: 100px;
         }
         
         span {
             display: inline-block;
-            background-color: black;
-            width: 30px;
-            height: 30px;
+            width: 100px;
+            height: 50px;
             color: white;
+            background-color: tomato;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 25px;
             text-align: center;
-            line-height: 30px;
+            line-height: 50px;
         }
     </style>
 </head>
 
 <body>
-    <div class="box">
+    <div>
+        <h1>距离光棍节,还有......</h1>
+        <span class="day"></span>
         <span class="hour"></span>
         <span class="minute"></span>
         <span class="second"></span>
     </div>
     <script>
         // 获取元素
+        var day = document.querySelector('.day');
         var hour = document.querySelector('.hour');
         var minute = document.querySelector('.minute');
         var second = document.querySelector('.second');
-        var inputTime = +new Date('2021-5-1');
-        // 防止有空白时期 先调用一次函数
-        countDown();
+        // 到2021-11-11日的时间
+
         // 开启定时器
-        setInterval(countDown, 1000);
+        var timer = setInterval(countDown, 1000);
         // 倒计时封装函数
         function countDown() {
             var nowTime = +new Date();
+            var inputTime = +new Date('2021-11-11 00:00:00');
             var times = (inputTime - nowTime) / 1000;
+            var d = parseInt(times / 60 / 60 / 24);
+            // console.log(d);
+            d = d < 10 ? "0" + d : d;
+            day.innerHTML = d + "天";
             var h = parseInt(times / 60 / 60 % 24);
-            console.log(h);
+            // console.log(h);
             h = h < 10 ? "0" + h : h;
             // 把剩余的小时给黑色盒子
-            hour.innerHTML = h;
+            hour.innerHTML = h + "时";
             var m = parseInt(times / 60 % 60);
             m = m < 10 ? "0" + m : m;
-            minute.innerHTML = m;
+            minute.innerHTML = m + "分";
             var s = parseInt(times % 60);
             s = s < 10 ? "0" + s : s;
-            second.innerHTML = s;
+            second.innerHTML = s + "秒";
         }
     </script>
 </body>

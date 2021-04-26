@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子时钟</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取元素
+        var div = document.querySelector('div');
+        clock();
+        setInterval(clock, 1000);
+
+        function clock() {
+            var date = new Date();
+            // 年
+            var year = date.getFullYear();
+            // console.log(year);
+            // 月
+            var month = date.getMonth() + 1;
+            // console.log(month);
+            // 日
+            var day = date.getDate();
+            // console.log(day);
+            // 星期几
+            var arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            var week = arr[date.getDay()];
+            // console.log(week);
+            // 小时
+            var h = date.getHours();
+            h = h < 10 ? '0' + h : h;
+            // console.log(h);
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            // console.log(m);
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            // console.log(s);
+            div.innerHTML = year + "年" + month + "月" + day + "日" + week + h + ":" + m + ":" + s;
+        }
+    </script>
+</body>
+
+</html>

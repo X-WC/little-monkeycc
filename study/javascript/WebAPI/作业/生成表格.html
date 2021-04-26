@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成表格</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            width: 600px;
+        }
+        
+        thead {
+            background-color: skyblue;
+        }
+        
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        请输入姓名：<input type="text" name="" id="uname"><br> 请输入邮箱：<input type="text" name="" id="email">
+    </div>
+    <button>添加</button>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>邮箱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>小黑</td>
+                <td>xiaohei@126.com</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 获取按钮元素
+        var btn = document.querySelector('button');
+        // 获取tbody元素
+        var tbody = document.querySelector('tbody');
+        // 监听按钮点击事件
+        /* btn.addEventListener('click', function() {
+            // 获取文本框元素
+            var name = document.getElementById('uname');
+            var email = document.getElementById('email');
+            // 判断文本框中是否有内容
+            if (name.value == '' || email.value == '') {
+                alert("请将数据填入完全");
+                return;
+            }
+            // 创建tr
+            var tr = document.createElement('tr');
+            // 添加tr 添加元素父.appendChild(添加元素)
+            tbody.appendChild(tr);
+            // 创建td
+            var td1 = document.createElement('td');
+            tr.appendChild(td1);
+            td1.innerHTML = name.value;
+            var td2 = document.createElement('td');
+            tr.appendChild(td2);
+            td2.innerHTML = email.value;
+        }); */
+
+        //  第二种方法 未成功
+        // btn.addEventListener('click', function() {
+        //     var iptLis = document.querySelectorAll('input');
+        //     var tr = document.createElement('tr');
+        //     tbody.appendChild(tr);
+        //     for (var i = 0; i < iptLis.length; i++) {
+        //         if (iptLis[i].value == "") {
+        //             alert("请将数据填入完全");
+        //         } else {
+        //             var td = document.createElement('td');
+        //             tr.appendChild(td);
+        //             td.innerHTML = iptLis[j].value;
+        //         }
+        //     }
+        // });
+    </script>
+</body>
+
+</html>

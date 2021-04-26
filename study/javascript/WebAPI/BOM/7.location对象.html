@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <p></p>
+    <script>
+        // location对象
+        // location.href 可以获得/设置URL
+        // 点击3秒后跳转页面
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            // console.log(location.href);
+            console.log(typeof location.href);
+            // 设置定时器
+            var timer = setTimeout(function() {
+                location.href = "https://www.baidu.com/";
+                // console.log(location.href);
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

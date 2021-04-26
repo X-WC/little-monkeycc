@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态添加列表</title>
+</head>
+
+<body>
+    <ul></ul>
+    <button>按钮</button>
+    <script>
+        var lis = [{
+            0: "西施"
+        }, {
+            1: "貂蝉"
+        }, {
+            3: "昭君"
+        }, {
+            4: "凤姐"
+        }, {
+            5: "芙蓉姐姐"
+        }];
+        // var lis = [
+        //     "西施",
+        //     "貂蝉",
+        //     "昭君",
+        //     "凤姐",
+        //     "芙蓉姐姐"
+        // ];
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        for (var i = 0; i < lis.length; i++) {
+            var li = document.createElement('li');
+            ul.appendChild(li);
+            for (var k in lis[i]) {
+                li.innerHTML = lis[i][k];
+            }
+        }
+
+        ul.addEventListener('click', function(e) {
+            for (var i = 0; i < ul.children.length; i++) {
+                ul.children[i].style.backgroundColor = "";
+            }
+            e.target.style.backgroundColor = "red";
+        })
+    </script>
+</body>
+
+</html>

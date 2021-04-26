@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取鼠标在盒子内的坐标
+        // 1.鼠标触发一个点击事件
+        // 2.e.pageX和e.pageY获取鼠标在页面中的位置
+        // 3.用e.pageX-div.offsetLeft 得到鼠标在盒子里的坐标
+        var div = document.querySelector('div');
+        div.addEventListener('mousemove', function(e) {
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            this.innerHTML = "x:" + x + " " + "y:" + y;
+        })
+    </script>
+</body>
+
+</html>

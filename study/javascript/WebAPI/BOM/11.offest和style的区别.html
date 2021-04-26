@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset和style的区别</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 200px;"></div>
+    <script>
+        var div = document.querySelector('div');
+        // offset可以获取内嵌样式 只读不改 （获取元素大小位置 推荐使用）
+        console.log(div.offsetWidth); //200 数字类型
+        console.log(div.offsetHeight);
+        // style
+        // 只能获取行内样式 可修改 （改变元素大小位置 推荐使用）
+        console.log(div.style.width); //200px 字符串类型
+    </script>
+</body>
+
+</html>

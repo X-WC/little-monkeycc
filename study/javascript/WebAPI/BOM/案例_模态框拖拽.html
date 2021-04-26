@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模态框拖拽</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        /* 顶部链接 */
+        
+        .login-header {
+            text-align: center;
+            font-size: 24px;
+            z-index: 1;
+        }
+        /* 模态框 */
+        
+        .login {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 514px;
+            height: 282px;
+            font-size: 14px;
+            background-color: white;
+            border: 1px solid #cccc;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        /* 登录会员 */
+        
+        .login-title {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+            height: 40px;
+            line-height: 40px;
+            cursor: move;
+        }
+        /* 关闭按钮 */
+        
+        .login-title span a {
+            position: absolute;
+            top: -35px;
+            right: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            text-align: center;
+            font-size: 12px;
+            line-height: 50px;
+            border-radius: 50%;
+        }
+        /* input板块 */
+        
+        .login-input-content {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+        }
+        /* 用户名 */
+        
+        .login-input {
+            margin-bottom: 20px;
+        }
+        
+        .login-input label {
+            display: inline-block;
+            height: 35px;
+            width: 90px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        
+        .login-input input {
+            width: 356px;
+            height: 39px;
+            border: 1px solid #ccc;
+        }
+        /* 登录按钮 */
+        
+        .loginBtn {
+            margin: 30px 127px 0;
+        }
+        /* 遮蔽层 */
+        
+        .login-bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3);
+        }
+        
+        .loginBtn a {
+            display: inline-block;
+            width: 256px;
+            height: 40px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header"><a href="javascript:;" id="link">点击，弹出登录框</a></div>
+    <div class="login" id="login">
+        <div id="title" class="login-title">
+            登录会员
+            <span><a href="javascript:;" id="closeBtn">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label for="">用户名:</label>
+                <input type="text" placeholder="请输入用户名" id="username">
+            </div>
+            <div class="login-input">
+                <label for="">登录密码:</label>
+                <input type="password" placeholder="请输入登录密码" id="password">
+            </div>
+        </div>
+        <div class="loginBtn"><a href="javascript:;">登录会员</a></div>
+    </div>
+    <div id="bg" class="login-bg"></div>
+    <script>
+        var link = document.getElementById('link');
+        var login = document.getElementById('login');
+        var bg = document.getElementById('bg')
+            // 点击弹出登录框时 模态框和遮蔽层显现
+        link.addEventListener('click', function() {
+            login.style.display = "block";
+            bg.style.display = "block";
+        });
+        // 点击关闭时 模态框和遮蔽层隐藏
+        var closeBtn = document.getElementById('closeBtn');
+        closeBtn.addEventListener('click', function() {
+            login.style.display = "none";
+            bg.style.display = "none";
+        });
+        var title = document.getElementById('title');
+        // 点击触发
+        title.addEventListener('mousedown', function(e) {
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+            // 实现拖拽功能
+            document.addEventListener('mousemove', move);
+
+            function move(e) {
+                login.style.top = e.pageY - y + "px";
+                login.style.left = e.pageX - x + 'px';
+            };
+            // 鼠标弹起时
+            document.addEventListener('mouseup', function() {
+                // 移除鼠标移动事件
+                document.removeEventListener('mousemove', move);
+            });
+        });
+    </script>
+</body>
+
+</html>

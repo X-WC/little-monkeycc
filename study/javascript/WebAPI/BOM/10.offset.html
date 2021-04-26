@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用offset得到元素的位置</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .father {
+            /* padding: 50px; */
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+            overflow: hidden;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // offset
+        // offsetParent 返回带有定位的父级元素 如果父元素没有定位返回body
+        var father = document.querySelector(".father");
+        var son = document.querySelector(".son");
+        console.log(son.offsetParent);
+
+        // offsetTop/offsetLeft 上/左偏移量 返回数值不带单位
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        console.log(son.offsetTop);
+        console.log(son.offsetLeft);
+
+        // 可以得到元素的大小 宽度和高度 (包含padding+border+width)
+        console.log(father.offsetWidth);
+        console.log(father.offsetHeight);
+    </script>
+</body>
+
+</html>
