@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <span>123</span>
+    <video src="mov.mp4" muted></video>
+    <script>
+        // 1.DOM对象 用原生js获取过来的对象就是DOM对象
+        var myDiv = document.querySelector('div'); // myDiv是DOM对象
+        var mySpan = document.querySelector('span'); // mySpan是DOM对象
+        console.dir(myDiv);
+
+        // 2.jQuery对象 用jQUery方式获取过来的对象是jQuery对象 本质：通过$把DOM元素进行了包装
+        $('div'); // $('div')是一个jQuery对象
+        $('span'); // $('span')是一个jQuery对象
+        console.dir($('div'));
+
+        // 3.jQuery对象只能使用jQuery方法 DOM对象则使用原生的JavaScript属性和方法
+        mySpan.style.display = 'none';
+        // $('span').style.display = 'none'; // 不能使用
+        // mySpan.hide(); // 不能使用
+        $('div').hide();
+
+        // 4.DOM对象和jQuery对象相互转换
+        // DOM对象转换为jQuery对象 $(DOM对象)
+        var myVideo = document.querySelector('video');
+        // $(myVideo).hide(); // $(myVideo)是jQuery对象
+
+        // jQuery对象转换为DOM对象
+        // $('div')[index] index是索引号
+        // $('video')[0].play();
+
+        // $('div').get(index) index是索引号
+        $('video').get(0).play();
+    </script>
+</body>
+
+</html>

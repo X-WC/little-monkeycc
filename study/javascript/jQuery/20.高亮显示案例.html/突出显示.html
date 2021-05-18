@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .wrap {
+            margin: 100px auto 0;
+            width: 630px;
+            height: 394px;
+            padding: 10px 0 0 10px;
+            background-color: black;
+            border: 1px solid #fff;
+        }
+        
+        .wrap ul li {
+            float: left;
+            margin: 0 10px 10px 0;
+            width: 200px;
+            height: 186px;
+        }
+        
+        .wrap ul li a {
+            display: inline-block;
+            width: 200px;
+            height: 186px;
+        }
+    </style>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="#"><img src="images/01.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/02.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/03.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/04.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/05.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/06.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function() {
+            // 1.给每个li添加鼠标经过事件
+            $('.wrap li').hover((function() {
+                $(this).siblings().stop().fadeTo(400, 0.5);
+            }), function() {
+                $(this).siblings().stop().fadeTo(400, 1);
+            })
+        })
+    </script>
+</body>
+
+</html>

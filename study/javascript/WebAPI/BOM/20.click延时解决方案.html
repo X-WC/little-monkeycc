@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="fastclick.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 2
+        // // 封装tap 解决click 300ms 延时
+        // function tap(obj, callback) {
+        //     var isMove = false;
+        //     var startTime = 0; // 记录触摸时候的时间变量
+        //     obj.addEventListener('touchstart', function() {
+        //         startTime = Date.now(); // 记录触摸时间
+        //         console.log(startTime);
+        //     })
+        //     obj.addEventListener('touchmove', function(e) {
+        //         isMove = true; // 看看是否有滑动 有滑动酸拖拽 不算点击
+        //     })
+        //     obj.addEventListener('touchend', function(e) {
+        //         if (!isMove && (Date.now() - startTime) < 150) {
+        //             // 执行回调函数
+        //             callback && callback();
+        //         }
+        //         isMove = false; // 取反 重置
+        //         startTime = 0;
+        //     })
+        // }
+        // // 调用
+        // tap(div, function() {
+        //     // 执行代码
+        // })
+
+        if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        };
+        var div = document.querySelector('div');
+        div.addEventListener('click', function() {
+            alert('11');
+        })
+    </script>
+</body>
+
+</html>

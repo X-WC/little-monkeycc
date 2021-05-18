@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+            color: gray;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        .nav {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+        }
+        
+        .nav>li {
+            float: left;
+        }
+        
+        .nav>li>a {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .nav>li>a:hover {
+            background-color: #ccc;
+        }
+        
+        .nav>li>ul {
+            display: none;
+        }
+        
+        .nav>li>ul>li {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid orange;
+            border-top: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="javascript:;">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(function() {
+            // 1.事件切换 hover就是鼠标经过和离开的复合写法
+            // $('.nav>li').hover(function() {
+            //     $(this).children('ul').slideDown(200);
+            // }, function() {
+            //     $(this).children('ul').slideUp(200);
+            // })
+
+            // 2.事件切换 hover 如果只写一个函数 那么鼠标经过和鼠标离开都会触发这个函数
+            $('.nav>li').hover(function() {
+                $(this).children('ul').stop().slideToggle();
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+        
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+        
+        .slider-bar {
+            position: absolute;
+            top: 300px;
+            left: 50%;
+            transform: translateX(600px);
+            width: 50px;
+            height: 130px;
+            background-color: pink;
+        }
+        
+        .goBack {
+            display: none;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 仿淘宝固定右侧侧边栏 -->
+    <!-- 
+        1.原先侧边栏是绝对定位
+        2.当页面滚动到一定位置 侧边栏改为固定定位
+        3.页面继续滚动 会让返回顶部显示出来
+     -->
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 1、获取元素
+        var sliderBar = document.querySelector('.slider-bar');
+        var goBack = document.querySelector('.goBack');
+        // 获取banner被卷去后的头部大小
+        var banner = document.querySelector('.banner');
+        console.log(banner.offsetTop);
+        var bannerTop = banner.offsetTop;
+        // 当侧边栏固定定位之后顶部的距离
+        var sliderBarTop = sliderBar.offsetTop - bannerTop;
+        // 获取main被卷去后的头部大小
+        var main = document.querySelector('.main');
+        var mainTop = main.offsetTop;
+        // 2、页面魂动事件
+        document.addEventListener('scroll', function() {
+            // window.pageYOffset 页面被卷去的头部
+            console.log(window.pageYOffset);
+            // 当页面滚动到banner时 侧边栏改为固定定位
+            if (window.pageYOffset >= bannerTop) {
+                // 将sliderBar的绝对定位改为固定定位
+                sliderBar.style.position = 'fixed';
+                sliderBar.style.top = sliderBarTop + 'px';
+            } else {
+                // 将sliderBar的固定定位改为绝对定位
+                sliderBar.style.position = 'absolute';
+                sliderBar.style.top = "300px";
+            }
+            // 当页面滚动到main时 显示goBack模块
+            if (window.pageYOffset >= mainTop) {
+                // 显示返回顶部模块
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        });
+        // 点击goBack模块 返回页面顶部
+        goBack.addEventListener('click', function() {
+            // window.scroll(x,y) 滚动到页面的某个位置 x横坐标 y纵坐标
+            // 不带单位
+            // window.scroll(0, 0);
+            animate(window, 0);
+        });
+
+        function animate(obj, target, callback) {
+            obj.timer = setInterval(function() {
+                var step = (target - obj.pageYOffset) / 10;
+                console.log(obj.pageYOffset);
+                // 步长为正值 向上取整 步长为负值 向下取整
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.pageYOffset == target) {
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+                window.scroll(0, window.pageYOffset + step);
+            }, 15);
+        };
+    </script>
+</body>
+
+</html>

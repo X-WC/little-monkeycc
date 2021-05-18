@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <button>开关灯</button>
+    <script>
+        // classList 返回元素的类名
+        var div = document.querySelector('div');
+        // 返回值为伪数组
+        console.log(div.classList);
+        // 该属性用于在元素中添加，移除及切换css类
+
+        // 添加类 element.classList.add('类名') 追加类名不会覆盖之前的类名
+        div.classList.add('two');
+
+        // 移除类 element.classList.remove('类名')
+        div.classList.remove('one');
+
+        // 切换类
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            document.body.classList.toggle('bg');
+        })
+    </script>
+</body>
+
+</html>

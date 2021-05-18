@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 注意此元素需要添加定位，才能使用element.style.left  */
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        
+        .red {
+            position: absolute;
+            left: 0;
+            top: 150px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击红色才走</button>
+    <div></div>
+    <div class="red"></div>
+    <script>
+        // 核心原理 通过定时器setInterval()不断移动盒子位置
+        var div = document.querySelector('div'); //获取元素
+        var red = document.querySelector('.red');
+        var btn = document.querySelector('button');
+        // 动画函数简单封装 obj 目标对象 target 目标位置
+        // 给不同的元素指定了不同的定时器 添加属性的方法
+        function animate(obj, target) {
+            // 利用定时器不断重复这个操作
+            // 当我们不断点击按钮 元素的速度会越来越快 因为开启了太多的定时器
+            // 解决方案是让我们元素只有一个定时器执行
+            // 先清除以前的定时器 只保留当前的一个定时器执行
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                // 获得盒子当前的位置
+                if (obj.offsetLeft < target) {
+                    // 让盒子在当前位置加上5px移动距离
+                    obj.style.left = obj.offsetLeft + 5 + 'px';
+                } else {
+                    // 加一个结束定时器的条件
+                    clearInterval(obj.timer);
+                }
+            }, 30);
+        }
+        animate(div, 500);
+        btn.onclick = function() {
+            animate(red, 300);
+        }
+    </script>
+</body>
+
+</html>

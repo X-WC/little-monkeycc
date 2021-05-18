@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+    <script>
+        $(function() {
+            // 筛选出ul的第一个
+            // $('ul>li:first')
+            $('ul>li:first').css('backgroundColor', 'red');
+            // 筛选ul的最后一个
+            $('ul>li:last').css('color', 'skyblue');
+            // 筛选ul的第三个
+            $('ul>li:eq(2)').css('color', 'pink');
+            // 筛选ol的奇数行
+            $('ol>li:odd').css('backgroundColor', 'pink');
+            // 筛选ol的偶数行
+            $('ol>li:even').css('backgroundColor', 'skyblue');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        // 封装动画函数
+        function animate(obj, target, callback) {
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            obj.timer = setInterval(function() {
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    // 停止计时器 调用函数callback
+                    if (callback) {
+                        callback();
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+        // 获取元素
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.addEventListener('click', function() {
+            animate(div, 500, function() {
+                div.style.backgroundColor = "pink";
+            });
+        });
+    </script>
+</body>
+
+</html>

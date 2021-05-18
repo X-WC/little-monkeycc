@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:;">链接</a>
+    <script>
+        console.log(window.devicePixelRatio);
+
+        // pageshow事件（FireFox中缓存页面会让load事件不二次生效)
+        window.addEventListener('pageshow', function() {
+            alert(11);
+        });
+        // load事件
+        // window.addEventListener('load', function() {
+        //     alert(11);
+        // });
+    </script>
+</body>
+
+</html>

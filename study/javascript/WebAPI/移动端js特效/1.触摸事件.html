@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 获取元素
+        var div = document.querySelector('div');
+        // 添加事件 
+        div.addEventListener('touchstart', function(e) {
+            // console.log(e);
+            // 得到第一个手指的相关信息
+            console.log(e.targetTouches[0]);
+            console.log("触摸触发");
+        })
+        div.addEventListener('touchmove', function() {
+            console.log("继续摸触发");
+        })
+        div.addEventListener('touchend', function(e) {
+            // 获得touchend事件对象 
+            console.log(e);
+            console.log("移开时触发");
+
+        })
+    </script>
+</body>
+
+</html>

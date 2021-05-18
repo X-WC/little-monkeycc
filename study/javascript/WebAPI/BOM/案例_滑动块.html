@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider_bar {
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+        .con {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 40px;
+            background-color: skyblue;
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="slider_bar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        // 获取元素
+        var sliderBar = document.querySelector('.slider_bar');
+        var con = document.querySelector('.con');
+        // 当我们鼠标经过slider_bar就会让con这个盒子滑到左侧
+        sliderBar.addEventListener('mouseenter', function() {
+            animate(con, -160, function() {
+                sliderBar.children[0].innerHTML = '→';
+            });
+        });
+        // 当我们鼠标离开slider_bar就会让con这个盒子滑到右侧
+        sliderBar.addEventListener('mouseleave', function() {
+            animate(con, 0, function() {
+                sliderBar.children[0].innerHTML = '←';
+            });
+        });
+    </script>
+</body>
+
+</html>

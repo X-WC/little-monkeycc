@@ -34,6 +34,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             alert(33);
         });
+
+        // window对象可以调用全局作用域定义的属性和方法
+        var age = 29;
+
+        function sayAge() {
+            console.log(this.age); // 第二个执行 29
+            console.log(this); // this指向的是window对象
+        }
+        console.log(window.age); // 第一个执行 29
+        sayAge();
+        window.sayAge(); // 第三个执行 29
+
+        // 全局变量不能通过delete操作符删除
+        var myAge = 18;
+        window.color = "red";
+        delete window.myAge;
+        delete window.color;
+        console.log(window.age); // 29
+        console.log(window.color); // undefined
+
+        // 访问未声明的变量会报错但是查询对象属性不会报错（未声明属性的值为undefined）
+        // var newValue = oldValue; // 报错 因为oldValue未定义
+        var newValue = window.oldValue;
+        console.log(newValue); // undefined 属性查询
     </script>
     <button>点击</button>
 

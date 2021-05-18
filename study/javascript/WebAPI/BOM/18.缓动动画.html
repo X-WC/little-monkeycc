@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn500">点击移动到500</button>
+    <button class="btn800">点击移动到800</button>
+    <div></div>
+    <script>
+        // 缓动动画原理
+        // 1.让盒子每次移动的距离慢慢变小 速度就会慢慢落下来
+        // 2.核心算法：（目标值-现在的位置）/10 作为每次移动的距离步长
+        // 2.停止条件：让当面盒子等于目标位置就停止计时器
+        function animate(obj, target) {
+            obj.timer = setInterval(function() {
+                var step = (target - obj.offsetLeft) / 10;
+                // 步长为正值 向上取整 步长为负值 向下取整
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + step + "px";
+            }, 15);
+        };
+        var div = document.querySelector('div');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+        btn500.onclick = function() {
+            animate(div, 500);
+        }
+        btn800.onclick = function() {
+            animate(div, 800);
+        }
+    </script>
+</body>
+
+</html>

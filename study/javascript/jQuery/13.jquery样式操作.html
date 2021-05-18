@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function() {
+            // 1.参数只写属性名，则返回属性值
+            console.log($('div').css('width'));
+            // 2.参数是属性名，属性值，逗号分隔，是设置一组样式 属性必须加引号 值如果是数字可以不加引号和单位
+            // $('div').css('width', '300px');
+            // $('div').css('width', 300);
+            $('div').css({
+                width: 300,
+                height: 300,
+                // 如果是复合属性则必须使用驼峰命名法
+                backgroundColor: 'skyblue'
+            })
+        })
+    </script>
+</body>
+
+</html>

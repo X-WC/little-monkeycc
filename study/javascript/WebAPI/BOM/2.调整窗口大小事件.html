@@ -18,6 +18,16 @@
 
 <body>
     <script>
+        // 窗口位置 
+        // screenLeft(screenX)/screenTop(screenY)
+        // 首先用三元表达式确定screenLeft和screenTop是否存在 如果存在就取得这两个属性的值 如果不存在就取得screenX和screenY的值
+        var leftPos = (typeof window.screenLeft == "number") ? window.screenLeft : window.screenX;
+        console.log(window.screenLeft);
+        console.log(window.screenX);
+        var topPos = (typeof window.screenTop == "number") ? window.screenTop : window.screenY;
+        console.log(window.screenTop);
+        console.log(window.screenY);
+        // moveTo()/moveBy()
         // 窗口大小改变就触发事件
         // resize
 

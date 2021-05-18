@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+    <div class="nav">
+        <p>我是p</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+    <script>
+        // 注意一下都是方法 带括号
+        $(function() {
+            // 1.父 parent() 返回的是最近一级的父级元素
+            console.log($('.son').parent());
+
+            // 2.子 children() 返回的是亲儿子
+            console.log($('.nav').children('p'));
+            $('.nav').find('p').css('color', 'pink'); // 后代选择器
+
+        })
+    </script>
+</body>
+
+</html>
