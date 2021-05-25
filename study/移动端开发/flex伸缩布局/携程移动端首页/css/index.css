@@ -22,7 +22,8 @@ img {
     vertical-align: middle;
 }
 
-ul {
+ul,
+ol {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -50,6 +51,7 @@ ul {
     font-size: 12px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    z-index: 9999;
 }
 
 .search {
@@ -97,15 +99,61 @@ ul {
 }
 
 
+/* 返回顶部模块 */
+
+.goBack {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    background: url(../images/back.png) no-repeat;
+    background-size: 38px 38px;
+}
+
+
 /* 焦点图模块 */
 
 .focus {
+    position: relative;
     padding-top: 44px;
     margin-bottom: 7px;
+    overflow: hidden;
 }
 
 .focus img {
     width: 100%;
+}
+
+.focus ul {
+    overflow: hidden;
+    width: 500%;
+}
+
+.focus ul li {
+    float: left;
+    width: 20%;
+}
+
+.focus ol {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 0;
+}
+
+.focus ol li {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all .3s;
+}
+
+.focus ol .current {
+    width: 15px;
 }
 
 

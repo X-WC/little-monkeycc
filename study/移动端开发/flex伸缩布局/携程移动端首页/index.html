@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="css/normalize.css">
     <!-- 引入首页样式文件 -->
     <link rel="stylesheet" href="css/index.css">
+    <!-- 引入js文件 -->
+    <script src="js/index.js"></script>
 </head>
 
 <body>
+    <!-- 返回顶部模块 -->
+    <div class="goBack"></div>
     <!-- 顶部搜索 -->
     <div class="search-index">
         <div class="search">搜索:目的地/酒店/景点/航班号</div>
@@ -20,7 +24,26 @@
     </div>
     <!-- 焦点图模块 -->
     <div class="focus">
-        <img src="upload/focus.jpg" alt="">
+        <ul>
+            <li>
+                <a href="#"><img src="upload/focus1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="upload/focus2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="upload/focus3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="upload/focus1.jpg" alt=""></a>
+            </li>
+        </ul>
+        <!-- 小圆点 -->
+        <ol class="circle">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+        </ol>
     </div>
     <!-- 局部导航栏 -->
     <ul class="local-nav">

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // 拷贝对象 $.extend()
+        var targetObj = {};
+        var obj = {
+            id: 0,
+            name: 'cc'
+        };
+        targetObj = {
+            id: 1
+        };
+        // 覆盖原有属性
+        $.extend(targetObj, obj);
+        console.log(targetObj);
+
+        // 1.浅拷贝
+        obj = {
+            id: 0,
+            name: 'cc',
+            msg: {
+                age: 18
+            }
+        };
+        $.extend(targetObj, obj);
+        // 浅拷贝会把原来对象里面的复杂数据类型地址拷贝给目标对象
+        targetObj.msg.age = 20;
+        console.log(targetObj);
+        console.log(obj);
+
+        // 2.深拷贝
+        targetObj = {
+            id: 1,
+            msg: {
+                lover: 'gg'
+            }
+        };
+        obj = {
+            id: 0,
+            name: 'cc',
+            msg: {
+                age: 18
+            }
+        };
+        // 深拷贝把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性 会合并在一起
+        $.extend(true, targetObj, obj);
+        targetObj.msg.age = 20;
+        console.log(targetObj);
+        console.log(obj);
+    </script>
+</body>
+
+</html>

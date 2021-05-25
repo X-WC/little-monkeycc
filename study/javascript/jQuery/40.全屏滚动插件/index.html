@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpage.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fullpage.min.js"></script>
+</head>
+
+<body>
+    <div id="dowebok">
+        <div class="section">
+            <h3>第一屏</h3>
+        </div>
+        <div class="section">
+            <h3>第二屏</h3>
+        </div>
+        <div class="section">
+            <h3>第三屏</h3>
+        </div>
+        <div class="section">
+            <h3>第四屏</h3>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            $('#dowebok').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90']
+            });
+        });
+    </script>
+</body>
+
+</html>

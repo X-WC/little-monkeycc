@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .focus {
+            width: 800px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 100px auto;
+        }
+        
+        .carousel {
+            height: 300px!important;
+        }
+        
+        .carousel img {
+            width: 100%;
+            height: 300px !important;
+        }
+    </style>
+    <!-- 引入jquery文件 -->
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <!-- 引入bootstrap css文件 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!--引入bootstrap js文件 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="focus">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators 小圆点 -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides 轮播图片模块 -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="upload/banner.dpg" alt="...">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="upload/banner1.dpg" alt="...">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="upload/banner2.dpg" alt="...">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="upload/banner3.dpg" alt="...">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls 左右箭头 -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+    <script>
+        $('.carousel').carousel({
+            interval: 2000
+        })
+    </script>
+</body>
+
+</html>

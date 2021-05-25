@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="css/common.css">
     <!-- 引入首页样式文件 -->
     <link rel="stylesheet" href="css/index.css">
+    <!-- animate.js文件 -->
+    <script src="js/animate.js"></script>
+    <!-- 引入主页js文件 -->
+    <script src="js/index.js"></script>
+    <!-- 引入jquery文件 -->
+    <script src="js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -34,17 +40,27 @@
             <div class="fr">
                 <ul>
                     <li>我的订单</li>
-                    <li></li>
+                    <li>
+                        <a href=""></a>
+                    </li>
                     <li class="arrow_icon">我的品优购</li>
                     <li></li>
                     <li>品优购会员</li>
-                    <li></li>
+                    <li>
+                        <a href=""></a>
+                    </li>
                     <li>企业采购</li>
-                    <li></li>
+                    <li>
+                        <a href=""></a>
+                    </li>
                     <li class="arrow_icon">关注品优购</li>
-                    <li></li>
+                    <li>
+                        <a href=""></a>
+                    </li>
                     <li class="arrow_icon">客户服务</li>
-                    <li></li>
+                    <li>
+                        <a href=""></a>
+                    </li>
                     <li class="arrow_icon">网站导航</li>
                 </ul>
             </div>
@@ -123,10 +139,41 @@
     <!-- main制作 start -->
     <div class="w">
         <div class="main">
-            <div class="focus">
+            <div class="focus f1">
+                <!-- 左侧按钮 -->
+                <a href="javascript:;" class="arrow-l">
+                    &lt;
+                </a>
+                <!-- 右侧按钮 -->
+                <a href="javascript:;" class="arrow-r">
+                    &gt;
+                </a>
+                <!-- 核心的滚动区域 -->
                 <ul>
-                    <li><img src="upload/focus1.png" alt=""></li>
+                    <li>
+                        <a href="#">
+                            <img data-lazy-src="upload/focus.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img data-lazy-src="upload/focus1.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img data-lazy-src="upload/focus2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img data-lazy-src="upload/focus3.jpg" alt="">
+                        </a>
+                    </li>
                 </ul>
+                <!-- 小圆圈 -->
+                <ol class="circle">
+                </ol>
             </div>
             <div class="newsflash">
                 <div class="news">
@@ -205,7 +252,7 @@
                     </ul>
                 </div>
                 <div class="bargain">
-                    <img src="upload/bargain.png" alt="">
+                    <img data-lazy-src="upload/bargain.png" alt="">
                 </div>
             </div>
         </div>
@@ -217,17 +264,27 @@
         </div>
         <div class="recom_bd">
             <ul>
-                <li><img src="upload/recom_03.jpg" alt=""></li>
+                <li><img data-lazy-src="upload/recom_03.jpg" alt=""></li>
                 <li></li>
-                <li><img src="upload/recom_03.jpg" alt=""></li>
+                <li><img data-lazy-src="upload/recom_03.jpg" alt=""></li>
                 <li></li>
-                <li><img src="upload/recom_03.jpg" alt=""></li>
+                <li><img data-lazy-src="upload/recom_03.jpg" alt=""></li>
                 <li></li>
-                <li><img src="upload/recom_03.jpg" alt=""></li>
+                <li><img data-lazy-src="upload/recom_03.jpg" alt=""></li>
             </ul>
         </div>
     </div>
     <!-- recomed 推荐板块 end -->
+    <!-- 电梯模块 start -->
+    <div class="fixedtool">
+        <ul>
+            <li class="current">家用电器</li>
+            <li>手机通讯</li>
+            <li>电脑办公</li>
+            <li>精品家具</li>
+        </ul>
+    </div>
+    <!-- 电梯模块 end -->
     <!-- floor制作 start -->
     <div class="floor">
         <div class="w jiadian">
@@ -276,28 +333,28 @@
                             <li><a href="#">节能补贴</a></li>
                             <li><a href="#">节能补贴</a></li>
                         </ul>
-                        <a href="#"><img src="upload/floor-1-1.png" alt=""></a>
+                        <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
                     </div>
                     <div class="col_329">
-                        <a href="#"><img src="upload/floor-1-b01.png" alt=""></a>
+                        <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
                     </div>
                     <div class="col_221">
-                        <a href=""><img src="upload/floor-1-2.png" alt=""></a>
-                        <a href=""><img src="upload/floor-1-3.png" alt="" class="bb"></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-3.png" alt="" class="bb"></a>
                     </div>
                     <div class="col_221">
-                        <a href="#"><img src="upload/floor-1-4.png" alt="" class="lrbb"></a>
+                        <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt="" class="lrbb"></a>
                     </div>
                     <div class="col_219">
-                        <a href=""><img src="upload/floor-1-5.png" alt=""></a>
-                        <a href=""><img src="upload/floor-1-6.png" alt="" class="bb"></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-6.png" alt="" class="bb"></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="w shouji">
             <div class="box_hd">
-                <h3>家用电器</h3>
+                <h3>手机通讯</h3>
                 <div class="tab_list">
                     <ul>
                         <li>
@@ -341,21 +398,151 @@
                             <li><a href="#">节能补贴</a></li>
                             <li><a href="#">节能补贴</a></li>
                         </ul>
-                        <a href="#"><img src="upload/floor-1-1.png" alt=""></a>
+                        <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
                     </div>
                     <div class="col_329">
-                        <a href="#"><img src="upload/floor-1-b01.png" alt=""></a>
+                        <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
                     </div>
                     <div class="col_221">
-                        <a href=""><img src="upload/floor-1-2.png" alt=""></a>
-                        <a href=""><img src="upload/floor-1-3.png" alt="" class="bb"></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-3.png" alt="" class="bb"></a>
                     </div>
                     <div class="col_221">
-                        <a href="#"><img src="upload/floor-1-4.png" alt="" class="lrbb"></a>
+                        <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt="" class="lrbb"></a>
                     </div>
                     <div class="col_219">
-                        <a href=""><img src="upload/floor-1-5.png" alt=""></a>
-                        <a href=""><img src="upload/floor-1-6.png" alt="" class="bb"></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-6.png" alt="" class="bb"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w diannao">
+            <div class="box_hd">
+                <h3>电脑办公</h3>
+                <div class="tab_list">
+                    <ul>
+                        <li>
+                            <a href="#" class="style_red">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box_bd">
+                <div class="tab_content">
+                    <div class="col_210">
+                        <ul>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                        </ul>
+                        <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
+                    </div>
+                    <div class="col_329">
+                        <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
+                    </div>
+                    <div class="col_221">
+                        <a href=""><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-3.png" alt="" class="bb"></a>
+                    </div>
+                    <div class="col_221">
+                        <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt="" class="lrbb"></a>
+                    </div>
+                    <div class="col_219">
+                        <a href=""><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-6.png" alt="" class="bb"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w jiaju">
+            <div class="box_hd">
+                <h3>精品家具</h3>
+                <div class="tab_list">
+                    <ul>
+                        <li>
+                            <a href="#" class="style_red">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>|
+                        </li>
+                        <li>
+                            <a href="#">热门</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box_bd">
+                <div class="tab_content">
+                    <div class="col_210">
+                        <ul>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                            <li><a href="#">节能补贴</a></li>
+                        </ul>
+                        <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
+                    </div>
+                    <div class="col_329">
+                        <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
+                    </div>
+                    <div class="col_221">
+                        <a href=""><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-3.png" alt="" class="bb"></a>
+                    </div>
+                    <div class="col_221">
+                        <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt="" class="lrbb"></a>
+                    </div>
+                    <div class="col_219">
+                        <a href=""><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                        <a href=""><img data-lazy-src="upload/floor-1-6.png" alt="" class="bb"></a>
                     </div>
                 </div>
             </div>
@@ -448,7 +635,7 @@
                 <dl>
                     <dt>帮助中心</dt>
                     <dd>
-                        <img src="../shopping/images/wx_cz.jpg" alt=""> 品优购商城
+                        <img data-lazy-src="../shopping/images/wx_cz.jpg" alt=""> 品优购商城
                     </dd>
 
                 </dl>
@@ -465,6 +652,101 @@
         </div>
     </footer>
     <!-- footer底部制作 end -->
+    <script>
+        $(function() {
+            // 当我们点击li的时候 不执行页面滚动事件中的li的背景选择 添加/移除current
+            // 节流阀（互斥锁）
+            var flag = true;
+
+            function toggleTool() {
+                // 推荐模块距离文档顶部距离
+                var recomTop = $('.recom').offset().top;
+                // 被卷去文档的顶部距离
+                var getScrollTop = $(document).scrollTop();
+                if (getScrollTop >= recomTop) {
+                    $('.fixedtool').fadeIn();
+                } else {
+                    $('.fixedtool').fadeOut();
+                }
+            }
+            toggleTool();
+
+            // 当滑动到推荐模块时 电梯模块显示
+            $(window).scroll(function() {
+                toggleTool();
+                // 页面滚动到某个内容区域 左侧电梯导航li相应添加和删除current类名
+                if (flag) {
+                    $('.floor .w').each(function(i, ele) {
+                        if ($(document).scrollTop() >= $(ele).offset().top) {
+                            $('.fixedtool li').eq(i).addClass('current').siblings().removeClass();
+                        }
+                    })
+                }
+            })
+
+            /*
+            // 点击模块跳到相应模块
+            // 家用电器模块
+            $('.fixedtool li:eq(0)').click(function() {
+                    var getScrollTop = $('.jiadian').offset().top;
+                    $('body,html').stop().animate({
+                        scrollTop: getScrollTop
+                    })
+                })
+                // 手机通讯模块
+            $('.fixedtool li:eq(1)').click(function() {
+                var getScrollTop = $('.shouji').offset().top;
+                $('body,html').stop().animate({
+                    scrollTop: getScrollTop
+                })
+            })
+
+            // 电脑办公
+            $('.fixedtool li:eq(2)').click(function() {
+                var getScrollTop = $('.diannao').offset().top;
+                $('body,html').stop().animate({
+                    scrollTop: getScrollTop
+                })
+            })
+
+            // 精品家具
+            $('.fixedtool li:eq(3)').click(function() {
+                var getScrollTop = $('.jiaju').offset().top;
+                $('body,html').stop().animate({
+                    scrollTop: getScrollTop
+                })
+            })
+            */
+
+            // 点击电梯导航页面可以滚动到相应内容区域
+            $('.fixedtool li').click(function() {
+                flag = false;
+                console.log($(this).index());
+                // 给点击的li添加current类名
+                $(this).addClass('current').siblings().removeClass();
+
+                // 当我们每次点击li的时候 计算出页面要去的位置
+                var current = $('.floor .w').eq($(this).index()).offset().top
+                $('body,html').stop().animate({
+                    scrollTop: current
+                }, function() {
+                    flag = true;
+                })
+            })
+        })
+    </script>
+    <script src="js/EasyLazyload.min.js"></script>
+    <script>
+        lazyLoadInit({
+            showTime: 1100,
+            onLoadBackEnd: function(i, e) {
+                console.log("onLoadBackEnd:" + i);
+            },
+            onLoadBackStart: function(i, e) {
+                console.log("onLoadBackStart:" + i);
+            }
+        });
+    </script>
 </body>
 
 </html>

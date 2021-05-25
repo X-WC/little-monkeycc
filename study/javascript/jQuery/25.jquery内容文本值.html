@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <span>我是内容</span>
+    </div>
+    <input type="text" name="" id="" value="请输入内容">
+    <script>
+        // 1.获取设置元素内容 html() 标签内容都获取
+        console.log($('div').html());
+        $('div').html('123');
+
+        // 2.获取设置元素内容 text() 只获取内容 不获取标签
+        console.log($('div').text());
+        $('div').text('有改变了');
+
+        // 3.获取表单的值 val()
+        console.log($('input').val());
+        $('input').val('输入了内容');
+    </script>
+</body>
+
+</html>

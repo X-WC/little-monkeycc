@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>123</div>
+    <span>123</span>
+    <script>
+        $(function() {
+            function $(ele) {
+                return document.querySelector(ele);
+            }
+            console.log($('div'));
+            // 1.$变为jQuery
+            jQuery('div').html('1234');
+            // 2.用户自定义 $.noConflict()
+            var gg = jQuery.noConflict();
+            console.log(gg('span'));
+        })
+    </script>
+</body>
+
+</html>

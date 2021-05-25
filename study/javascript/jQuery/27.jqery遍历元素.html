@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function() {
+            // 隐式迭代 针对同一类元素做相同操作
+            $('div').css('color', 'red');
+            // 1.each()方法遍历元素
+            var arr = ['red', 'green', 'pink'];
+            var sum = 0;
+            $('div').each(function(i, domEle) {
+                // 回调函数第一个参数一定是索引号 可以自己指定索引号名称
+                console.log(i);
+                // 回调函数第二个参数一定是dom元素对象 可以自己指定名称
+                $(domEle).css('color', arr[i]);
+                // div内容相加
+                sum += parseInt($(domEle).text());
+                console.log(sum);
+            })
+
+            // 2.$.each()方法遍历元素 主要用于遍历数据 处理数据
+            $.each($('div'), function(i, element) {
+                console.log(i);
+                console.log(element);
+            })
+
+            $.each({
+                name: 'andy',
+                age: 19
+            }, function(i, element) {
+                console.log(i); // 输出的是属性名
+                console.log(element); // 输出的是属性值
+            })
+        })
+    </script>
+</body>
+
+</html>

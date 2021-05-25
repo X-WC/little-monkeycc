@@ -120,7 +120,7 @@ header {
     margin-bottom: 10px;
 }
 
-.news li a {
+.news li>a {
     position: relative;
     display: block;
     width: 100%;
@@ -135,6 +135,12 @@ header {
 .news li:nth-child(1) {
     height: 266px;
     width: 50%;
+}
+
+.carousel,
+.carousel img {
+    height: 266px !important;
+    width: 100%;
 }
 
 @media screen and (max-width:991px) {
@@ -153,7 +159,14 @@ header {
     }
 }
 
-.news li a p {
+.carousel-caption {
+    padding: 0 !important;
+    line-height: 41px;
+    font-size: 16px !important;
+}
+
+.news li a p,
+.carousel-caption {
     /* 绝对定位不占位置 */
     position: absolute;
     bottom: 0;

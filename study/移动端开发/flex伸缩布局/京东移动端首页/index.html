@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="css/normalize.css">
     <!-- 引入首页的css -->
     <link rel="stylesheet" href="css/index.css">
+    <!-- 引入swiper css文件 -->
+    <link rel="stylesheet" href="css/swiper-bundle.css">
+    <!-- 引入 swiper js文件-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- 引入首页的js文件 -->
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -38,7 +44,20 @@
     <div class="main-content">
         <!-- 滑动图 -->
         <div class="slider">
-            <img src="upload/banner.dpg" alt="">
+            <!-- Swiper 不要随意修改结构和类名 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="upload/banner.dpg" alt=""></div>
+                    <div class="swiper-slide"><img src="upload/banner1.dpg" alt=""></div>
+                    <div class="swiper-slide"><img src="upload/banner2.dpg" alt=""></div>
+                    <div class="swiper-slide"><img src="upload/banner3.dpg" alt=""></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
         <!-- 蔡康永品牌日 -->
         <div class="brand">
