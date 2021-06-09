@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        select {
+            width: 200px;
+            height: 300px;
+            font-size: 22px;
+            background-color: #80ff45;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="sel1" size="4" multiple>
+        <option value="">香蕉</option>
+        <option value="">大鸭梨</option>
+        <option value="">苹果</option>
+        <option value="">大西瓜</option>
+    </select>
+
+    <button>&gt;&gt;&gt;</button>
+    <button>&lt;&lt;&lt;</button>
+    <button>&gt;</button>
+    <button>&lt;</button>
+
+    <select name="" id="sel2" size="4" multiple></select>
+    <script>
+        $(function() {
+            //需求1：点击前两个按钮，一侧的所有option移动到另一侧的select标签中
+            $('button').eq(0).click(function() {
+                $('#sel2').append($('#sel1>option'));
+            });
+            $('button').eq(1).click(function() {
+                $('#sel1').append($('#sel2>option'));
+            });
+            $('button').eq(2).click(function() {
+                $('#sel2').append($('#sel1>option:selected'));
+            });
+            $('button').eq(3).click(function() {
+                $('#sel1').append($('#sel2>option:selected'));
+            });
+        })
+    </script>
+</body>
+
+</html>

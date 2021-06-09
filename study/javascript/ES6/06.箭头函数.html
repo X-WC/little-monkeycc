@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+
+<body>
+    <script>
+        // ES6新增的定义函数的方式
+        // 箭头函数是用来简化函数定义语法的
+        const fn = () => {
+            console.log(1);
+        }
+        fn();
+
+        // 在箭头函数中 如果函数题只有一句代码 并且代码的解析结果就是函数的返回值 函数题大括号可以省略
+        const sum = (num1, num2) => num1 + num2;
+        console.log(sum(1, 2));
+
+        // 如果形参只有一个 行参外面的小括号也可以省略
+        const fun = v => v;
+        console.log(fun(5));
+    </script>
+</body>
+
+</html>

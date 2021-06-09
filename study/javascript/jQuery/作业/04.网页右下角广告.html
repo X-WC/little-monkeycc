@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <style type="text/css">
+        .ad {
+            display: none;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 230px;
+            height: 120px;
+            background-image: url(images/ad.jpg);
+        }
+        
+        .ad span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 18px;
+            background-image: url(h.jpg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 整个广告 -->
+    <div class="ad">
+        <img src="ad.jpg" alt="">
+        <!-- 关闭按钮 -->
+        <span></span>
+    </div>
+    <script>
+        $(function() {
+            //需求1：页面加载完毕，ad这个盒子，先滑入在滑出，在淡入;
+            $('.ad').slideDown(1000).slideUp(1000).fadeIn(1000);
+            //需求2：点击span淡出我们的视野;(隐藏)
+            $('span').click(function() {
+                $('.ad').fadeOut(1000);
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>座机号码验证</title>
+    <style>
+        button {
+            margin-top: 10px;
+            width: 281px;
+        }
+        
+        .right {
+            color: green;
+        }
+        
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <span>请输入座机号码：</span><input type="text" /><span class="text"></span><br>
+    <button>点击验证</button>
+    <script>
+        // 座机号码验证：全国座机号码 两种格式 010-12345678 / 0530-1234567
+        // 获取元素
+        var ipt = document.querySelector('input');
+        var text = document.querySelector('.text');
+        var btn = document.querySelector('button');
+        // 正则表达式
+        var reg = /^\d{3}-\d{8}$/;
+        var reg1 = /^\d{4}-\d{7}$/;
+        btn.onclick = function() {
+            if (reg.test(ipt.value) || reg1.test(ipt.value)) {
+                text.className = 'right';
+                text.innerHTML = '电话号码是正确的！';
+            } else {
+                text.className = 'wrong';
+                text.innerHTML = '电话号码是错误的！';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

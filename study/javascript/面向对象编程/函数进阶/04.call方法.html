@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 改变this指向之call()
+        var o = {
+            name: 'andy'
+        };
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        fn.call(o, 1, 2);
+
+        // 1.可以调用函数 可以改变函数内部的this
+        // 2.可以让子类继承父类属性
+        function Father(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        }
+
+        function Son(uname, age) {
+            Father.call(this, uname, age);
+        }
+
+        var son = new Son('cc', 18);
+        console.log(son);
+    </script>
+</body>
+
+</html>

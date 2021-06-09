@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // num = 10;
+        var num = 10; // 变量必须声明再使用
+        console.log(num);
+        // delete num;  // 不能随意删除已经声明了的变量
+        function fn() {
+            // 全局作用域中函数中的 this 指向 undefined
+            console.log(this);
+        }
+        fn();
+
+        function Star() {
+            this.sex = '男';
+        }
+        var cc = new Star();
+        console.log(cc.sex);
+
+        setTimeout(function() {
+            // this 指向 window
+            console.log(this);
+        }, 2000);
+
+        // 不允许使用重名的参数
+        function fn(a, b) {
+            console.log(a + b);
+        }
+        fn(1, 2);
+    </script>
+</body>
+
+</html>

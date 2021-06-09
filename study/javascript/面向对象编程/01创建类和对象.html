@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.创建类 class 
+        // 类里面所有的函数不用加function关键字 
+        // 多个函数方法之间不需要添加逗号分隔
+        // 创建一个明星类
+        class Star {
+            // 类的共有属性放到constructor函数里面
+            constructor(uname, age) {
+                    this.uname = uname;
+                    this.age = age;
+                }
+                // 共有方法
+            sing(song) {
+                // console.log("我唱歌");
+                console.log(this.uname + "唱了" + song);
+            }
+        }
+
+        // 2.利用类生成对象 new
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 20);
+        ldh.sing('冰雨');
+        console.log(ldh);
+        zxy.sing('李香兰');
+        console.log(zxy);
+    </script>
+</body>
+
+</html>

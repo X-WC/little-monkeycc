@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        
+        div {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+        
+        .current {
+            background-color: green;
+        }
+    </style>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <button>切换</button>
+    <div>牡丹虽好空入目，枣花最小结实诚;</div>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                $('div').toggleClass('current');
+            })
+        })
+    </script>
+</body>
+
+</html>

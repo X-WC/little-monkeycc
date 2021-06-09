@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的this关键字</title>
+</head>
+
+<body>
+    <script>
+        // 箭头函数不绑定this 箭头函数没有自己的this关键字 如果在箭头函数中使用this this关键字指向箭头函数定义位置中的this
+        function fn() {
+            console.log(this);
+            return () => {
+                console.log(this);
+            }
+        }
+        const obj = {
+            name: "cc"
+        }
+        const resFn = fn.call(obj);
+        resFn();
+
+        const fun = () => {
+            console.log(this);
+        }
+        fun();
+    </script>
+</body>
+
+</html>

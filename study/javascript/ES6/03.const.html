@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const</title>
+</head>
+
+<body>
+    <script>
+        // 声明常量 常量就是值（内存地址）不能变量的量
+
+        // 具有块级作用域
+        if (true) {
+            const a = 10;
+            if (true) {
+                const a = 20;
+                console.log(a); // 20
+            }
+            console.log(a); // 10
+        }
+        // console.log(a); // not defined
+
+        // 声明变量时必须赋值
+        // const b; // Missing initializer in const declaration
+
+        // 常量赋值后 值不能更改(值对应的内存地址不可更改)
+        const b = 1;
+        // b = 2; // Assignment to constant variable
+        const arr = [100, 200];
+        arr[0] = 'a';
+        arr[1] = 'b';
+        console.log(arr);
+        // arr = ['a', 'b']; // Assignment to constant variable
+        const gg = {
+            uname: '果果',
+            age: 20,
+            work: {
+                type: 'draw'
+            }
+        }
+        gg.age = 26;
+        console.log(gg);
+        // gg = {
+        //     uname: '果果',
+        //     age: 26,
+        //     work: {
+        //         type: 'draw'
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

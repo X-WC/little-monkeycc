@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .right {
+            color: green;
+        }
+        
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="uname" /><span>请输入用户名</span>
+    <script>
+        var uname = document.querySelector('.uname');
+        var span = document.querySelector('span');
+        // 用户名只能为英文字母 数字 下划线 短横线组成 长度在6-16位之间
+        // 正则表达式如下
+        var reg = /^[a-zA-Z0-9-_]{6,16}$/;
+        // 表单失去焦点开始验证
+        uname.onblur = function() {
+            if (reg.test(this.value)) {
+                span.className = 'right';
+                span.innerHTML = '输入正确！';
+            } else {
+                span.className = 'wrong';
+                span.innerHTML = '输入错误！';
+            }
+        }
+    </script>
+</body>
+
+</html>

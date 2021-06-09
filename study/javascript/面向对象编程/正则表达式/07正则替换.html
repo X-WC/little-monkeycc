@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则替换</title>
+</head>
+
+<body>
+    <textarea name="" id="message" cols="30" rows="10"></textarea> <button>提交</button>
+    <div></div>
+    <script>
+        // replace 替换
+
+        // var str = 'andy和red';
+        // 字符串替换
+        // var newStr = str.replace('andy', 'baby');
+        // 正则表达式替换
+        // var newStr = str.replace(/andy/, 'baby');
+        // console.log(newStr);
+
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function() {
+            div.innerHTML = text.value.replace(/激情|gay/g, '**');
+        }
+    </script>
+</body>
+
+</html>

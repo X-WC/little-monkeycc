@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        * {
+            border-collapse: collapse;
+            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        thead th {
+            background-color: #0099cc;
+            color: white;
+            font: bold 16px "微软雅黑";
+        }
+        
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        tbody tr {
+            background-color: #f0f0f0;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        button {
+            width: 110px;
+            height: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .wrap {
+            width: 410px;
+            margin: 100px auto;
+        }
+        
+        .form-add {
+            display: none;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            background: #fff;
+            margin-left: -197px;
+            width: 424px;
+            height: 246px;
+            border: 1px solid #ccc;
+        }
+        
+        .form-add-title {
+            position: relative;
+            height: 36px;
+            background-color: #f7f7f7;
+            margin-bottom: 15px;
+        }
+        
+        .form-add-title span {
+            color: rgb(102, 102, 102);
+            display: block;
+            height: 18px;
+            width: auto;
+            font: bold 16px "宋体";
+            padding: 8px 0px 10px;
+            text-indent: 12px;
+        }
+        
+        .j_hideFormAdd {
+            cursor: pointer;
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            width: 16px;
+            height: 20px;
+        }
+        
+        .form-item {
+            padding-left: 20px;
+            margin-bottom: 34px;
+        }
+        
+        .form-item>.txt {
+            width: 300px;
+            height: 32px;
+        }
+        
+        .form-submit {
+            text-align: center;
+        }
+        
+        .form-submit input {
+            width: 170px;
+            height: 32px;
+        }
+        
+        .j_mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.8;
+        }
+    </style>
+    <script>
+        $(function() {
+            // 鼠标经过tbody里tr变色
+            $('tbody tr').mouseenter(function() {
+                $(this).css('background', 'white').siblings().css('background', '#f0f0f0');
+            })
+            $('tbody tr').mouseleave(function() {
+                $('tbody tr').css('background', '#f0f0f0');
+            })
+            $('button').on('click', function() {
+                $('.j_mask').show();
+                $('.form-add').show();
+            })
+            $('.j_hideFormAdd').click(function() {
+                $('.j_mask').hide();
+                $('.form-add').hide();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <button>添加数据</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>课程名称</th>
+                    <th>所属学院</th>
+                    <th>已学会</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>传智播客-前端与移动开发学院</td>
+                    <td><a href="#">GET</a></td>
+                </tr>
+                <tr>
+                    <td>css</td>
+                    <td>传智播客-前端与移动开发学院</td>
+                    <td><a href="#">GET</a></td>
+                </tr>
+                <tr>
+                    <td>html</td>
+                    <td>传智播客-前端与移动开发学院</td>
+                    <td><a href="#">GET</a></td>
+                </tr>
+                <tr>
+                    <td>jQuery</td>
+                    <td>传智播客-前端与移动开发学院</td>
+                    <td><a href="#">GET</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="j_mask"></div>
+        <div class="form-add" id="j_formAdd">
+            <div class="form-add-title">
+                <span>添加数据</span>
+                <div class="j_hideFormAdd">X</div>
+            </div>
+            <div class="form-item">
+                <label for="j_txtLesson" class="lb">课程名称：</label>
+                <input class="txt" type="text" name="" id="j_txtLesson" placeholder="请输入课程名称">
+            </div>
+            <div class="form-item">
+                <label for="j_txtBelSch" class="lb">所属学院：</label>
+                <input class="txt" type="text" name="" id="j_txtBelSch" value="传智播客-前端中的黄埔军校">
+            </div>
+            <div class="form-submit">
+                <input type="button" value="添加" id="j_btnAdd">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

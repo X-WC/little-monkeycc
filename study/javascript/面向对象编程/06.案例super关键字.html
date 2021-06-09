@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Father {
+            constructor(surname) {
+                this.surname = surname;
+            }
+            saySurname() {
+                console.log('我的姓是' + this.surname);
+            }
+        }
+        class Son extends Father {
+            constructor(surname, firstname) {
+                super(surname);
+                this.firstname = firstname;
+            }
+            sayFirstname() {
+                console.log('我的名字是' + this.firstname);
+            }
+        }
+        var damao = new Son('刘', '德华');
+        damao.saySurname();
+        damao.sayFirstname();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log('我会唱歌');
+            // }
+        }
+        Star.prototype.sing = function() {
+            console.log('我会唱歌');
+        }
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 20);
+        // 检查两个对象的sing方法指向地址是否相同
+        console.log(ldh.sing === zxy.sing);
+        ldh.sing();
+        zxy.sing();
+        // 2.一般情况下 我们公共属性定义在构造函数里面 公用的方法放在原型对象身上
+        console.dir(Star);
+
+        // 对象身上系统自己添加一个 __proto__指向我们构造函数的原型对象
+        console.log(ldh);
+        console.log(ldh.__proto__ === Star.prototype);
+        // 方法的查找规则： 首先看实例对象身上是否有sing方法 如果有就执行这个对象上的sing
+        // 如果没有sing方法 因为有__proto__的存在 就去构造函数原型对象prototype身上去查找sing这个方法
+    </script>
+</body>
+
+</html>

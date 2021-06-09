@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text"> <button>点击</button>
+    <div></div>
+    <script>
+        // trim 方法去除字符串两侧空格
+        // 获取元素
+        var ipt = document.querySelector('input');
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        // 点击按钮
+        btn.addEventListener('click', function() {
+            var str = ipt.value.trim();
+            if (str === '') {
+                alert('请输入内容');
+            } else {
+                console.log(str);
+                console.log(str.length);
+                div.innerHTML = str;
+            }
+        })
+    </script>
+</body>
+
+</html>

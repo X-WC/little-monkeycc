@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Father {
+            constructor(money, cars, house, company) {
+                this.money = money;
+                this.cars = cars;
+                this.house = house;
+                this.company = company;
+            }
+            manage() {
+                console.log("管理方式");
+            }
+        }
+        class Son extends Father {
+            constructor(money, cars, house, company) { // 子类继承了父类的属性和方法
+                // 利用super 调用父类的构造函数
+                super(money, cars, house, company);
+            }
+        }
+        var son = new Son();
+        son.manage();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 量词符 设定某个模式出现的次数
+        // 让字符重复多少次
+        // var reg = /^a$/;
+
+        // * 相当于>=0 可以出现1次或者很多次
+        var reg = /^a*$/;
+        console.log(reg.test('')); // true
+        console.log(reg.test('a')); // true
+        console.log(reg.test('aaaa')); // true
+
+        console.log('---------------------');
+
+        // + 相当于>=1 可以出现1次或者很多次
+        var reg1 = /^a+$/;
+        console.log(reg1.test('')); // false
+        console.log(reg1.test('a')); // true
+        console.log(reg1.test('aaaa')); // true
+
+        console.log('---------------------');
+
+        // ? 相当于 1||0 出现1次或0次
+        var reg2 = /^a?$/;
+        console.log(reg2.test('')); // true
+        console.log(reg2.test('a')); // true
+        console.log(reg2.test('aaaa')); // false
+
+        console.log('---------------------');
+
+        // {n} 重复n次
+        var reg3 = /^a{3}$/;
+        console.log(reg3.test('')); // false
+        console.log(reg3.test('a')); // false
+        console.log(reg3.test('aaa')); // true
+
+        console.log('---------------------');
+
+        // {n,} >=n
+        var reg4 = /^a{3,}$/;
+        console.log(reg4.test('')); // false
+        console.log(reg4.test('a')); // false
+        console.log(reg4.test('aaa')); // true
+        console.log(reg4.test('aaaa')); // true
+
+        console.log('---------------------');
+
+        // {m,n} >=m&&<=n
+        var reg5 = /^a{3,6}$/;
+        console.log(reg5.test('')); // false
+        console.log(reg5.test('a')); // false
+        console.log(reg5.test('aaa')); // true
+        console.log(reg5.test('aaaa')); // true
+        console.log(reg5.test('aaaaaaa')); // false
+    </script>
+</body>
+
+</html>

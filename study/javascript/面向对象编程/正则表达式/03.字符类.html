@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符类：[] 表示有一系列字符可供选择 只要匹配其中一个就可以了
+        var rg = /[abc]/; // 只要出现a/b/c任意一个 返回的均是true
+        console.log(rg.test('andy')); // true
+        console.log(rg.test('baby')); // true
+        console.log(rg.test('color')); // true
+        console.log(rg.test('gg')); // false
+
+        console.log('--------------------');
+
+        var rg1 = /^[abc]$/; // 如果是a/b/c 返回的是true 
+        console.log(rg1.test('a')); // true
+        console.log(rg1.test('b')); // true
+        console.log(rg1.test('c')); // true
+        console.log(rg1.test('cc')); // false
+
+        console.log('--------------------');
+
+        // - 表示范围
+        var reg = /^[a-z]$/; // 26个小写英文字母任何一个都是true
+        console.log(reg.test('a')); // true
+        console.log(reg.test('j')); // true
+        console.log(reg.test('andy')); // false
+        console.log(reg.test('1')); // false
+        console.log(reg.test('A')); // false
+        console.log(reg.test('a1')); // false
+
+        console.log('--------------------');
+
+        // 字符组合
+        var reg1 = /^[a-zA-Z0-9_-]$/;
+        console.log(reg1.test('a')); // true
+        console.log(reg1.test('B')); // true
+        console.log(reg1.test('9')); // true
+        console.log(reg1.test('-')); // true
+        console.log(reg1.test('-')); // true
+        console.log(reg1.test('!')); // false
+
+        console.log('--------------------');
+
+        var reg2 = /^[^a-zA-Z0-9_-]$/; // /[^XX]/中^表示取反的意思
+        console.log(reg2.test('a')); // false
+        console.log(reg2.test('B')); // false
+        console.log(reg2.test('9')); // false
+        console.log(reg2.test('-')); // false
+        console.log(reg2.test('-')); // false
+        console.log(reg2.test('!')); // true
+    </script>
+</body>
+
+</html>

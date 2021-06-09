@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        * {
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 300px;
+            margin: 100px auto;
+        }
+        
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: white;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        tbody tr {
+            background-color: #f0f0f0;
+            cursor: pointer;
+            font-size: 14px;
+            color: #404060;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" id="check_all"></th>
+                    <th>课程名称</th>
+                    <th>所属学院</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td><input type="checkbox" name="" class="check"></td>
+                    <td>JavaScript</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" class="check"></td>
+                    <td>css</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" class="check"></td>
+                    <td>html</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" class="check"></td>
+                    <td>jQuery</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(function() {
+            $('#j_tb tr').mouseenter(function() {
+                $(this).css('backgroundColor', '#fff').siblings().css('backgroundColor', '#f0f0f0');
+            });
+            $('#j_tb tr').mouseout(function() {
+                $('#j_tb tr').css('backgroundColor', '#f0f0f0');
+            });
+            // 1.点击全选按钮 j_tb的所有按钮都选中
+            $('#check_all').change(function() {
+                $('.check').prop('checked', $(this).prop('checked'));
+            })
+
+            // 2.如果四个j_tb按钮全部选中了 全选按钮也选中
+            $('.check').change(function() {
+                // 被选中check个数为4 全选按钮选中
+                if ($('.check:checked').length == 4) {
+                    $('#check_all').prop('checked', true);
+                } else {
+                    $('#check_all').prop('checked', false);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        ul li {
+            list-style: none;
+            float: left;
+            margin: 0 10px 7px 0;
+        }
+        
+        .wrap {
+            width: 642px;
+            height: 406px;
+            padding: 10px 0 0 10px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+    </style>
+    <script src="../../jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="#"><img src="images/01.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/02.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/03.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/04.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/05.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="images/06.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function() {
+            // 当鼠标经过li 当前li的透明度为1 剩下的兄弟改成0.5
+            $('li').mouseenter(function() {
+                $(this).css('opacity', '1').siblings().css('opacity', '.5');
+            });
+            // 当鼠标离开 所有li透明度都变为1
+            $('.wrap').mouseleave(function() {
+                $('li').css('opacity', '1');
+            })
+        })
+    </script>
+</body>
+
+</html>

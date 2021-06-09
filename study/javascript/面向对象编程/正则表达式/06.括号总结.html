@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>括号总结</title>
+</head>
+
+<body>
+    <a href=""></a>
+    <script>
+        // 中括号 字符集合 匹配方括号的任意字符 多选一
+        var reg = /^[abc]$/; // a||b||c
+
+        // 大括号 量词符 表示重复次数
+        var reg1 = /^abc{3}$/; // c重复三次 
+        console.log(reg1.test('abc')); // false
+        console.log(reg1.test('abcabc')); // false
+        console.log(reg1.test('abccc')); // true
+
+        console.log('------------');
+        // 小括号 表示优先级
+        var reg2 = /^(abc){3}$/; // abc重复三次
+        console.log(reg2.test('abc')); // false
+        console.log(reg2.test('abcabc')); // false 
+        console.log(reg2.test('abcabcabc')); // true 
+        console.log(reg2.test('abccc')); // false
+    </script>
+</body>
+
+</html>

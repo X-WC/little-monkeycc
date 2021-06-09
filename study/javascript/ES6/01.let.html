@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let声明的变量具有块级作用域
+        let a = 10;
+        console.log(a);
+
+        if (true) {
+            let b = 20;
+            if (true) {
+                let c = 0;
+                console.log(c);
+            }
+        }
+        // console.log(b);
+        console.log('-------------');
+
+
+        // 这一个大括号中 使用let关键字声明的变量才具有块级作用域
+        if (true) {
+            let num = 100;
+            var abc = 200;
+        }
+        console.log(abc);
+        // console.log(num);
+
+        console.log('-------------');
+
+        // 防止循环变量变成全局变量
+        for (let i = 0; i < 2; i++) {
+
+        }
+        // console.log(i);
+
+        console.log('-------------');
+
+        //  使用let关键字声明的变量没有变量提升
+        // console.log(d);
+        let d = 10;
+
+        // 暂时性死区
+        var tmp = 123;
+        if (true) {
+            tmp = 'abc';
+            let tmp;
+        }
+    </script>
+</body>
+
+</html>
