@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检索字符串中正则表达式的匹配</title>
+</head>
+
+<body>
+    <script>
+        // exec()函数可检索字符串中正则表达式的匹配
+
+        var str = 'hello';
+        var pattern = /o/;
+        var result = pattern.exec(str);
+        console.log(result); // ["o", index: 4, input: "hello", groups: undefined]
+    </script>
+</body>
+
+</html>

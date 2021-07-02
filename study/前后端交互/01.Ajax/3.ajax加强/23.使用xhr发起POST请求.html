@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用xhr发起POST请求</title>
+</head>
+
+<body>
+    <script>
+        // 1.创建xhr对象
+        var xhr = new XMLHttpRequest();
+
+        // 2.调用open()
+        xhr.open('POST', 'http://www.liulongbin.top:3006/api/addbook');
+
+        // 3.设置Content-Type 属性
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // 4.调用send()
+        xhr.send('bookname=小豆子历险记&author=cc&publisher=上海出版社');
+
+        // 5.监听onreadystatechange事件
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        }
+    </script>
+</body>
+
+</html>

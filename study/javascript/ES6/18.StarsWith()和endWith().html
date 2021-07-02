@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>startsWith()和endsWith()</title>
+</head>
+
+<body>
+    <script>
+        let str = 'hello world';
+
+        // startsWith() 参数字符串是否在原字符串的头部 返回布尔值
+        let r1 = str.startsWith('hello');
+        console.log(r1); // true
+        let r2 = str.startsWith('w');
+        console.log(r2); // false
+
+        // startsWith() 参数字符串是否在原字符串的尾部 返回布尔值
+        let w1 = str.endsWith('d');
+        console.log(w1); // true
+        let w2 = str.endsWith('!');
+        console.log(w2); // false
+    </script>
+</body>
+
+</html>

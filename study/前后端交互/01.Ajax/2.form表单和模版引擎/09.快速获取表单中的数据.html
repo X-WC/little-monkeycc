@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速获取表单的数据</title>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="/login" id="form1">
+        <input type="text" name="user_name" id="">
+        <input type="password" name="password" id="">
+        <button type="submit">提交</button>
+    </form>
+
+
+    <script>
+        $(function() {
+            $('#form1').submit(function(e) {
+                // // 阻止页面跳转和表单提交
+                // e.preventDefault();
+                // // 快速获取表单的数据
+                // // 必须为每个表单元素添加name属性
+                // var data = $(this).serialize();
+                // console.log(data);
+            })
+
+            $('#form1').on('submit', function(e) {
+                // 阻止页面跳转和表单提交
+                e.preventDefault();
+                // 快速获取表单的数据
+                // 必须为每个input提供一个name属性
+                var data = $('#form1').serialize();
+                console.log(data);
+            })
+        })
+    </script>
+</body>
+
+</html>

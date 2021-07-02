@@ -5,20 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>箭头函数面试题</title>
+    <title>findIndex()</title>
 </head>
 
 <body>
     <script>
-        var age = 100;
-        var obj = {
-            age: 20,
-            say: () => {
-                alert(this.age); // 100
-                console.log(this); // window
-            }
-        }
-        obj.say();
+        // 查找第一个符合条件的数组成员的位置 如果没有找到返回-1
+        let arr = [10, 20, 30];
+        let index = arr.findIndex(item => item > 15);
+        console.log(index);
     </script>
 </body>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>监听表单的提交事件</title>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <form action="/login" id="f1">
+        <input type="text" name="user_name" id="">
+        <input type="password" name="password" id="">
+        <button type="submit">提交</button>
+    </form>
+
+
+    <script>
+        $(function() {
+            // 监听表单的提交事件
+            // 第一种方式
+            // $('#f1').submit(function() {
+            //     alert("监听了表单的提交事件");
+            // })
+
+            // 第二种方式
+            $('#f1').on('submit', function() {
+                alert('监听了表单的提交事件');
+            })
+        })
+    </script>
+</body>
+
+</html>

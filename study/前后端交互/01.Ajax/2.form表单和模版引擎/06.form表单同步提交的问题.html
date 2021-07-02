@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form表单同步提交的问题</title>
+</head>
+
+<body>
+    <!-- 表单的同步提交的缺点
+        (1) <form>表单同步提交后 整个页面会发生跳转 跳转到 action URL所指向的地址 用户体验很差
+        (2)<form>表单同步提交后 页面之前的状态和数据会丢失 
+    -->
+    <form action="/login">
+        <input type="text" name="user_name" id="">
+        <input type="password" name="password" id="">
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>

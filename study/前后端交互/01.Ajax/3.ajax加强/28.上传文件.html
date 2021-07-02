@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传文件</title>
+    <link rel="stylesheet" href="../../bootstrap.css">
+    <script src="../../jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 1.文件选择框 -->
+    <input type="file" name="" id="file1">
+    <!-- 2.上传按钮 -->
+    <button id="btnUpload">上传文件</button>
+    <!-- 文件上传进度条 -->
+    <div class="progress" style="width: 500px; margin: 15px 10px;">
+        <div class="progress-bar progress-bar-striped active" style="width: 0%" id="percent">
+            0%
+        </div>
+    </div>
+    <br />
+    <!-- 3.显示上传到服务器上的图片 -->
+    <img src="" alt="" id="img" width="800" />
+
+    <script>
+        // 验证是否选择了文件
+
+        // 1.获取上传文件按钮
+        var btnUpload = document.querySelector('#btnUpload');
+
+        // 2.绑定点击事件
+        btnUpload.addEventListener('click', function() {
+            // 3.获取到选择的文件列表 返回值是一个数组
+            var files = document.querySelector('#file1').files;
+            // console.log(files);
+            if (files.length <= 0) {
+                return alert('请选择要上传的文件！');
+            } else {
+                // 向FormData中追加文件
+
+                // 1.创建FormData对象
+                var fd = new FormData();
+
+                // 2.向FormData对象追加文件
+                fd.append('avatar', files[0]);
+
+                // 使用xhr发起上传文件的请求
+
+                var xhr = new XMLHttpRequest();
+
+                // 计算并显示显示文件上传进度
+                xhr.upload.onprogress = function(e) {
+                    // e.lengthComputable 是一个布尔值，表示当前上传的资源是否具有可计算的长度
+                    if (e.lengthComputable) {
+                        // e.loaded 已传输的字节
+                        // e.total  需传输的总字节
+                        // 1.计算当前上传进度的百分比
+                        var percentComplete = Math.ceil((e.loaded / e.total) * 100);
+                        // console.log(percentComplete);
+                        $('#percent')
+                            // 2.设置进度条的宽度
+                            // attr() 方法设置或返回被选元素的属性和值
+                            .attr('style', 'width:' + percentComplete + '%')
+                            // 3.设置进度条上的数字
+                            // html() 方法设置或返回被选元素的内容（innerHTML）
+                            .html(percentComplete + '%');
+                    }
+                }
+
+                //进度条上传成功后显示
+                xhr.upload.onload = function() {
+                    $('#percent')
+                        // 移除上传中的类样式
+                        .removeClass()
+                        // 添加上传完成的类样式
+                        .addClass('progress-bar progress-bar-success');
+                }
+
+                xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar');
+                xhr.send(fd);
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        if (data.status === 200) {
+                            document.querySelector('#img').src = 'http://www.liulongbin.top:3006' + data.url;
+                        } else {
+                            console.log(data.message);
+                        }
+                    }
+                }
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>

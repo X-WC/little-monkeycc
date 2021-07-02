@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模版字符串</title>
+</head>
+
+<body>
+    <script>
+        // 新增字符串定义方法 
+        let name = `cc`;
+        console.log(name);
+
+        // 模版字符串可以拼接字符串
+        let sayHello = `hello,my name is ${name}`;
+        console.log(sayHello);
+
+        // 模版字符串可以换行
+        let result = {
+            name: 'cc',
+            age: 19,
+        }
+        let html = `
+            <div>
+                <span>${result.name}</span>
+                <span>${result.age}</span>
+            </div>
+        `;
+        console.log(html);
+
+        // 可以调用函数
+        const sayHello1 = function() {
+            return "hello world";
+        }
+        let greet = `${sayHello1()}哈哈哈哈哈哈`
+        console.log(greet);
+    </script>
+</body>
+
+</html>

@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>箭头函数面试题</title>
+    <title>剖析JSONP实现原理1</title>
 </head>
 
 <body>
     <script>
-        var age = 100;
-        var obj = {
-            age: 20,
-            say: () => {
-                alert(this.age); // 100
-                console.log(this); // window
-            }
+        function success(data) {
+            console.log('我拿到了数据');
+            console.log(data);
         }
-        obj.say();
+    </script>
+
+    <script>
+        success({
+            name: 'gg',
+            age: 19
+        });
     </script>
 </body>
 

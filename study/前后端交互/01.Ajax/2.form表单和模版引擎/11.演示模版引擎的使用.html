@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.导入模版引擎 -->
+    <!-- 在window全局 多一个template函数 template('模版的id','需要渲染的数据对象') -->
+    <script src="../template-web.js"></script>
+    <script src="../jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <!-- 3.定义模版 -->
+    <!-- 模版的html结构 必须定义到script中 -->
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}}-----{{age}} {{@title}}</h1>
+        <div>
+            {{if isVIP==true}} 是会员 {{else if isVIP!==true}} 不是会员 {{/if}}
+        </div>
+        <ul>
+            {{each hobby}}
+            <li>索引：{{$index}} 循环项:{{$value}}</li>
+            {{/each}}
+        </ul>
+        <h3>注册时间：{{regTime|dateFormat}}</h3>
+    </script>
+
+    <script>
+        template.defaults.imports.dateFormat = function(date) {
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            var d = date.getDate();
+
+            // 过滤器函数必须要有return值
+            return y + '-' + m + '-' + d;
+        };
+
+
+        // 2.定义需要渲染的数据
+        var data = {
+            title: '<h3>用户信息</h3>',
+            name: 'zs',
+            age: 20,
+            isVIP: true,
+            regTime: new Date(),
+            hobby: ['吃饭', '睡觉', '打豆豆']
+
+        }
+
+        // 4.调用template函数
+        var htmlStr = template('tpl-user', data);
+        // console.log(htmlStr);
+        $('#container').html(htmlStr);
+    </script>
+</body>
+
+</html>

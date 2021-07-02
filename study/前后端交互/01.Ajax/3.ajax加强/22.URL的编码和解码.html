@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>箭头函数面试题</title>
+    <title>URL的编码和解码</title>
 </head>
 
 <body>
     <script>
-        var age = 100;
-        var obj = {
-            age: 20,
-            say: () => {
-                alert(this.age); // 100
-                console.log(this); // window
-            }
-        }
-        obj.say();
+        // 编码操作
+        var str = encodeURI('聪聪');
+        // 解码操作
+        var str1 = decodeURI(str);
+
+        console.log(str);
+        console.log(str1);
     </script>
 </body>
 

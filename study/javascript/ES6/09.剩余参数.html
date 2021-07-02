@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剩余参数</title>
+</head>
+
+<body>
+    <script>
+        const sum = (...args) => {
+            let total = 0;
+            args.forEach(item => total += item)
+            return total;
+        }
+        console.log(sum(10, 20));
+        console.log(sum(10, 20, 30));
+
+        let arr = ['cc', 'gg', 'oo'];
+        let [s1, ...s2] = arr;
+        console.log(s1); // cc
+        console.log(s2); // ["gg", "oo"]
+        console.log(s2[0]); // gg
+        console.log(s2[1]); // oo
+    </script>
+</body>
+
+</html>

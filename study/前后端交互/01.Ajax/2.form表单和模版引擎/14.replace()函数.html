@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace()</title>
+</head>
+
+<body>
+    <script>
+        // replace()函数 将{{}}的值替换为真值
+        var str = '<div>我的{{name}}</div>';
+
+        var pattern = /{{([a-zA-Z]+)}}/;
+
+        var patternResult = pattern.exec(str);
+
+        console.log(patternResult);
+        str = str.replace(patternResult[0], patternResult[1]);
+
+        console.log(str);
+    </script>
+</body>
+
+</html>

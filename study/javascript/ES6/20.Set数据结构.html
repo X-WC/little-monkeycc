@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set数据结构</title>
+</head>
+
+<body>
+    <script>
+        // ES6提供了新的数据结构Set 类似于数组 但是成员的值都是唯一的 没有重复的值
+        // 比如电商网站的搜索关键词
+        // Set 本身是一个构造函数 用来生成Set数据结构
+        const s1 = new Set();
+        // size 获取数据的数量
+        console.log(s1.size); // 0
+
+        // 可以传入一个数组
+        const s2 = new Set([1, 2, 3, 4, 5]);
+        console.log(s2.size); // 5
+
+        // 利用set数据结构去重
+        let arr = [1, 2, 3, 4, 5, 4, 4, 3];
+        const s3 = new Set(arr);
+        console.log(s3.size);
+        let arr1 = [...s3];
+        console.log(arr1);
+
+        // 实例方法
+        const s4 = new Set();
+        // 1.add(value) 添加值 返回set结构本身
+        s4.add('a').add('b');
+        console.log(s4.size);
+        console.log(s4);
+        // 2.delete(value) 删除某个值 返回一个布尔值 表示删除是否成功
+        const r1 = s4.delete('a'); // true
+        console.log(r1);
+        const w1 = s4.delete('c'); // false
+        console.log(w1);
+        // 3.has() 是否包含某个值 返回布尔值
+        const r2 = s4.has('b');
+        console.log(r2); // true
+        const w2 = s4.has('d');
+        console.log(w2); // false
+        // 4.clear() 删除所有成员 没有返回值
+        s4.clear();
+        console.log(s4.size);
+
+        // 遍历 forEach()
+        const s5 = new Set(['a', 'b', 'c']);
+        s5.forEach(value => {
+            console.log(value);
+        })
+    </script>
+</body>
+
+</html>

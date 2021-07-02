@@ -12,9 +12,9 @@
     <script>
         // 箭头函数不绑定this 箭头函数没有自己的this关键字 如果在箭头函数中使用this this关键字指向箭头函数定义位置中的this
         function fn() {
-            console.log(this);
+            console.log(this); // obj
             return () => {
-                console.log(this);
+                console.log(this); // obj
             }
         }
         const obj = {
@@ -24,7 +24,7 @@
         resFn();
 
         const fun = () => {
-            console.log(this);
+            console.log(this); // window
         }
         fun();
     </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON和JS对象互转</title>
+</head>
+
+<body>
+    <script>
+        // 将JSON字符串转换为JS对象 使用JSON.parse()方法 反序列化函数
+        var obj = JSON.parse('{"a": "Hello","b": "World"}');
+        console.log(obj); // {a: "Hello", b: "World"}
+
+        // 将JS对象转换为JSON字符串 使用JSON.stringify()方法 序列化函数
+        var json = JSON.stringify({
+            a: 'Hello',
+            b: 'World'
+        })
+        console.log(json); // {"a":"Hello","b":"World"}
+
+        let books = JSON.parse('[{"title": "professional JavaScript","authors": ["gg", "cc"],"year": 2017}, {"title": "professional JavaScript","authors": ["gg", "cc"],"year": 2018}, {"title": "professional JavaScript","authors": ["gg", "cc"],"year": 2019}]');
+        console.log(books[2].year);
+    </script>
+</body>
+
+</html>

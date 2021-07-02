@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评论列表</title>
+    <link rel="stylesheet" href="../../bootstrap.css">
+    <script src="../../jquery.min.js"></script>
+</head>
+
+<body style="padding: 15px;">
+    <!-- 评论面板 -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">发起评论</h3>
+        </div>
+        <form class="panel-body" action="" id="formAddCmt">
+            <div>评论人：</div>
+            <input type="text" name="username" id="" class="form-control">
+            <div>评论内容：</div>
+            <textarea name="content" id="" class="form-control"></textarea>
+            <button type="submit" class="btn btn-primary">发表评论</button>
+        </form>
+    </div>
+    <!-- 评论列表 -->
+
+
+    <ul class="list-group" id="cmt-list">
+        <li class="list-group-item">
+            <span class="badge" style="background-color: #f0ad4e;">评论时间：</span>
+            <span class="badge" style="background-color: #5bc0de;">评论人：</span> Item 1
+        </li>
+
+    </ul>
+
+    <script src="js/cmt.js"></script>
+</body>
+
+</html>

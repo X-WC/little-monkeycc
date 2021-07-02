@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拓展运算符的应用</title>
+</head>
+
+<body>
+    <script>
+        // 拓展运算符可以应用于合并数组
+        // 方法一
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        // let arr3 = [...arr1, ...arr2];
+        // console.log(arr3);
+        // arr3.forEach(item => console.log(item));
+
+        // 方法二
+        // push()追加数组元素 可以放入多个元素
+        arr1.push(...arr2);
+        console.log(arr1);
+    </script>
+</body>
+
+</html>

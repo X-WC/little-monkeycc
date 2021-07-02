@@ -5,20 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>箭头函数面试题</title>
+    <title>includes()方法</title>
 </head>
 
 <body>
     <script>
-        var age = 100;
-        var obj = {
-            age: 20,
-            say: () => {
-                alert(this.age); // 100
-                console.log(this); // window
-            }
-        }
-        obj.say();
+        let arr = ['a', 'b', 'c'];
+        // let result = arr.includes('a'); // true
+        let result = arr.includes('e'); // false
+        console.log(result);
     </script>
 </body>
 

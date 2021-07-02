@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery实现文件上传</title>
+    <!-- 导入jQuery -->
+    <script src="../../jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 1.定义UI结构 -->
+    <!-- 文件选择框 -->
+    <input type="file" name="" id="file1" />
+    <!-- 上传文件按钮 -->
+    <button id="btnUpload">上传文件</button>
+    <br>
+    <img src="loading.gif" alt="" style="display: none;" id="loading">
+    <script>
+        $(function() {
+            // 监听当前文档内所有的 Ajax 请求
+            $(document).ajaxStart(function() {
+                $('#loading').show();
+            });
+
+            // 监听到ajax完成的请求
+            $(document).ajaxStop(function() {
+                $('#loading').hide();
+            });
+            // 验证是否选择了文件
+            $('#btnUpload').on('click', function() {
+                // 将 jQuery 对象转化为 DOM 对象，并获取选中的文件列表
+                var files = $('#file1')[0].files;
+                console.log(files);
+                if (files.length <= 0) {
+                    return alert('请选择要上传的文件!');
+                } else {
+                    // 向FormData追加文件
+                    var fd = new FormData();
+                    fd.append('avatar', files[0]);
+                    // 发起上传文件请求
+                    $.ajax({
+                        method: 'post',
+                        url: 'http://www.liulongbin.top:3006/api/upload/avatar',
+                        data: fd,
+                        // 不修改 Content-Type属性 使用 FormData 默认的 Content-Type 值
+                        contentType: false,
+                        // 不对 FormData 中的数据进行 url 编码，而是将 FormData 数据原样发送到服务器
+                        processData: false,
+                        success: function(res) {
+                            console.log(res);
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
