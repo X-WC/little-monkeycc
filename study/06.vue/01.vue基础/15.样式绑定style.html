@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式绑定</title>
+    <script src="../vue.js"></script>
+    <style>
+        .active {
+            border: 1px solid red;
+            height: 100px;
+            width: 100px;
+        }
+        
+        .error {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 样式绑定style -->
+        <!-- 对象语法 -->
+        <div v-bind:style="{color:activeColor,fontSize:fontsize,background:'red'}">内联样式</div>
+
+        <!-- 数组语法 -->
+        <div v-bind:style="[styleObj1,styleObj2]">数组语法</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeColor: 'white',
+                fontsize: '30px',
+                styleObj1: {
+                    color: 'skyblue',
+                    background: 'yellow'
+                },
+                styleObj2: {
+                    fontSize: '60px'
+                }
+            },
+            method: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

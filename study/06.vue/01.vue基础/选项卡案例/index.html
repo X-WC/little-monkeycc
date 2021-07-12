@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏选项卡</title>
+    <style>
+        html,
+        body,
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .tab {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+        }
+        
+        .tab ul li {
+            float: left;
+            border: 1px solid blue;
+            padding: 15px;
+        }
+        
+        .tab div img {
+            border: 1px solid blue;
+            border-top: none;
+        }
+        
+        .active {
+            background-color: orange;
+        }
+        
+        .tab div {
+            display: none;
+        }
+        
+        .tab .current {
+            /* 显示 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="tab">
+            <!-- tab栏 -->
+            <ul>
+                <li v-on:click='change(index)' :class='currentIndex==index?"active":" "' :key="item.id" v-for="(item,index) in list">
+                    {{item.title}}
+                </li>
+            </ul>
+            <div :key="item.id" :class='currentIndex==index?"current":" "' v-for="(item,index) in list">
+                <img v-bind:src="item.path" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                currentIndex: 0,
+                list: [{
+                    id: 1,
+                    title: 'apple',
+                    path: 'image/apple.png'
+                }, {
+                    id: 2,
+                    title: 'orange',
+                    path: 'image/orange.png'
+                }, {
+                    id: 3,
+                    title: 'lemon',
+                    path: 'image/lemon.png'
+                }]
+            },
+            methods: {
+                change: function(index) {
+                    this.currentIndex = index;
+                    console.log(this.currentIndex);
+                    console.log(index);
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

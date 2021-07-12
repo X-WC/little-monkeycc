@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环结构——遍历对象</title>
+    <script src="../vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- 遍历对象 -->
+        <div v-for="(v,k,i) in obj">
+            {{v+'--'+k+'---'+i}}
+        </div>
+        <div v-if="i==1" v-for="(v,k,i) in obj">
+            {{v+'--'+k+'---'+i}}
+        </div>
+    </div>
+    <script>
+        // 原生js遍历对象
+        const obj = {
+            name: 'cc',
+            age: 18,
+            hobby: function() {
+                return 'football'
+            }
+        }
+        for (const key in obj) {
+            console.log(key);
+            console.log(obj[key]);
+        }
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                obj: {
+                    name: 'cc',
+                    age: 18,
+                    hobby: function() {
+                        return 'football'
+                    }
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

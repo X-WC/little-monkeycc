@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div>
+            {{msg}}
+        </div>
+        <button v-on:click="num++">点击</button>
+        <button @click="handle">点击1</button>
+        <button @click="handle()">点击2</button>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    num: 0,
+                    msg: 'hello vue',
+                },
+                methods: {
+                    handle: function() {
+                        // 这里的this是vm对象
+                        console.log(this === vm);
+                        this.num++;
+                    }
+                }
+            })
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式绑定</title>
+    <script src="../vue.js"></script>
+    <style>
+        .active {
+            border: 1px solid red;
+            height: 100px;
+            width: 100px;
+        }
+        
+        .error {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- class样式处理 -->
+        <!-- 对象语法 -->
+        <div v-bind:class="{active:isActive,error:isError}">测试样式</div>
+        <button v-on:click="handle">切换</button>
+
+        <!-- 数组语法 -->
+        <div v-bind:class="[activeClass,errorClass]">测试样式1</div>
+        <button v-on:click="handle1">切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                isError: true,
+                activeClass: 'active',
+                errorClass: 'error',
+            },
+            methods: {
+                handle: function() {
+                    // 控制 isActive 的值在true和false之间切换
+                    this.isActive = !this.isActive;
+                    this.isError = !this.isError;
+                    console.log(this.isActive);
+                },
+                handle1: function() {
+                    this.activeClass = '';
+                    this.errorClass = '';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环结构——遍历数组</title>
+    <script src="../vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- 遍历数组 -->
+        <ul>
+            <!-- :key作用是一定程度提高vue的性能 -->
+            <li :key="item.id" v-for="(item,index) in items">
+                {{item.message+'------'+index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="fruit in fruits">
+                {{fruit}}
+            </li>
+        </ul>
+    </div>
+    <script>
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                items: [{
+                    id: 1,
+                    message: '西游记'
+                }, {
+                    id: 2,
+                    message: '红楼梦'
+                }],
+                fruits: ['apple', 'banana'],
+
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

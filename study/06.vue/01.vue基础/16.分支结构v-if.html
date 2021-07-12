@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if</title>
+    <script src="../vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <span v-if="score>=90">优秀</span>
+        <span v-else-if="score<90&&score>=80">良好</span>
+        <span v-else-if="score<80&&score>=60">一般</span>
+        <span v-else>比较差</span>
+        <!-- 
+            v-show和v-if的区别
+            1.v-if控制元素是否渲染到页面
+            2.v-show 控制元素是否显示（已经渲染到页面 display:none）
+        
+        -->
+        <span v-show="flag">测试v-show</span>
+        <button @click="handle">切换</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                score: 59,
+                flag: false
+            },
+            methods: {
+                handle: function() {
+                    this.flag = !this.flag;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
