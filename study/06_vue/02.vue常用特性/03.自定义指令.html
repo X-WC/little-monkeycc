@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义指令</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-focus>
+        <input type="text" v-color="bgdColor">
+    </div>
+    <script>
+        // 全局指令
+        // 不带参数的自定义指令
+        Vue.directive('focus', {
+            inserted: function(el) {
+                // 获取元素的焦点
+                // el表示指定所绑定的元素
+                el.focus();
+            }
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                bgdColor: {
+                    color: 'skyblue'
+                }
+            },
+            // 局部指令(使用是有限制的)
+            // 带参数的自定义指令
+            directives: {
+                color: {
+                    // bind 只调用一次 在指令第一次绑定在元素上时候调用
+                    bind: function(el, binding) {
+                        console.log(binding.value.color);
+                        el.style.backgroundColor = binding.value.color;
+                    }
+                }
+            },
+            methods: {
+                handle: function() {
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

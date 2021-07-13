@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 自动将用户的输入值转换为数值类型 -->
+        <input type="text" name="" id="" v-model.number="age">
+        <!-- 自动过滤用户输入的首尾空白字符 -->
+        <input type="text" name="" id="" v-model.trim="msg">
+        <!-- 在'change'时而非'input'时更新  -->
+        <!-- 不是实时更新 而是失去焦点的时候更新 -->
+        <div>
+            <input type="text" v-model.lazy="msg1">
+            <span>{{msg1}}</span>
+        </div>
+        <input type="button" @click="handle" value="点击">
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                age: undefined,
+                msg: '',
+                msg1: ''
+            },
+            methods: {
+                handle: function() {
+                    console.log(this.age);
+                    console.log(this.msg);
+                    console.log(this.msg1);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
