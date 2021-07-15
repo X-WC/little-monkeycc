@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组响应式</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+        <div>{{info.name}}</div>
+        <div>{{info.age}}</div>
+        <div>{{info.sex}}</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: ['orange', 'apple', 'pear'],
+                info: {
+                    name: 'cc',
+                    age: 18
+                }
+            }
+        });
+        // 不存在响应式变化
+        vm.list[0] = 'lemon';
+        Vue.set(vm.list, '2', 'lemon');
+        vm.$set(vm.list, 1, 'banana');
+        // 不存在响应式变化
+        // vm.info.sex = "男";
+        vm.$set(vm.info, 'sex', '女');
+    </script>
+</body>
+
+</html>

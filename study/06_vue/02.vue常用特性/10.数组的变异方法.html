@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变异方法（变更方法）数组</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="fname">
+        <button @click="add">添加</button>
+        <button @click="del">删除</button>
+        <button @click='change'>替换</button>
+        <ul>
+            <li v-for="item in fruits">{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fruits: ['orange', 'apple', 'pear'],
+                fname: ''
+            },
+            methods: {
+                add: function() {
+                    this.fruits.push(this.fname);
+                },
+                del: function() {
+                    this.fruits.pop();
+                },
+                change: function() {
+                    // slice() 方法可从已有的数组中返回选定的元素
+                    // slice() 方法不会改变原始数组
+                    this.fruits = this.fruits.slice(0, 2);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
